@@ -1,0 +1,43 @@
+body {
+  font-family: "futura-100", sans-serif;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
+button {
+  font-family: "futura-100", sans-serif;
+}
+
+/* ----------------------------------- */
+/* Heading----------------------------- */
+/* ----------------------------------- */
+
+.nav-bar {
+  margin-top: 25px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: right;
+  gap: 20px;
+}
+
+.nav-bar button {
+  font-weight: 450;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+#portfolio-text {
+  height: 90vh;
+  width: 100vw;
+  margin-left: -3%;
+  margin-right: -3%;
+}
+
+.centered {
+  display: flex;
+  justify-content: center;
+}
+
+#name {
+  font-size: 15rem;
+}
