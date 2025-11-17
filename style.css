@@ -21,16 +21,21 @@ h2 {
 /* Heading----------------------------- */
 /* ----------------------------------- */
 
-.nav-bar {
-  margin-top: 25px;
+.nav {
   display: flex;
-  align-items: flex-end;
-  justify-content: right;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  margin-top: 25px;
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center; /* align buttons with the icon */
   gap: 20px;
 }
 
 .nav-bar button {
-  font-weight: 450;
   border: none;
   background-color: rgba(0, 0, 0, 0);
 }
