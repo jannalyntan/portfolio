@@ -20,3 +20,13 @@ document.addEventListener("scroll", function () {
     }
   });
 });
+
+window.addEventListener("load", () => {
+  const images = document.querySelectorAll(".fade-in-on-load");
+
+  images.forEach((img, index) => {
+    // Stagger the reveal slightly
+    img.style.transitionDelay = `${index * 0.2}s`;
+    img.classList.add("visible");
+  });
+});
