@@ -20,7 +20,6 @@ h2 {
 /* ----------------------------------- */
 /* Heading----------------------------- */
 /* ----------------------------------- */
-
 .nav {
   display: flex;
   align-items: center;
@@ -51,10 +50,11 @@ h2 {
 }
 
 #portfolio-text {
-  height: 95vh;
   width: 100vw;
   margin-left: -3%;
   margin-right: -3%;
+  margin-top: -80px;
+  pointer-events: none;
 }
 
 .centered {
@@ -67,6 +67,12 @@ h2 {
 .right {
   display: flex;
   justify-content: right;
+  flex-direction: column;
+}
+
+.right2 {
+  display: flex;
+  justify-content: right;
 }
 
 .left {
@@ -75,7 +81,7 @@ h2 {
 }
 
 #name {
-  font-size: 96px;
+  font-size: 50px;
 }
 
 /* ----------------------------------- */
@@ -84,6 +90,16 @@ h2 {
 #smile {
   width: 150px;
   height: auto;
+  margin-top: 70px;
+  margin-bottom: -70px;
+}
+
+#arrow {
+  width: 150px;
+  height: auto;
+  margin-top: 70px;
+  margin-bottom: -70px;
+  z-index: 30;
 }
 
 #ghost {
@@ -93,12 +109,11 @@ h2 {
   margin-top: -100px;
 }
 
-#lines {
+#waves {
   width: 150px;
   height: auto;
-  z-index: 1;
-  margin-top: -70px;
-  margin-bottom: -70px;
+  z-index: -1;
+  margin-bottom: -200px;
 }
 
 #lines-2 {
@@ -109,39 +124,34 @@ h2 {
 }
 
 /* ----------------------------------- */
-/* Selection-------------------------- */
+/* Side By Side-------------------------- */
 /* ----------------------------------- */
 
-#selection {
+.sidebyside {
   display: flex;
-  justify-content: center;
-  gap: 20px;
+  align-items: center;
+  gap: 70px;
+  margin-top: -60px;
 }
 
-#selection a {
-  text-decoration: none;
+.left {
+  text-align: left;
+  align-items: left;
+  margin-left: 10%;
 }
 
-.seclection-btn {
-  background-color: #0f7cbf;
-  width: 750px;
-  height: 450px;
-  border-radius: 30px;
-  font-size: 30px;
-  text-align: center;
-  line-height: 0.9;
-
-  display: grid;
-  place-items: center;
-  color: white;
+.right {
+  align-items: right;
+  text-align: right;
+  margin-right: 10%;
 }
 
-.seclection-btn br {
-  line-height: 0;
+#profile {
+  border-radius: 10px;
 }
 
 /* ----------------------------------- */
-/* Scroll----------------------------- */
+/* Scroll-------------------------- */
 /* ----------------------------------- */
 
 .scroll-reveal {
