@@ -20,6 +20,7 @@ h2 {
 /* ----------------------------------- */
 /* Heading----------------------------- */
 /* ----------------------------------- */
+
 .nav {
   display: flex;
   align-items: center;
@@ -51,6 +52,7 @@ h2 {
 
 #portfolio-text {
   width: 100vw;
+  z-index: 3;
   margin-left: -3%;
   margin-right: -3%;
   margin-top: -80px;
@@ -174,4 +176,52 @@ h2 {
 .fade-in-on-load.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ----------------------------------- */
+/* Selection-------------------------- */
+/* ----------------------------------- */
+
+#selection {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding-top: 40px;
+}
+
+#selection a {
+  text-decoration: none;
+}
+
+.seclection-btn {
+  background-color: #0f7cbf;
+  width: 750px;
+  height: 450px;
+  border-radius: 30px;
+  font-size: 30px;
+  text-align: center;
+  line-height: 0.9;
+
+  display: grid;
+  place-items: center;
+  color: white;
+}
+
+.seclection-btn br {
+  line-height: 0;
+}
+
+#selection-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+#scribbles {
+  position: absolute;
+  top: 350px; /* adjust this value */
+  right: 57px;
+  width: 92vw;
+  height: 75%;
+  z-index: 1;
+  pointer-events: none;
 }
