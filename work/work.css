@@ -1,0 +1,237 @@
+/* Colour
+Blue   background-color: #0f7cbf;
+Yellow  color: #F3A20D;
+
+*/
+
+body {
+  font-family: "futura-100", sans-serif;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
+button {
+  font-family: "futura-100", sans-serif;
+}
+
+h2 {
+  font-weight: lighter;
+}
+/* ----------------------------------- */
+/* Heading----------------------------- */
+/* ----------------------------------- */
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  margin-top: 25px;
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center; /* align buttons with the icon */
+  gap: 20px;
+}
+
+.nav-bar button {
+  font-size: 16px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.nav-bar button:hover {
+  color: #f3a20d;
+  font-weight: 600;
+  scale: 1.1;
+  cursor: pointer;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+#portfolio-text {
+  width: 100vw;
+  z-index: 3;
+  margin-left: -3%;
+  margin-right: -3%;
+  margin-top: -80px;
+  pointer-events: none;
+}
+
+.centered {
+  display: flex;
+  justify-content: center;
+  margin-top: -250px;
+  margin-left: 70px;
+}
+
+.right {
+  display: flex;
+  justify-content: right;
+  flex-direction: column;
+}
+
+.right2 {
+  display: flex;
+  justify-content: right;
+}
+
+.left {
+  display: flex;
+  justify-content: left;
+}
+
+#name {
+  font-size: 50px;
+}
+
+/* ----------------------------------- */
+/* Img Elements----------------------- */
+/* ----------------------------------- */
+#smile {
+  width: 150px;
+  height: auto;
+  margin-top: 70px;
+  margin-bottom: -70px;
+}
+
+#arrow {
+  width: 150px;
+  height: auto;
+  margin-top: 70px;
+  margin-bottom: -70px;
+  z-index: 30;
+}
+
+#ghost {
+  width: 60px;
+  height: auto;
+  z-index: 1;
+  margin-top: -100px;
+}
+
+#waves {
+  width: 150px;
+  height: auto;
+  z-index: -1;
+  margin-bottom: -200px;
+}
+
+#lines-2 {
+  width: 150px;
+  height: auto;
+  z-index: 1;
+  margin-top: -100px;
+}
+
+/* ----------------------------------- */
+/* Side By Side-------------------------- */
+/* ----------------------------------- */
+
+.sidebyside {
+  display: flex;
+  align-items: center;
+  gap: 70px;
+  margin-top: -60px;
+}
+
+.left {
+  text-align: left;
+  align-items: left;
+  margin-left: 10%;
+}
+
+.right {
+  align-items: right;
+  text-align: right;
+  margin-right: 10%;
+}
+
+#profile {
+  border-radius: 10px;
+}
+
+/* ----------------------------------- */
+/* Scroll-------------------------- */
+/* ----------------------------------- */
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.7s ease-out;
+}
+
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in-on-load {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.fade-in-on-load.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ----------------------------------- */
+/* Selection-------------------------- */
+/* ----------------------------------- */
+
+#selection {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding-top: 40px;
+}
+
+#selection a {
+  text-decoration: none;
+}
+
+.seclection-btn {
+  background-color: #0f7cbf;
+  width: 380px;
+  height: 250px;
+  border-radius: 30px;
+  font-size: 20px;
+  text-align: center;
+  line-height: 0.9;
+
+  display: grid;
+  place-items: center;
+  color: white;
+}
+
+.seclection-btn br {
+  line-height: 0;
+}
+
+#selection-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+#scribbles {
+  position: absolute;
+  top: 350px; /* adjust this value */
+  right: 57px;
+  width: 92vw;
+  height: 75%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.intro {
+  font-family: "futura-100", sans-serif;
+  font-weight: 300;
+  padding-left: 15%;
+  padding-right: 15%;
+  padding-top: 40px;
+  text-align: center;
+  line-height: 25px;
+}
