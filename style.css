@@ -158,10 +158,20 @@ h2 {
 .fade-in-on-load {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 1.2s ease, transform 1.2s ease;
+  transition:
+    opacity 1.2s ease,
+    transform 1.2s ease;
 }
 
 .fade-in-on-load.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.seclection-btn:hover {
+  background-color: #f3a20d;
+  font-weight: 600;
+  transform: scale(0.95);
+  cursor: pointer;
+  border: none;
 }

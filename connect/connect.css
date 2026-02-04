@@ -170,7 +170,9 @@ h2 {
 .fade-in-on-load {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 1.2s ease, transform 1.2s ease;
+  transition:
+    opacity 1.2s ease,
+    transform 1.2s ease;
 }
 
 .fade-in-on-load.visible {
@@ -200,11 +202,24 @@ h2 {
   border-radius: 30px;
   font-size: 30px;
   text-align: center;
-  line-height: 0.9;
+  line-height: 0.95;
 
   display: grid;
   place-items: center;
   color: white;
+
+  transition:
+    background-color 0.1s ease,
+    transform 0.15s ease,
+    font-weight 0.1s ease;
+}
+
+.seclection-btn:hover {
+  background-color: #f3a20d;
+  font-weight: 600;
+  transform: scale(0.95);
+  cursor: pointer;
+  border: none;
 }
 
 .seclection-btn br {
