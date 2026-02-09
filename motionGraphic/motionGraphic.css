@@ -1,0 +1,258 @@
+/* Colour
+Blue   background-color: #0f7cbf;
+Yellow  color: #F3A20D;
+
+*/
+
+body {
+  font-family: "futura-100", sans-serif;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
+button {
+  font-family: "futura-100", sans-serif;
+}
+
+h2 {
+  font-weight: lighter;
+}
+/* ----------------------------------- */
+/* Heading----------------------------- */
+/* ----------------------------------- */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  margin-top: 25px;
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center; /* align buttons with the icon */
+  gap: 20px;
+}
+
+.nav-bar button {
+  font-weight: 450;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.nav-bar button:hover {
+  color: #f3a20d;
+  font-weight: 600;
+  scale: 1.1;
+  cursor: pointer;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+#portfolio-text {
+  width: 100vw;
+  margin-left: -3%;
+  margin-right: -3%;
+  /* margin-top: -80px; */
+  pointer-events: none;
+}
+
+.centered {
+  display: flex;
+  justify-content: center;
+  margin-top: -250px;
+  margin-left: 70px;
+}
+
+.right {
+  display: flex;
+  justify-content: right;
+  flex-direction: column;
+}
+
+.right2 {
+  display: flex;
+  justify-content: right;
+}
+
+.left {
+  display: flex;
+  justify-content: left;
+}
+
+#name {
+  font-size: 50px;
+}
+
+/* ----------------------------------- */
+/* Img Elements----------------------- */
+/* ----------------------------------- */
+#smile {
+  width: 150px;
+  height: auto;
+  margin-top: 70px;
+  margin-bottom: -70px;
+}
+
+#arrow {
+  width: 150px;
+  height: auto;
+  margin-top: 70px;
+  margin-bottom: -70px;
+  z-index: 30;
+}
+
+#ghost {
+  width: 60px;
+  height: auto;
+  z-index: 1;
+  margin-top: -100px;
+}
+
+#waves {
+  width: 150px;
+  height: auto;
+  z-index: -1;
+  margin-bottom: -200px;
+}
+
+#lines-2 {
+  width: 150px;
+  height: auto;
+  z-index: 1;
+  margin-top: -100px;
+}
+
+/* ----------------------------------- */
+/* Side By Side-------------------------- */
+/* ----------------------------------- */
+
+.sidebyside {
+  display: flex;
+  align-items: center;
+  gap: 70px;
+  margin-top: -60px;
+}
+
+.left {
+  text-align: left;
+  align-items: left;
+  margin-left: 10%;
+}
+
+.right {
+  align-items: right;
+  text-align: right;
+  margin-right: 10%;
+}
+
+#profile {
+  border-radius: 10px;
+}
+
+/* ----------------------------------- */
+/* Scroll-------------------------- */
+/* ----------------------------------- */
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.7s ease-out;
+}
+
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in-on-load {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 1.2s ease,
+    transform 1.2s ease;
+}
+
+.fade-in-on-load.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ----------------------------------- */
+/* slideshow-------------------------- */
+/* ----------------------------------- */
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1100px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #d4d4d4;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: #0f7cbf;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
