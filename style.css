@@ -109,35 +109,49 @@ h2 {
 }
 
 /* ----------------------------------- */
-/* Selection-------------------------- */
+/* Selection grid -------------------- */
 /* ----------------------------------- */
 
-#selection {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
+.selection-section {
+  padding: clamp(20px, 4vw, 40px) 0;
 }
 
-#selection a {
+.selection-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  column-gap: clamp(20px, 2vw, 30px);
+  row-gap: 10px;
+}
+
+.selection-grid a {
   text-decoration: none;
+  display: block;
 }
 
 .seclection-btn {
   background-color: #0f7cbf;
-  width: 750px;
-  height: 450px;
-  border-radius: 30px;
-  font-size: 30px;
+  width: 100%;
+  aspect-ratio: 5 / 3;
+  border-radius: clamp(14px, 2vw, 30px);
+  font-size: clamp(14px, 2.2vw, 30px);
   text-align: center;
-  line-height: 0.9;
-
+  line-height: 1.1;
   display: grid;
   place-items: center;
   color: white;
+  transition:
+    background-color 0.25s,
+    transform 0.25s;
+  padding: 10px;
+  cursor: pointer;
+  margin: 0;
 }
 
-.seclection-btn br {
-  line-height: 0;
+.seclection-btn:hover {
+  background-color: #f3a20d;
+  font-weight: 600;
+  transform: scale(0.9);
 }
 
 /* ----------------------------------- */
