@@ -1,27 +1,62 @@
 :root {
   --pink: #d0826f;
+  --mainfont: "Futura 100";
+  --script: "Covered By Your Grace";
+}
+h2 {
+  font-family: var(--mainfont);
+  font-size: 64px;
 }
 
+body {
+  margin: 0;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* container */
 .logo {
   display: flex;
   flex-direction: column;
-  line-height: 25px;
+  align-items: center;
+  justify-content: center;
+
+  gap: 20px; /* spacing between svg + text */
+}
+
+.path {
+  fill: var(--pink);
+  fill-opacity: 0;
+  stroke: var(--pink);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 #name {
-  color: #000;
   text-align: right;
-  font-family: "itc-bradley-hand-std", sans-serif;
-  font-size: 128px;
+  font-family: "Futura 100";
+  font-size: 100px;
   font-style: normal;
   font-weight: 700;
   line-height: 94%; /* 120.32px */
+  margin-top: -300px;
 }
 
-.box {
+#multimedia {
+  color: #d0826f;
+  justify-content: flex-end;
+  font-family: "Futura 100";
+  font-size: 36px;
+  font-style: light;
+  font-weight: 100;
+  line-height: 94%; /* 33.84px */
+  margin-top: -100px;
+}
+
+svg {
   display: block;
-  height: 100px;
-  width: 100px;
-  background-color: green;
-  border-radius: 20px;
 }
