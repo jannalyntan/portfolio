@@ -2,10 +2,6 @@
   --pink: #d0826f;
 }
 
-body {
-  font-family: futura-100, sans-serif;
-}
-
 .logo {
   display: flex;
   flex-direction: column;
@@ -15,21 +11,13 @@ body {
 #name {
   color: #000;
   text-align: right;
-  font-family: "Futura 100";
+  font-family: "itc-bradley-hand-std", sans-serif;
   font-size: 128px;
   font-style: normal;
   font-weight: 700;
   line-height: 94%; /* 120.32px */
 }
 
-#portfolio {
-  color: #d0826f;
-  font-family: "Covered By Your Grace";
-  font-size: 96px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 94%; /* 90.24px */
-}
 .box {
   display: block;
   height: 100px;
