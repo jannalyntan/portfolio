@@ -1,5 +1,6 @@
 :root {
   --pink: #d0826f;
+  --blue: #3b4358;
   --mainfont: "Futura 100";
   --script: "Covered By Your Grace";
 }
@@ -10,19 +11,27 @@ h2 {
 
 body {
   margin: 0;
-  height: 100vh;
-
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-/* container */
+p {
+  font-family: var(--mainfont);
+}
+
+/* -------------------------------------------- */
+/* Logo Introduction */
+/* -------------------------------------------- */
+
 .logo {
+  height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-top: 10vh;
 
   gap: 20px; /* spacing between svg + text */
 }
@@ -31,12 +40,13 @@ body {
   fill: var(--pink);
   fill-opacity: 0;
   stroke: var(--pink);
-  stroke-width: 3;
+  stroke-width: 2;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
 
-#name {
+#name-1 {
+  color: var(--blue);
   text-align: right;
   font-family: "Futura 100";
   font-size: 100px;
@@ -44,6 +54,18 @@ body {
   font-weight: 700;
   line-height: 94%; /* 120.32px */
   margin-top: -300px;
+}
+
+#name-2 {
+  color: var(--blue);
+  text-align: right;
+  font-family: "Futura 100";
+  font-size: 100px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 94%; /* 120.32px */
+  margin-top: -110px;
+  padding-left: 360px;
 }
 
 #multimedia {
@@ -55,8 +77,42 @@ body {
   font-weight: 100;
   line-height: 94%; /* 33.84px */
   margin-top: -100px;
+  padding-left: 290px;
 }
 
-svg {
-  display: block;
+.split {
+  will-change: transform;
+}
+
+.char {
+  display: inline-block;
+}
+
+/* -------------------------------------------- */
+/* Continue Scrolling-------------------------- */
+/* -------------------------------------------- */
+.scrollText {
+  color: var(--blue);
+}
+
+/* -------------------------------------------- */
+/* Introduction-------------------------- */
+/* -------------------------------------------- */
+.introduction {
+  background-color: #3b4358;
+  height: 100vh;
+  width: 100vw;
+
+  color: #fff;
+  text-align: center;
+  font-family: "Futura 100";
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 134%;
+  text-transform: uppercase;
+}
+
+#human-centred {
+  font-family: var(--script);
 }
