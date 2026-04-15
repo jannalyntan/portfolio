@@ -154,3 +154,17 @@ p {
   opacity: 0.12;
   z-index: 1;
 }
+
+/* -------------------------------------------- */
+/* iphone-------------------------- */
+/* -------------------------------------------- */
+
+#iphone {
+  position: sticky;
+
+  width: 386px;
+  height: 777px;
+  aspect-ratio: 77/155;
+
+  background: url(img/iphoneTemplate.png) lightgray 50% / cover no-repeat;
+}

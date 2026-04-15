@@ -92,6 +92,10 @@ document.addEventListener("DOMContentLoaded", () => {
     opacity: 0.12,
   });
 
+  gsap.set("#iphone, #iphoneIMG-1", {
+    opacity: 0,
+  });
+
   const introScrollTl = gsap.timeline({
     scrollTrigger: {
       trigger: ".introduction",
@@ -143,5 +147,15 @@ document.addEventListener("DOMContentLoaded", () => {
         ease: "none",
       },
       3.2,
+    )
+
+    // expand to fill the whole screen
+    .to(
+      "#iphone,",
+      {
+        opacity: 1,
+        duration: 2,
+      },
+      4,
     );
 });
