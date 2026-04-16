@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const name2Split = new SplitText("#name-2", { type: "chars" });
   const multimediaSplit = new SplitText("#multimedia", { type: "chars" });
   const continueScrolling = new SplitText(".scrollText", { type: "chars" });
+  const splitzTtitle = new SplitText("#splitz", { type: "chars" });
 
   // -------------------------
   // INTRO TIMELINE
@@ -151,11 +152,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // expand to fill the whole screen
     .to(
-      "#iphone,",
+      "#iphone, #iphoneIMG-1",
       {
         opacity: 1,
         duration: 2,
       },
+      3.6,
+    )
+
+    // expand to fill the whole screen
+    .to(
+      "#iphone, #iphoneIMG-1",
+      {
+        y: 40,
+        duration: 2,
+      },
       4,
     );
+
+  tl.from(
+    splitzTtitle.chars,
+    {
+      opacity: 1,
+      y: 10,
+      duration: 0.8,
+      stagger: 0.03,
+      ease: "power2.out",
+    },
+    "+=0.5",
+  );
 });

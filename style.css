@@ -158,13 +158,46 @@ p {
 /* -------------------------------------------- */
 /* iphone-------------------------- */
 /* -------------------------------------------- */
-
 #iphone {
   position: sticky;
-
+  top: 50%;
+  margin: 0 auto;
   width: 386px;
   height: 777px;
-  aspect-ratio: 77/155;
-
-  background: url(img/iphoneTemplate.png) lightgray 50% / cover no-repeat;
+  transform: translateY(-50%) scale(0.8);
+  transform-origin: center center;
+  opacity: 0;
+  z-index: 5;
 }
+
+#iphoneIMG-1 {
+  position: sticky;
+  top: 50%;
+  margin: 0 auto;
+  width: 380px; /* slightly smaller so it sits inside the frame */
+  height: 750px;
+  transform: translateY(-50%) scale(0.8);
+  transform-origin: center center;
+  opacity: 0;
+  z-index: 4;
+}
+
+.iphone img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+
+#splitz {
+  color: var(--blue);
+  text-align: right;
+  font-family: "Futura 100";
+  font-size: 100px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 94%; /* 120.32px */
+  padding-left: 360px;
+}
+
