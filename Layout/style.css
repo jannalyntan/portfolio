@@ -1,0 +1,220 @@
+:root {
+  --pink: #d0826f;
+  --blue: #3b4358;
+  --mainfont: "Futura 100", sans-serif;
+  --script: "Covered By Your Grace", cursive;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--mainfont);
+  overflow-x: hidden;
+}
+
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h2 {
+  font-size: 64px;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 46px;
+  font-weight: 300;
+  font-style: italic;
+}
+
+p {
+  font-family: var(--mainfont);
+}
+
+/* -------------------------------------------- */
+/* Logo Introduction */
+/* -------------------------------------------- */
+
+.logo {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+
+.path {
+  fill: var(--pink);
+  fill-opacity: 0;
+  stroke: var(--pink);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+#name-1,
+#name-2 {
+  color: var(--blue);
+  font-size: clamp(64px, 8vw, 100px);
+  font-weight: 700;
+  line-height: 0.94;
+}
+
+#multimedia {
+  color: var(--pink);
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 100;
+  line-height: 0.94;
+}
+
+.split {
+  will-change: transform;
+}
+
+.char {
+  display: inline-block;
+}
+
+/* -------------------------------------------- */
+/* Continue Scrolling */
+/* -------------------------------------------- */
+
+.scrollText {
+  color: var(--blue);
+  margin-top: 2rem;
+  text-align: center;
+}
+
+/* -------------------------------------------- */
+/* Introduction */
+/* -------------------------------------------- */
+
+.introduction {
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--blue);
+  color: white;
+  padding: 4rem 2rem;
+  position: relative;
+}
+
+.intro-text {
+  text-align: center;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.1;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 2;
+}
+
+.intro-line {
+  display: block;
+}
+
+#human-centred {
+  font-family: var(--script);
+  display: inline-block;
+  margin-right: 0.15em;
+  font-size: 1.15em;
+  text-transform: none;
+}
+
+.digital {
+  display: inline-block;
+}
+
+#circleAnimation {
+  width: 487px;
+  height: 708px;
+  margin: 3rem auto 0;
+  border-radius: 500px;
+  background: #000;
+  opacity: 0.12;
+}
+
+/* -------------------------------------------- */
+/* iPhone Section */
+/* -------------------------------------------- */
+
+.iphone {
+  position: relative;
+  width: 500px; /* your phone size */
+  margin: 0 auto;
+}
+
+/* phone frame */
+.phone-frame {
+  width: 100%;
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+
+/* screen inside phone */
+.phone-screen {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: 85%; /* tweak this */
+  height: 90%; /* tweak this */
+
+  object-fit: cover;
+  border-radius: 40px;
+
+  z-index: 1;
+}
+
+#splitz {
+  max-width: 400px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#splitz h2 {
+  color: white;
+}
+
+#splitz p {
+  line-height: 1.6;
+}
+
+/* -------------------------------------------- */
+/* Responsive */
+/* -------------------------------------------- */
+
+@media (max-width: 900px) {
+  .part1 {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #splitz {
+    align-items: center;
+  }
+
+  #iphone {
+    width: 320px;
+    height: auto;
+  }
+
+  #iphoneIMG-1 {
+    width: 300px;
+    height: auto;
+  }
+}

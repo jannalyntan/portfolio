@@ -7,8 +7,14 @@
 h2 {
   font-family: var(--mainfont);
   font-size: 64px;
+  text-transform: uppercase;
 }
 
+h3 {
+  font-size: 46px;
+  font-weight: lighter;
+  font-style: italic;
+}
 body {
   margin: 0;
   display: flex;
@@ -158,28 +164,40 @@ p {
 /* -------------------------------------------- */
 /* iphone-------------------------- */
 /* -------------------------------------------- */
+.part1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
 #iphone {
-  position: sticky;
-  top: 50%;
   margin: 0 auto;
-  width: 386px;
-  height: 777px;
-  transform: translateY(-50%) scale(0.8);
-  transform-origin: center center;
+  width: 501.8px;
+  height: 1010.1px;
+
   opacity: 0;
   z-index: 5;
 }
 
 #iphoneIMG-1 {
-  position: sticky;
-  top: 50%;
   margin: 0 auto;
-  width: 380px; /* slightly smaller so it sits inside the frame */
-  height: 750px;
-  transform: translateY(-50%) scale(0.8);
-  transform-origin: center center;
+  width: 490px; /* slightly smaller so it sits inside the frame */
+  height: 950px;
+
   opacity: 0;
   z-index: 4;
+}
+
+#iphone,
+#iphoneIMG-1 {
+  position: sticky;
+  top: 50%;
+  transform: translateY(-50%) scale(0.8);
 }
 
 .iphone img {
@@ -189,15 +207,14 @@ p {
   object-fit: contain;
 }
 
-
 #splitz {
+  max-width: 400px;
   color: var(--blue);
-  text-align: right;
-  font-family: "Futura 100";
-  font-size: 100px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 94%; /* 120.32px */
-  padding-left: 360px;
-}
 
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  position: relative;
+  z-index: 6;
+}
