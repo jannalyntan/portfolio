@@ -27,15 +27,43 @@ h2 {
 }
 
 h3 {
-  font-size: 46px;
+  font-size: 32px;
   font-weight: 300;
   font-style: italic;
+}
+
+h1 {
+  color: #d0826f;
+  text-align: right;
+  font-family: "Futura 100";
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: right;
+  margin-bottom: -16px;
 }
 
 p {
   font-family: var(--mainfont);
 }
 
+button {
+  font-family: var(--mainfont);
+  width: 100px;
+  padding: 10px;
+  border-radius: 25px;
+  background-color: var(--pink);
+  color: white;
+  border: none;
+}
+
+button:hover {
+  scale: 0.9;
+  background-color: var(--blue);
+  cursor: pointer;
+}
 /* -------------------------------------------- */
 /* Logo Introduction */
 /* -------------------------------------------- */
@@ -146,10 +174,17 @@ p {
 /* iPhone Section */
 /* -------------------------------------------- */
 
+.part1 {
+  display: flex;
+  flex-direction: row; /* force side by side */
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+}
+
 .iphone {
   position: relative;
-  width: 500px; /* your phone size */
-  margin: 0 auto;
+  width: 450px; /* your phone size */
 }
 
 /* phone frame */
@@ -170,7 +205,7 @@ p {
   transform: translate(-50%, -50%);
 
   width: 85%; /* tweak this */
-  height: 90%; /* tweak this */
+  height: 95%; /* tweak this */
 
   object-fit: cover;
   border-radius: 40px;
@@ -179,19 +214,31 @@ p {
 }
 
 #splitz {
-  max-width: 400px;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  color: var(--blue);
+
+  padding-left: -100px;
+
+  border-radius: 55px;
+  background: rgba(59, 67, 88, 0.09);
+  padding: 50px 100px 50px 50px;
+
+  text-align: left;
 }
 
-#splitz h2 {
-  color: white;
+#splitz-container {
+  display: flex;
+  flex-direction: column;
 }
 
 #splitz p {
-  line-height: 1.6;
+  line-height: 2;
+}
+
+#moneyBag {
+  width: 226px;
+  height: 262px;
+  aspect-ratio: 69/80;
+  z-index: 15;
 }
 
 /* -------------------------------------------- */
