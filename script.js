@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const name2Split = new SplitText("#name-2", { type: "chars" });
   const multimediaSplit = new SplitText("#multimedia", { type: "chars" });
   const continueScrolling = new SplitText(".scrollText", { type: "chars" });
-  const splitzTtitle = new SplitText("#splitz", { type: "chars" });
 
   // -------------------------
   // INTRO TIMELINE
@@ -81,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   // -------------------------
-  // SCROLL SECTION
+  // INITIAL STATES
   // -------------------------
   gsap.set(".line-1, .line-2, .line-3", {
     opacity: 0.35,
@@ -93,10 +92,26 @@ document.addEventListener("DOMContentLoaded", () => {
     opacity: 0.12,
   });
 
-  gsap.set("#iphone, #iphoneIMG-1", {
+  gsap.set(".iphone", {
     opacity: 0,
+    y: 180,
+    scale: 0.82,
   });
 
+  gsap.set("#splitz-container", {
+    opacity: 0,
+    x: 120,
+  });
+
+  // optional: make part1 sit above the white circle reveal nicely
+  gsap.set(".part1", {
+    position: "relative",
+    zIndex: 2,
+  });
+
+  // -------------------------
+  // SCROLL SECTION
+  // -------------------------
   const introScrollTl = gsap.timeline({
     scrollTrigger: {
       trigger: ".introduction",
@@ -107,19 +122,15 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   introScrollTl
-    // line 1
     .to(".line-1", { opacity: 1, duration: 1 }, 0)
     .to("#circleAnimation", { scale: 0.25, duration: 1 }, 0)
 
-    // line 2
     .to(".line-2", { opacity: 1, duration: 1 }, 1)
     .to("#circleAnimation", { scale: 0.5, duration: 1 }, 1)
 
-    // line 3
     .to(".line-3", { opacity: 1, duration: 1 }, 2)
     .to("#circleAnimation", { scale: 1, duration: 1, opacity: 0.18 }, 2)
 
-    // invert moment
     .to(
       "#circleAnimation",
       {
@@ -133,52 +144,44 @@ document.addEventListener("DOMContentLoaded", () => {
     .to(
       ".intro-text",
       {
-        color: "transparent",
-        duration: 1,
+        opacity: 0,
+        duration: 0.8,
       },
       3,
     )
 
-    // expand to fill the whole screen
     .to(
       "#circleAnimation",
       {
-        scale: 6,
+        scale: 7,
         duration: 2,
         ease: "none",
       },
       3.2,
     )
 
-    // expand to fill the whole screen
+    // phone appears and moves into place
     .to(
-      "#iphone, #iphoneIMG-1",
+      ".iphone",
       {
         opacity: 1,
-        duration: 2,
+        y: 0,
+        scale: 1,
+        duration: 1.4,
+        ease: "power3.out",
       },
-      3.6,
+      4.1,
     )
 
-    // expand to fill the whole screen
+    // text card appears slightly after
     .to(
-      "#iphone, #iphoneIMG-1",
+      "#splitz-container",
       {
-        y: 40,
-        duration: 2,
+        opacity: 1,
+        x: 0,
+        duration: 1.2,
+        ease: "power3.out",
       },
-      4,
+      4.35,
     );
-
-  tl.from(
-    splitzTtitle.chars,
-    {
-      opacity: 1,
-      y: 10,
-      duration: 0.8,
-      stagger: 0.03,
-      ease: "power2.out",
-    },
-    "+=0.5",
-  );
 });
