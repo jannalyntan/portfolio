@@ -22,27 +22,16 @@ p {
 }
 
 h2 {
+  font-family: var(--mainfont);
   font-size: 64px;
   text-transform: uppercase;
 }
 
 h3 {
+  font-family: var(--mainfont);
   font-size: 32px;
-  font-weight: 300;
+  font-weight: lighter;
   font-style: italic;
-}
-
-h1 {
-  color: #d0826f;
-  text-align: right;
-  font-family: "Futura 100";
-  font-size: 48px;
-  font-style: normal;
-  font-weight: 400;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  text-align: right;
-  margin-bottom: -16px;
 }
 
 p {
@@ -51,21 +40,29 @@ p {
 
 button {
   font-family: var(--mainfont);
-  width: 100px;
-  padding: 10px;
+  padding: 12px 32px;
   border-radius: 25px;
   background-color: var(--pink);
   color: white;
   border: none;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  opacity: 0.6; /* matches the faded button in the reference */
+  transition:
+    opacity 0.2s,
+    background-color 0.2s,
+    scale 0.2s;
 }
 
 button:hover {
-  scale: 0.9;
+  opacity: 1;
   background-color: var(--blue);
-  cursor: pointer;
+  scale: 0.95;
 }
+
 /* -------------------------------------------- */
-/* Logo Introduction */
+/* Logo                                         */
 /* -------------------------------------------- */
 
 .logo {
@@ -107,14 +104,9 @@ button:hover {
 .split {
   will-change: transform;
 }
-
 .char {
   display: inline-block;
 }
-
-/* -------------------------------------------- */
-/* Continue Scrolling */
-/* -------------------------------------------- */
 
 .scrollText {
   color: var(--blue);
@@ -123,63 +115,26 @@ button:hover {
 }
 
 /* -------------------------------------------- */
-/* Introduction */
-/* -------------------------------------------- */
-
-.introduction {
-  min-height: 100vh;
-  width: 100%;
-  background-color: var(--blue);
-  color: white;
-  padding: 4rem 2rem;
-  position: relative;
-}
-
-.intro-text {
-  text-align: center;
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 700;
-  line-height: 1.1;
-  text-transform: uppercase;
-  position: relative;
-  z-index: 2;
-}
-
-.intro-line {
-  display: block;
-}
-
-#human-centred {
-  font-family: var(--script);
-  display: inline-block;
-  margin-right: 0.15em;
-  font-size: 1.15em;
-  text-transform: none;
-}
-
-.digital {
-  display: inline-block;
-}
-
-#circleAnimation {
-  width: 487px;
-  height: 708px;
-  margin: 3rem auto 0;
-  border-radius: 500px;
-  background: #000;
-  opacity: 0.12;
-}
-
-/* -------------------------------------------- */
-/* iPhone Section */
+/* PART 1 — Splitz section                      */
 /* -------------------------------------------- */
 
 .part1 {
+  position: relative; /* anchors all the floating decos */
+  min-height: 100vh;
+  width: 100%;
+  background: #ffffff;
+  overflow: hidden;
   display: flex;
-  flex-direction: row; /* force side by side */
   align-items: center;
   justify-content: center;
+  padding: 6rem 6vw;
   gap: 100px;
+}
+
+#title {
+  color: #d0826f;
+  margin-bottom: -10px;
+  margin-left: 20px;
 }
 
 .iphone {
@@ -231,37 +186,179 @@ button:hover {
 }
 
 #splitz p {
-  line-height: 2;
+  line-height: 1.5;
+  width: 600px;
 }
 
-#moneyBag {
+/* ── Floating decorations ── */
+
+.deco {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Plane — top-right, tilted ~17° like the reference */
+.deco-plane {
+  top: -0px;
+  right: -px;
+  transform: rotate(17deg);
+  z-index: 10;
+  height: 286.68px;
+  scale: 0.7;
+}
+
+/* Money bill — top-left corner */
+.deco-money-tl {
+  top: 20%;
+  right: 25%;
+  z-index: 0;
+  width: 204px;
+  height: 169px;
+  transform: rotate(-23.135deg);
+  aspect-ratio: 204/169;
+}
+
+/* Money bag — bottom-left */
+.deco-money-bl {
   width: 226px;
   height: 262px;
-  aspect-ratio: 69/80;
-  z-index: 15;
+  bottom: 4%;
+  left: 130px;
+  z-index: 10;
+}
+
+/* Money bill — bottom-right */
+.deco-money-br {
+  width: clamp(90px, 11vw, 160px);
+  bottom: 4%;
+  right: 3%;
+  z-index: 10;
+  width: 345.875px;
+  height: 286.68px;
+  transform: rotate(21.566deg);
+  aspect-ratio: 111/92;
+}
+
+/* ── Inner layout: left card + right phone ── */
+
+.part1-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(2rem, 6vw, 6rem);
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* ── Left column ── */
+
+.part1-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  max-width: 520px;
+}
+
+/* Wrapper that positions the screen image inside the frame */
+.iphone {
+  position: relative;
+  width: clamp(260px, 28vw, 420px);
+}
+
+/* Phone chrome frame — sits on top */
+.phone-frame {
+  display: block;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  drop-shadow: 0 24px 48px rgba(0, 0, 0, 0.18);
+  filter: drop-shadow(0 24px 48px rgba(0, 0, 0, 0.2));
+}
+
+/* Screen image — centred inside the frame */
+.phone-screen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 84%;
+  height: 94%;
+  object-fit: cover;
+  border-radius: 40px;
+  z-index: 1;
 }
 
 /* -------------------------------------------- */
-/* Responsive */
+/* Mac                      */
 /* -------------------------------------------- */
+.part2 {
+  position: relative; /* anchors all the floating decos */
+  min-height: 100vh;
+  width: 100%;
+  background: #ffffff;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 6vw;
+  gap: 40px;
+}
 
-@media (max-width: 900px) {
-  .part1 {
-    flex-direction: column;
-    text-align: center;
-  }
+.mac-wrapper {
+  position: relative;
+  width: 767.931px;
+  height: 703.38px;
+  flex-shrink: 0;
+}
 
-  #splitz {
-    align-items: center;
-  }
+.mac-frame {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  z-index: 1;
+  margin-left: 0;
+}
 
-  #iphone {
-    width: 320px;
-    height: auto;
-  }
+.macImg {
+  position: absolute;
+  top: 34.5%;
+  left: 49.9%;
+  transform: translate(-50%, -50%);
+  width: 96.5%;
+  height: 65%;
+  object-fit: fit;
+  z-index: 2;
+  border-radius: 6px;
+}
 
-  #iphoneIMG-1 {
-    width: 300px;
-    height: auto;
-  }
+#title {
+  color: #d0826f;
+  margin-bottom: -10px;
+  margin-left: 20px;
+}
+
+#nameZen {
+  color: var(--blue);
+  border-radius: 55px;
+  background: rgba(59, 67, 88, 0.09);
+  padding: 50px 100px 50px 50px;
+  text-align: left;
+}
+
+#nameZen-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: -100px;
+}
+
+#nameZen p {
+  line-height: 1.5;
+  width: 600px;
 }

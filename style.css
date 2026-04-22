@@ -4,6 +4,27 @@
   --mainfont: "Futura 100";
   --script: "Covered By Your Grace";
 }
+
+/* -------------------------------------------- */
+/* Global */
+/* -------------------------------------------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+p {
+  font-family: var(--mainfont);
+}
+
 h2 {
   font-family: var(--mainfont);
   font-size: 64px;
@@ -11,20 +32,10 @@ h2 {
 }
 
 h3 {
+  font-family: var(--mainfont);
   font-size: 46px;
   font-weight: lighter;
   font-style: italic;
-}
-body {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-p {
-  font-family: var(--mainfont);
 }
 
 /* -------------------------------------------- */
@@ -32,14 +43,13 @@ p {
 /* -------------------------------------------- */
 
 .logo {
-  height: 90vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding-top: 20vh;
-
-  gap: 20px; /* spacing between svg + text */
+  gap: 20px;
 }
 
 .path {
@@ -58,7 +68,7 @@ p {
   font-size: 100px;
   font-style: normal;
   font-weight: 700;
-  line-height: 94%; /* 120.32px */
+  line-height: 94%;
   margin-top: -300px;
 }
 
@@ -69,7 +79,7 @@ p {
   font-size: 100px;
   font-style: normal;
   font-weight: 700;
-  line-height: 94%; /* 120.32px */
+  line-height: 94%;
   margin-top: -110px;
   padding-left: 360px;
 }
@@ -81,7 +91,7 @@ p {
   font-size: 36px;
   font-style: light;
   font-weight: 100;
-  line-height: 94%; /* 33.84px */
+  line-height: 94%;
   margin-top: -100px;
   padding-left: 290px;
 }
@@ -95,15 +105,16 @@ p {
 }
 
 /* -------------------------------------------- */
-/* Continue Scrolling-------------------------- */
+/* Continue Scrolling */
 /* -------------------------------------------- */
+
 .scrollText {
   color: var(--blue);
   margin-top: 200px;
 }
 
 /* -------------------------------------------- */
-/* Introduction-------------------------- */
+/* Introduction */
 /* -------------------------------------------- */
 
 .introduction {
@@ -127,7 +138,6 @@ p {
   margin: 0;
   text-transform: uppercase;
   z-index: 2;
-
   font-size: 48px;
 }
 
@@ -162,33 +172,123 @@ p {
 }
 
 /* -------------------------------------------- */
-/* iphone-------------------------- */
+/* Buttons */
 /* -------------------------------------------- */
+
+button {
+  font-family: var(--mainfont);
+  padding: 12px 32px;
+  border-radius: 25px;
+  background-color: var(--pink);
+  color: white;
+  border: none;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  opacity: 0.6;
+  transition:
+    opacity 0.2s,
+    background-color 0.2s,
+    transform 0.2s;
+}
+
+button:hover {
+  opacity: 1;
+  background-color: var(--blue);
+  transform: scale(0.95);
+}
+
+/* -------------------------------------------- */
+/* PART 1 — Splitz */
+/* -------------------------------------------- */
+
 .part1 {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 80px;
-
-  height: 100vh;
+  gap: 100px;
+  min-height: 100vh;
   width: 100%;
-  position: relative;
+  padding: 6rem 6vw;
+  background: white;
+  overflow: hidden;
 }
 
+#title {
+  color: var(--pink);
+  margin-bottom: -10px;
+  margin-left: 20px;
+  font-family: var(--mainfont);
+}
+
+#splitz-container, #nameZen-container  {
+  display: flex;
+  flex-direction: column;
+  z-index: 6;
+}
+
+#splitz,
+#nameZen {
+  max-width: 700px;
+  color: var(--blue);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 6;
+  border-radius: 55px;
+  background: rgba(59, 67, 88, 0.09);
+  padding: 50px 100px 50px 50px;
+  text-align: left;
+}
+
+#splitz p,
+#nameZen p {
+  line-height: 1.5;
+  width: 600px;
+}
+
+/* iphone wrapper */
+.iphone {
+  position: relative;
+  width: 450px;
+  z-index: 5;
+}
+
+/* if using frame + screen as separate classes */
+.phone-frame {
+  width: 100%;
+  display: block;
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 24px 48px rgba(0, 0, 0, 0.2));
+}
+
+.phone-screen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 85%;
+  height: 95%;
+  object-fit: cover;
+  border-radius: 40px;
+  z-index: 1;
+}
+
+/* if using your existing IDs */
 #iphone {
   margin: 0 auto;
   width: 501.8px;
   height: 1010.1px;
-
   opacity: 0;
   z-index: 5;
 }
 
 #iphoneIMG-1 {
   margin: 0 auto;
-  width: 490px; /* slightly smaller so it sits inside the frame */
+  width: 490px;
   height: 950px;
-
   opacity: 0;
   z-index: 4;
 }
@@ -207,14 +307,96 @@ p {
   object-fit: contain;
 }
 
-#splitz {
-  max-width: 400px;
-  color: var(--blue);
+/* floating decorations */
+.deco {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+}
 
+.deco-plane {
+  top: 0;
+  right: 0;
+  transform: rotate(17deg);
+  z-index: 10;
+  height: 286.68px;
+  scale: 0.7;
+}
+
+.deco-money-tl {
+  top: 20%;
+  right: 25%;
+  z-index: 0;
+  width: 204px;
+  height: 169px;
+  transform: rotate(-23.135deg);
+}
+
+.deco-money-bl {
+  width: 226px;
+  height: 262px;
+  bottom: 4%;
+  left: 130px;
+  z-index: 10;
+}
+
+.deco-money-br {
+  bottom: 4%;
+  right: 3%;
+  z-index: 10;
+  width: 345.875px;
+  height: 286.68px;
+  transform: rotate(21.566deg);
+}
+
+/* -------------------------------------------- */
+/* PART 2 — NameZen */
+/* -------------------------------------------- */
+
+.part2 {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background: #ffffff;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 6vw;
+  gap: 40px;
+}
+
+{
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  margin-left: -100px;
+}
 
+
+.mac-wrapper {
   position: relative;
-  z-index: 6;
+  width: 767.931px;
+  height: 703.38px;
+  flex-shrink: 0;
+}
+
+.mac-frame {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  z-index: 1;
+  margin-left: 0;
+}
+
+.macImg {
+  position: absolute;
+  top: 34.5%;
+  left: 49.9%;
+  transform: translate(-50%, -50%);
+  width: 96.5%;
+  height: 65%;
+  object-fit: cover;
+  z-index: 2;
+  border-radius: 6px;
 }
