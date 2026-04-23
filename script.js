@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const name2Split = new SplitText("#name-2", { type: "chars" });
   const multimediaSplit = new SplitText("#multimedia", { type: "chars" });
   const continueScrolling = new SplitText(".scrollText", { type: "chars" });
+  const splitz = new SplitText(".splitz", { type: "chars" });
 
   // -------------------------
   // INTRO TIMELINE
@@ -82,9 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // -------------------------
   // INITIAL STATES
   // -------------------------
-  gsap.set(".line-1, .line-2, .line-3", {
-    opacity: 0.35,
-  });
+  gsap.set(".line-1, .line-2, .line-3", { opacity: 0.35 });
 
   gsap.set("#circleAnimation", {
     scale: 0,
@@ -92,22 +91,20 @@ document.addEventListener("DOMContentLoaded", () => {
     opacity: 0.12,
   });
 
-  gsap.set(".iphone", {
-    opacity: 0,
-    y: 180,
-    scale: 0.82,
-  });
+  // FIX 1: removed the gsap.set(".part1") block that was overriding
+  // position:sticky with position:relative. CSS handles positioning.
 
-  gsap.set("#splitz-container", {
-    opacity: 0,
-    x: 120,
-  });
+  // FIX 2: part1 itself starts at opacity 0 so it can be faded in
+  gsap.set(".part1", { opacity: 0 });
 
-  // optional: make part1 sit above the white circle reveal nicely
-  gsap.set(".part1", {
-    position: "relative",
-    zIndex: 2,
-  });
+  gsap.set(".iphone", { opacity: 0, y: 180, scale: 0.82 });
+  gsap.set("#splitz-container", { opacity: 0, x: 120 });
+  gsap.set(".deco-plane", { x: -2700 });
+  gsap.set(".deco-money-tl", { y: -350 });
+  gsap.set(".deco-money-br", { y: -1000 });
+  gsap.set(".deco-bag-bl", { scale: 0 });
+  gsap.set(".deco-money-ll", { y: -600, rotation: 3 });
+  gsap.set(".deco-money-lr", { y: -100, rotation: 3, opacity: 0 });
 
   // -------------------------
   // SCROLL SECTION
@@ -133,34 +130,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
     .to(
       "#circleAnimation",
-      {
-        backgroundColor: "#ffffff",
-        opacity: 1,
-        duration: 1,
-      },
+      { backgroundColor: "#ffffff", opacity: 1, duration: 1 },
       3,
+    )
+    .to(".intro-text", { opacity: 0, duration: 0.8 }, 3)
+
+    .to("#circleAnimation", { scale: 7, duration: 2, ease: "none" }, 3.2)
+
+    .to(
+      ".deco-plane",
+      {
+        x: 625,
+        duration: 7,
+        ease: "power3.out",
+      },
+      3.35,
     )
 
     .to(
-      ".intro-text",
+      ".deco-money-br",
       {
-        opacity: 0,
-        duration: 0.8,
+        y: 100,
+        duration: 5,
+        rotation: -10,
+        ease: "power3.out",
       },
-      3,
+      4.15,
     )
 
-    .to(
-      "#circleAnimation",
-      {
-        scale: 7,
-        duration: 2,
-        ease: "none",
-      },
-      3.2,
-    )
+    // FIX 3: fade in .part1 itself before animating its children
+    .to(".part1", { opacity: 1, duration: 0.5 }, 3.8)
 
-    // phone appears and moves into place
+    // phone slides up
     .to(
       ".iphone",
       {
@@ -173,9 +174,65 @@ document.addEventListener("DOMContentLoaded", () => {
       4.1,
     )
 
-    // text card appears slightly after
+    .to(
+      ".deco-money-ll",
+      {
+        y: 100,
+        duration: 9,
+        rotation: -10,
+        ease: "power3.out",
+      },
+      4.15,
+    )
+
+    .to(
+      ".deco-bag-bl",
+      {
+        opacity: 1,
+        scale: 1,
+        duration: 1.4,
+        ease: "power3.out",
+      },
+      4.1,
+    )
+
+    .to(
+      ".deco-money-lr",
+      {
+        y: 200,
+        duration: 1.2,
+        opacity: 1,
+        rotation: -10,
+        ease: "power3.out",
+      },
+      4.15,
+    )
+
+    .to(
+      ".deco-money-tl",
+      {
+        y: 0,
+        duration: 4,
+        rotation: 6,
+        ease: "power2.out",
+      },
+      4.15,
+    )
+
+    // text card slides in
     .to(
       "#splitz-container",
+      {
+        opacity: 1,
+        x: 0,
+        duration: 2,
+        ease: "power3.out",
+      },
+      4.35,
+    )
+
+    .to(
+      splitz.chars,
       {
         opacity: 1,
         x: 0,

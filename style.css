@@ -118,7 +118,7 @@ h3 {
 /* -------------------------------------------- */
 
 .introduction {
-  min-height: 500vh;
+  min-height: 400vh;
   position: relative;
   background-color: var(--blue);
   width: 100vw;
@@ -213,6 +213,8 @@ button:hover {
   padding: 6rem 6vw;
   background: white;
   overflow: hidden;
+  margin-top: -100vh;
+  padding-top: 100vh;
 }
 
 #title {
@@ -222,7 +224,8 @@ button:hover {
   font-family: var(--mainfont);
 }
 
-#splitz-container, #nameZen-container  {
+#splitz-container,
+#nameZen-container {
   display: flex;
   flex-direction: column;
   z-index: 6;
@@ -365,8 +368,6 @@ button:hover {
   padding: 6rem 6vw;
   gap: 40px;
 }
-
-
 
 .mac-wrapper {
   position: relative;

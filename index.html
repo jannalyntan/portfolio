@@ -77,11 +77,16 @@
     </div>
 
     <!-- -------------------------------------------- -->
-    <!-- Introduction -->
+    <!-- Introduction + Part1 combined              -->
+    <!-- Replace your existing .introduction div    -->
+    <!-- and .part1 section with this entire block  -->
     <!-- -------------------------------------------- -->
+
     <div class="frame2 introduction">
+      <!-- Circle that grows and inverts -->
       <div id="circleAnimation"></div>
 
+      <!-- Sticky text that reveals line by line -->
       <p class="intro-text">
         <span class="intro-line line-1"
           >Motion designer and UX/UI designer</span
@@ -92,49 +97,53 @@
           <span class="digital">digital experiences.</span>
         </span>
       </p>
-    </div>
 
-    <!-- -------------------------------------------- -->
-    <!-- PART 1 -->
-    <!-- -------------------------------------------- -->
-    <section class="part1">
-      <!-- optional decoration images -->
-      <img src="img/Plane@4x-8.png" class="deco deco-plane" alt="" />
-      <img src="img/Bills@4x-8.png" class="deco deco-money-tl" alt="" />
-      <img src="img/Money@4x-8.png" class="deco deco-money-bl" alt="" />
-      <img src="img/Bills@4x-8.png" class="deco deco-money-br" alt="" />
+      <!-- =========================================== -->
+      <!-- PART 1 is now INSIDE .introduction          -->
+      <!-- It is sticky so it pins while the circle    -->
+      <!-- expands, then sits on top of the white fill -->
+      <!-- =========================================== -->
+      <section class="part1">
+        <img src="img/Plane@4x-8.png" class="deco deco-plane" alt="" />
+        <img src="img/Bills@4x-8.png" class="deco deco-money-tl" alt="" />
 
-      <div class="iphone">
-        <img
-          src="img/iphoneTemplate.png"
-          class="phone-frame"
-          alt="iPhone frame"
-        />
-        <img
-          src="img/Home Page.png"
-          class="phone-screen"
-          alt="Splitz app screen"
-        />
-      </div>
+        <img src="img/Money@4x-8.png" class="deco deco-bag-bl" alt="" />
 
-      <div id="splitz-container">
-        <h1 id="title">USER INTERFACE</h1>
+        <img src="img/Bills@4x-8.png" class="deco deco-money-ll" alt="" />
+        <img src="img/Bills@4x-8.png" class="deco deco-money-ll" alt="" />
 
-        <div id="splitz">
-          <h2 style="margin-bottom: -70px">Splitz</h2>
-          <h3 style="margin-bottom: -10px">Split Smarter, Settle Faster</h3>
-          <p>
-            Splitz is a simple way to track shared expenses and split costs with
-            friends. Whether you’re travelling, eating out, or sharing bills, it
-            keeps everything organised in one place so everyone knows who paid
-            what—and what’s still owed. No more awkward reminders or messy
-            calculations, just clear and fair spending.
-          </p>
+        <img src="img/Bills@4x-8.png" class="deco deco-money-br" alt="" />
 
-          <a href=""><button>view more</button></a>
+        <div class="iphone">
+          <img
+            src="img/iphoneTemplate.png"
+            class="phone-frame"
+            alt="iPhone frame"
+          />
+          <img
+            src="img/Home Page.png"
+            class="phone-screen"
+            alt="Splitz app screen"
+          />
         </div>
-      </div>
-    </section>
+
+        <div id="splitz-container">
+          <h1 id="title">USER INTERFACE</h1>
+          <div id="splitz">
+            <h2 style="margin-bottom: -70px">Splitz</h2>
+            <h3 style="margin-bottom: -10px">Split Smarter, Settle Faster</h3>
+            <p>
+              Splitz is a simple way to track shared expenses and split costs
+              with friends. Whether you're travelling, eating out, or sharing
+              bills, it keeps everything organised in one place so everyone
+              knows who paid what—and what's still owed.
+            </p>
+            <a href=""><button>view more</button></a>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- end .introduction -->
 
     <!-- -------------------------------------------- -->
     <!-- PART 2 -->
