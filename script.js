@@ -174,6 +174,8 @@ document.addEventListener("DOMContentLoaded", () => {
       4.1,
     )
 
+
+
     .to(
       ".deco-money-ll",
       {
@@ -196,17 +198,7 @@ document.addEventListener("DOMContentLoaded", () => {
       4.1,
     )
 
-    .to(
-      ".deco-money-lr",
-      {
-        y: 200,
-        duration: 1.2,
-        opacity: 1,
-        rotation: -10,
-        ease: "power3.out",
-      },
-      4.15,
-    )
+  
 
     .to(
       ".deco-money-tl",
@@ -240,5 +232,18 @@ document.addEventListener("DOMContentLoaded", () => {
         ease: "power3.out",
       },
       4.35,
-    );
+    )
+
+      .to(
+      ".deco-money-lr",
+      {
+        y: 250,
+        duration: 2,
+        opacity: 1,
+        rotation: -10,
+        ease: "power3.out",
+      },
+      4.7,
+    )
+
 });
