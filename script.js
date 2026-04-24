@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // -------------------------
   // INITIAL STATES
   // -------------------------
-  gsap.set(".line-1, .line-2, .line-3", { opacity: 0.35 });
+  gsap.set(".line-1, .line-2, .line-3", { opacity: 0.1 });
   gsap.set("#circleAnimation", {
     scale: 0,
     backgroundColor: "#000000",
@@ -106,59 +106,59 @@ document.addEventListener("DOMContentLoaded", () => {
   introScrollTl
     .to(".line-1", { opacity: 1, duration: 1 }, 0)
     .to("#circleAnimation", { scale: 0.25, duration: 1 }, 0)
-    .to(".line-2", { opacity: 1, duration: 1 }, 1)
-    .to("#circleAnimation", { scale: 0.5, duration: 1 }, 1)
-    .to(".line-3", { opacity: 1, duration: 1 }, 2)
-    .to("#circleAnimation", { scale: 1, duration: 1, opacity: 0.18 }, 2)
+    .to(".line-2", { opacity: 1, duration: 2 }, 2)
+    .to("#circleAnimation", { scale: 0.5, duration: 1 }, 2)
+    .to(".line-3", { opacity: 1, duration: 2 }, 4)
+    .to("#circleAnimation", { scale: 1, duration: 1, opacity: 0.18 }, 4)
     .to(
       "#circleAnimation",
       { backgroundColor: "#ffffff", opacity: 1, duration: 1 },
-      3,
+      5,
     )
-    .to(".intro-text", { opacity: 0, duration: 0.8 }, 3)
-    .to("#circleAnimation", { scale: 7, duration: 2, ease: "none" }, 3.2)
+    .to(".intro-text", { opacity: 0, duration: 0.8 }, 5)
+    .to("#circleAnimation", { scale: 7, duration: 2, ease: "none" }, 5.2)
 
-    .to(".part1", { opacity: 1, duration: 0.5 }, 3.4)
-    .to(".iphone", { opacity: 1, scale: 1, duration: 0.8 }, 3.1)
-    .to(".iphone", { x: 0, duration: 1.2 }, 3.8)
-    .to(".deco-plane", { x: 1600, duration: 7, ease: "power3.out" }, 3.8)
+    .to(".part1", { opacity: 1, duration: 0.5 }, 5.4)
+    .to(".iphone", { opacity: 1, scale: 1, duration: 0.8 }, 5.1)
+    .to(".iphone", { x: 0, duration: 1.2 }, 5.8)
+    .to(".deco-plane", { x: 1000, duration: 7, ease: "power3.out" }, 5.8)
 
     .to(
       ".deco-bag-bl",
       { opacity: 1, scale: 1, duration: 1.4, ease: "power3.out" },
-      4.1,
+      6.1,
     )
 
     .to(
       ".deco-money-ll",
       { y: 100, duration: 9, rotation: -10, opacity: 1, ease: "power3.out" },
-      4.15,
+      6.15,
     )
     .to(
       ".deco-money-br",
       { y: 100, duration: 5, rotation: -10, opacity: 1, ease: "power3.out" },
-      4.15,
+      6.15,
     )
     .to(
       ".deco-money-tl",
       { y: 0, duration: 4, rotation: 6, opacity: 1, ease: "power2.out" },
-      4.15,
+      6.15,
     )
 
     .to(
       "#splitz-container",
       { opacity: 1, x: 0, duration: 2, ease: "power3.out" },
-      4.35,
+      6.35,
     )
     .to(
       splitz.chars,
       { opacity: 1, x: 0, duration: 1.2, ease: "power3.out" },
-      4.35,
+      6.35,
     )
     .to(
       ".deco-money-lr",
       { y: 250, duration: 2, opacity: 1, rotation: -10, ease: "power3.out" },
-      4.7,
+      6.7,
     );
 
   // -------------------------
