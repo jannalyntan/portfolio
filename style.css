@@ -18,7 +18,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow-x: hidden;
+  overflow-x: hidden; /* ← ADD THIS */
 }
 
 p {
@@ -118,7 +118,7 @@ h3 {
 /* -------------------------------------------- */
 
 .introduction {
-  min-height: 500vh;
+  min-height: 300vh;
   position: relative;
   background-color: var(--blue);
   width: 100vw;
@@ -203,21 +203,22 @@ button:hover {
 .part1 {
   position: sticky;
   top: 0;
+  margin-top: -1000px;
   height: 100vh;
   width: 100%;
- 
+
   /* keep all your existing layout exactly */
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 100px;
   padding: 6rem 6vw;
-  background: white;
+  background-color: rgba(0, 0, 0, 0);
   overflow: hidden;
- 
+
   /* starts invisible — GSAP fades it in at scroll position ~3.9 */
   opacity: 0;
- 
+
   /* must sit above circle (z:1) and intro-text (z:2) */
   z-index: 10;
 }
@@ -304,7 +305,7 @@ button:hover {
   top: 0;
   right: 0;
   transform: rotate(17deg);
-  z-index: 10;
+  z-index: 20;
   height: 286.68px;
   scale: 0.7;
 }
@@ -336,7 +337,6 @@ button:hover {
   transform: rotate(-24deg);
 }
 
-
 .deco-bag-bl {
   width: 226px;
   height: 262px;
@@ -355,6 +355,19 @@ button:hover {
 }
 
 /* -------------------------------------------- */
+/* Horizontal */
+/* -------------------------------------------- */
+
+.horizontalscrolling {
+  position: relative;
+  width: 200vw;
+  height: 100vh;
+  display: flex;
+  background: rgba(0, 0, 0, 0);
+  z-index: 20;
+}
+
+/* -------------------------------------------- */
 /* PART 2 — NameZen */
 /* -------------------------------------------- */
 
@@ -362,13 +375,15 @@ button:hover {
   position: relative;
   min-height: 100vh;
   width: 100%;
-  background: #ffffff;
+  background: rgba(0, 0, 0, 0);
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 6rem 6vw;
   gap: 40px;
+  will-change: transform;
+  z-index: 15;
 }
 
 .mac-wrapper {
@@ -397,4 +412,61 @@ button:hover {
   object-fit: fit;
   z-index: 2;
   border-radius: 6px;
+}
+
+#nameZen-container,
+.mac-wrapper {
+  will-change: transform, opacity;
+}
+
+/* Last 3 */
+.motion-title-section,
+.showreel-section,
+.about-section {
+  width: 100vw;
+  min-height: 100vh;
+  z-index: 60;
+  align-self: stretch;
+}
+
+.motion-title-section {
+  width: 100vw;
+  min-height: 10vh;
+  background: var(--blue);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 60;
+  margin-top: 0;
+  transform: translateY(-100px);
+}
+
+.showreel-section {
+  background: black;
+  min-height: 100vh;
+  width: 100vw;
+  display: grid;
+  place-items: center;
+}
+
+#showreelVideo {
+  display: block;
+  width: auto;
+  height: 100vh;
+  max-width: 100vw;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+.about-section {
+  background: white;
+  color: var(--blue);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 6rem;
 }
