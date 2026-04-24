@@ -431,7 +431,7 @@ button:hover {
 
 .motion-title-section {
   width: 100vw;
-  min-height: 10vh;
+  min-height: 100vh;
   background: var(--blue);
   color: white;
   display: flex;

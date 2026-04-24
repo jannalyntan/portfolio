@@ -175,12 +175,11 @@ document.addEventListener("DOMContentLoaded", () => {
       scrub: 1,
       pin: true,
       anticipatePin: 1,
-      markers: true,
     },
   });
 
   horizontalTl
-    .to(".horizontal-track", {
+    .to(".horizontalscrolling", {
       x: "-100vw",
       ease: "none",
     })
