@@ -66,14 +66,15 @@ h4 {
 /* -------------------------------------------- */
 
 #backBtn {
-  position: relative;
-  margin-top: 40px;
-  margin-left: 40px;
+  position: fixed;
+  top: 30px;
+  left: 30px;
+
   padding: 10px;
-  z-index: 20;
+  z-index: 9999;
+
   cursor: pointer;
 }
-
 /* -------------------------------------------- */
 /* Shared Section Layout */
 /* -------------------------------------------- */
@@ -265,35 +266,33 @@ h4 {
   scale: 2;
 }
 
+/* Settling */
 .plane-2 {
   right: 20px;
   top: 100px;
   transform: scaleX(-1) rotate(4deg);
   z-index: 10;
-}
-
-.bill-5 {
-  left: 350px;
-  bottom: 130px;
-  transform: rotate(15deg);
+  scale: 1.2;
 }
 
 /* Final section decorations */
 .bill-6 {
   top: 120px;
   left: 80px;
-  transform: rotate(-14deg);
+  transform: rotate(-13deg);
+  scale: 2;
 }
 
 .bill-7 {
-  right: 120px;
-  top: 100px;
+  right: 200px;
+  top: 270px;
   transform: rotate(18deg);
+  scale: 3;
 }
 
 .moneybag-3 {
-  left: 90px;
-  bottom: 120px;
+  left: 200px;
+  bottom: 200px;
 }
 
 /* -------------------------------------------- */

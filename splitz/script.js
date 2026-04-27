@@ -1,6 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger);
 
+  const backBtn = document.getElementById("backBtn");
+
+  backBtn.addEventListener("click", () => {
+    window.location.href = "../index.html";
+  });
   /* ------------------------------ */
   /* Text + phone section animation */
   /* ------------------------------ */
