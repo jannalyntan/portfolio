@@ -35,6 +35,44 @@ h3 {
   font-style: italic;
 }
 
+/* Sound Popup  */
+
+/* Popup Overlay */
+#soundPopup {
+  position: fixed;
+  inset: 0;
+  background: rgba(28, 32, 43, 0.88);
+  backdrop-filter: blur(8px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 99999;
+}
+
+/* Popup Box */
+.sound-box {
+  width: 1000px;
+  max-width: 90%;
+  padding: 50px;
+  border-radius: 30px;
+  background: white;
+  text-align: center;
+}
+
+.sound-box h2 {
+  line-height: 1;
+  color: var(--blue);
+}
+
+.sound-box p {
+  margin-bottom: 30px;
+  color: var(--blue);
+  font-size: 20px;
+  line-height: 1.4;
+}
+
 /* -------------------------------------------- */
 /* Logo Introduction */
 /* -------------------------------------------- */
@@ -351,38 +389,34 @@ button:hover {
   transform: rotate(21.566deg);
 }
 .deco-money-ll-2 {
-  bottom: 45%;
-  left: 8%;
+  bottom: 65%;
+  left: -5%;
   z-index: 8;
-  width: 255px;
-  height: 211.25px;
-  transform: rotate(18deg);
+  width: 240px;
+  transform: rotate(22deg);
 }
 
 .deco-money-lr-2 {
-  bottom: 20%;
-  right: 20%;
+  bottom: 35%;
+  right: 28%;
   z-index: 8;
-  width: 255px;
-  height: 211.25px;
+  width: 220px;
   transform: rotate(-18deg);
 }
 
 .deco-money-br-2 {
-  bottom: 15%;
-  right: 8%;
+  bottom: 8%;
+  right: -2%;
   z-index: 8;
-  width: 300px;
-  height: 248px;
-  transform: rotate(12deg);
+  width: 285px;
+  transform: rotate(14deg);
 }
 
 .deco-money-tl-2 {
-  top: 10%;
-  right: 35%;
+  top: -5%;
+  right: 45%;
   z-index: 8;
-  width: 204px;
-  height: 169px;
+  width: 190px;
   transform: rotate(-12deg);
 }
 

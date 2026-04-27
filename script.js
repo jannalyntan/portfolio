@@ -1,15 +1,50 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const popup = document.getElementById("soundPopup");
+  const enterBtn = document.getElementById("startExperience");
+  const video = document.getElementById("showreelVideo");
+
+  document.body.style.overflow = "hidden";
+
+  enterBtn.addEventListener("click", () => {
+    if (video) {
+      video.muted = false;
+      video.volume = 1;
+      video.playsInline = true;
+    }
+
+    popup.style.opacity = "0";
+    popup.style.pointerEvents = "none";
+    popup.style.transition = "0.5s ease";
+
+    document.body.style.overflow = "auto";
+
+    startPortfolioAnimations();
+
+    setTimeout(() => {
+      popup.remove();
+    }, 600);
+  });
+});
+
+function startPortfolioAnimations() {
   gsap.registerPlugin(DrawSVGPlugin, ScrollTrigger, SplitText);
 
   const name1Split = new SplitText("#name-1", { type: "chars" });
   const name2Split = new SplitText("#name-2", { type: "chars" });
   const multimediaSplit = new SplitText("#multimedia", { type: "chars" });
   const continueScrolling = new SplitText(".scrollText", { type: "chars" });
-  const splitz = new SplitText(".splitz", { type: "chars" });
 
-  // -------------------------
-  // LOGO INTRO
-  // -------------------------
+  const splitzElement = document.querySelector(".splitz");
+  let splitz = null;
+
+  if (splitzElement) {
+    splitz = new SplitText(".splitz", { type: "chars" });
+  }
+
+  /* ------------------------- */
+  /* LOGO INTRO */
+  /* ------------------------- */
+
   const tl = gsap.timeline();
 
   tl.from(".path", {
@@ -72,9 +107,10 @@ document.addEventListener("DOMContentLoaded", () => {
       "+=0.2",
     );
 
-  // -------------------------
-  // INITIAL STATES
-  // -------------------------
+  /* ------------------------- */
+  /* INITIAL STATES */
+  /* ------------------------- */
+
   gsap.set(".line-1, .line-2, .line-3", { opacity: 0.1 });
 
   gsap.set("#circleAnimation", {
@@ -90,13 +126,11 @@ document.addEventListener("DOMContentLoaded", () => {
   gsap.set(".deco-plane", { x: -2700 });
   gsap.set(".deco-bag-bl", { opacity: 0, scale: 0 });
 
-  // First money wave
   gsap.set(".deco-money-ll", { opacity: 0, y: -550, rotation: 3 });
   gsap.set(".deco-money-br", { opacity: 0, y: -880, rotation: -8 });
   gsap.set(".deco-money-tl", { opacity: 0, y: -20, rotation: 10 });
   gsap.set(".deco-money-lr", { opacity: 0, y: -20, rotation: -12 });
 
-  // Second money wave — starts later during horizontal scroll
   gsap.set(".deco-money-ll-2", { opacity: 1, y: -700, rotation: 18 });
   gsap.set(".deco-money-lr-2", { opacity: 1, y: -850, rotation: -12 });
   gsap.set(".deco-money-br-2", { opacity: 1, y: -950, rotation: 8 });
@@ -105,14 +139,16 @@ document.addEventListener("DOMContentLoaded", () => {
   gsap.set("#nameZen-container", { x: 80, opacity: 0 });
   gsap.set(".mac-wrapper", { x: 120, opacity: 0 });
 
-  // -------------------------
-  // INTRO SCROLL
-  // -------------------------
+  /* ------------------------- */
+  /* INTRO SCROLL */
+  /* ------------------------- */
+
   const introScrollTl = gsap.timeline({
     scrollTrigger: {
       trigger: ".introduction",
       start: "top top",
-      end: "bottom bottom",
+      end: "+=2500",
+      scrub: 1.5,
       scrub: true,
     },
   });
@@ -122,19 +158,28 @@ document.addEventListener("DOMContentLoaded", () => {
     .to("#circleAnimation", { scale: 0.25, duration: 1 }, 0)
 
     .to(".line-2", { opacity: 1, duration: 2 }, 2)
-    .to("#circleAnimation", { scale: 0.5, duration: 1 }, 2)
+    .to("#circleAnimation", { scale: 0.5, duration: 2 }, 2)
 
     .to(".line-3", { opacity: 1, duration: 2 }, 4)
-    .to("#circleAnimation", { scale: 1, duration: 1, opacity: 0.18 }, 4)
+    .to("#circleAnimation", { scale: 1, duration: 2, opacity: 0.18 }, 4)
 
     .to(
       "#circleAnimation",
       {
-        backgroundColor: "#ffffff",
         opacity: 1,
         duration: 1,
+        ease: "power3.out",
       },
       5,
+    )
+    .to(
+      "#circleAnimation",
+      {
+        backgroundColor: "#ffffff",
+        duration: 1,
+        ease: "power3.out",
+      },
+      5.25,
     )
 
     .to(".intro-text", { opacity: 0, duration: 0.8 }, 5)
@@ -143,13 +188,12 @@ document.addEventListener("DOMContentLoaded", () => {
       "#circleAnimation",
       {
         scale: 7,
-        duration: 2,
-        ease: "none",
+        duration: 4,
+        ease: "power3.out",
       },
-      5.2,
+      5.5,
     )
 
-    // Part 1 appears
     .to(".part1", { opacity: 1, duration: 0.5 }, 5.4)
 
     .to(
@@ -201,9 +245,10 @@ document.addEventListener("DOMContentLoaded", () => {
         ease: "power3.out",
       },
       6.35,
-    )
+    );
 
-    .to(
+  if (splitz) {
+    introScrollTl.to(
       splitz.chars,
       {
         opacity: 1,
@@ -212,51 +257,14 @@ document.addEventListener("DOMContentLoaded", () => {
         ease: "power3.out",
       },
       6.35,
-    )
+    );
+  }
 
-    // -------------------------
-    // FIRST MONEY WAVE
-    // fades in quickly, then drops slowly
-    // -------------------------
-    .to(
-      ".deco-money-ll",
-      {
-        opacity: 1,
-        duration: 0.8,
-        ease: "power2.out",
-      },
-      7,
-    )
-
-    .to(
-      ".deco-money-br",
-      {
-        opacity: 1,
-        duration: 0.8,
-        ease: "power2.out",
-      },
-      8,
-    )
-
-    .to(
-      ".deco-money-tl",
-      {
-        opacity: 1,
-        duration: 0.8,
-        ease: "power2.out",
-      },
-      7.6,
-    )
-
-    .to(
-      ".deco-money-lr",
-      {
-        opacity: 1,
-        duration: 0.8,
-        ease: "power2.out",
-      },
-      7.9,
-    )
+  introScrollTl
+    .to(".deco-money-ll", { opacity: 1, duration: 0.8 }, 7)
+    .to(".deco-money-br", { opacity: 1, duration: 0.8 }, 8)
+    .to(".deco-money-tl", { opacity: 1, duration: 0.8 }, 7.6)
+    .to(".deco-money-lr", { opacity: 1, duration: 0.8 }, 7.9)
 
     .to(
       ".deco-money-ll",
@@ -302,138 +310,124 @@ document.addEventListener("DOMContentLoaded", () => {
       7.9,
     );
 
-  // -------------------------
-  // HORIZONTAL SCROLL
-  // second money wave continues while moving into Part 2
-  // -------------------------
-  // -------------------------
-  // HORIZONTAL SCROLL
-  // Part 1 -> money keeps falling -> Part 2
-  // -------------------------
-  const horizontalTl = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".horizontalscrolling",
-      start: "top top",
-      end: "+=2600",
-      scrub: 1,
-      pin: true,
-      anticipatePin: 1,
-    },
-  });
+  /* ------------------------- */
+  /* HORIZONTAL SCROLL */
+  /* ------------------------- */
 
-  horizontalTl
+  if (document.querySelector(".horizontalscrolling")) {
+    const horizontalTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".horizontalscrolling",
+        start: "top top",
+        end: "+=2600",
+        scrub: 1,
+        pin: true,
+        anticipatePin: 1,
+      },
+    });
 
-    // Hold Part 1 briefly
-    .to(
-      ".horizontalscrolling",
-      {
+    horizontalTl
+      .to(".horizontalscrolling", {
         x: "0vw",
         duration: 0.45,
         ease: "none",
-      },
-      0,
-    )
+      })
 
-    // -------------------------
-    // SECOND MONEY WAVE
-    // unsynchronised + continuous
-    // -------------------------
-    .to(
-      ".deco-money-ll-2",
-      {
-        opacity: 1,
-        y: 3600,
-        rotation: -160,
-        duration: 3.8,
-        ease: "none",
-      },
-      0.05,
-    )
+      .to(
+        ".deco-money-ll-2",
+        {
+          opacity: 1,
+          y: 3600,
+          rotation: -160,
+          duration: 3.8,
+          ease: "none",
+        },
+        0.05,
+      )
 
-    .to(
-      ".deco-money-lr-2",
-      {
-        opacity: 1,
-        y: 3950,
-        rotation: 145,
-        duration: 4.2,
-        ease: "none",
-      },
-      0.42,
-    )
+      .to(
+        ".deco-money-lr-2",
+        {
+          opacity: 1,
+          y: 3950,
+          rotation: 145,
+          duration: 4.2,
+          ease: "none",
+        },
+        0.42,
+      )
 
-    .to(
-      ".deco-money-br-2",
-      {
-        opacity: 1,
-        y: 4300,
-        rotation: -120,
-        duration: 4.6,
-        ease: "none",
-      },
-      0.9,
-    )
+      .to(
+        ".deco-money-br-2",
+        {
+          opacity: 1,
+          y: 4300,
+          rotation: -120,
+          duration: 4.6,
+          ease: "none",
+        },
+        0.9,
+      )
 
-    .to(
-      ".deco-money-tl-2",
-      {
-        opacity: 1,
-        y: 3450,
-        rotation: 110,
-        duration: 4.1,
-        ease: "none",
-      },
-      1.35,
-    )
+      .to(
+        ".deco-money-tl-2",
+        {
+          opacity: 1,
+          y: 3450,
+          rotation: 110,
+          duration: 4.1,
+          ease: "none",
+        },
+        1.35,
+      )
 
-    // Slide into Part 2 sooner
-    .to(
-      ".horizontalscrolling",
-      {
-        x: "-100vw",
-        duration: 1.8,
-        ease: "none",
-      },
-      0.55,
-    )
+      .to(
+        ".horizontalscrolling",
+        {
+          x: "-100vw",
+          duration: 1.8,
+          ease: "none",
+        },
+        0.55,
+      )
 
-    // Part 2 content reveals
-    .to(
-      "#nameZen-container",
-      {
-        x: 0,
-        opacity: 1,
-        duration: 0.7,
-        ease: "power2.out",
-      },
-      1.55,
-    )
+      .to(
+        "#nameZen-container",
+        {
+          x: 0,
+          opacity: 1,
+          duration: 0.7,
+          ease: "power2.out",
+        },
+        1.55,
+      )
 
-    .to(
-      ".mac-wrapper",
-      {
-        x: 0,
-        opacity: 1,
-        duration: 0.7,
-        ease: "power2.out",
-      },
-      1.65,
-    )
+      .to(
+        ".mac-wrapper",
+        {
+          x: 0,
+          opacity: 1,
+          duration: 0.7,
+          ease: "power2.out",
+        },
+        1.65,
+      )
 
-    // Hold Part 2
-    .to(
-      ".horizontalscrolling",
-      {
-        x: "-100vw",
-        duration: 0.7,
-        ease: "none",
-      },
-      2.35,
-    );
+      .to(
+        ".horizontalscrolling",
+        {
+          x: "-100vw",
+          duration: 0.7,
+          ease: "none",
+        },
+        2.35,
+      );
+  }
 
-  // -------------------------
-  // MOTION GRAPHICS TITLE
-  // -------------------------
+  /* ------------------------- */
+  /* MOTION TITLE */
+  /* ------------------------- */
+
   if (document.querySelector(".motion-title-section h2")) {
     const motionTitleSplit = new SplitText(".motion-title-section h2", {
       type: "chars",
@@ -457,12 +451,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // -------------------------
-  // SHOWREEL VIDEO
-  // -------------------------
+  /* ------------------------- */
+  /* SHOWREEL VIDEO */
+  /* ------------------------- */
+
   const video = document.querySelector("#showreelVideo");
 
   if (video) {
+    video.muted = false;
+    video.volume = 1;
+    video.playsInline = true;
+
     gsap.set("#showreelVideo", {
       scale: 0.75,
       opacity: 1,
@@ -482,10 +481,24 @@ document.addEventListener("DOMContentLoaded", () => {
         pin: true,
         pinSpacing: true,
         anticipatePin: 1,
-        onEnter: () => {
-          video.pause();
-          video.currentTime = 0;
+
+        onUpdate: (self) => {
+          if (self.progress >= 0.25 && self.progress < 0.75) {
+            video.muted = false;
+            video.volume = 1;
+            video.play().catch(() => {});
+          }
+
+          if (self.progress >= 0.75) {
+            video.pause();
+          }
+
+          if (self.progress < 0.25) {
+            video.pause();
+            video.currentTime = 0;
+          }
         },
+
         onLeaveBack: () => {
           video.pause();
           video.currentTime = 0;
@@ -498,32 +511,20 @@ document.addEventListener("DOMContentLoaded", () => {
         scale: 1,
         duration: 1,
         ease: "none",
-        onComplete: () => {
-          video.play().catch(() => {});
-        },
-        onReverseComplete: () => {
-          video.pause();
-          video.currentTime = 0;
-        },
       })
 
       .to("#showreelVideo", {
         scale: 1,
-        duration: 1,
+        opacity: 1,
+        duration: 2,
         ease: "none",
       })
 
       .to("#showreelVideo", {
         scale: 0.75,
-        opacity: 0.5,
+        opacity: 0.4,
         duration: 1,
         ease: "none",
-        onStart: () => {
-          video.pause();
-        },
-        onReverseComplete: () => {
-          video.play().catch(() => {});
-        },
       })
 
       .to(".leaving-video-text", {
@@ -531,16 +532,12 @@ document.addEventListener("DOMContentLoaded", () => {
         y: 0,
         duration: 0.8,
         ease: "none",
-      })
-
-      .to(".leaving-video-text", {
-        opacity: 1,
-        duration: 0.7,
-        ease: "none",
       });
   }
 
   window.addEventListener("load", () => {
     ScrollTrigger.refresh();
   });
-});
+
+  ScrollTrigger.refresh();
+}
