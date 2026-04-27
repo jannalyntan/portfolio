@@ -1,6 +1,7 @@
 :root {
   --pink: #d0826f;
   --blue: #3b4358;
+  --darklblue: #1c202b;
   --mainfont: "Futura 100";
   --script: "Covered By Your Grace";
 }
@@ -114,7 +115,7 @@ h3 {
 /* -------------------------------------------- */
 
 .introduction {
-  min-height: 300vh;
+  min-height: 280vh;
   position: relative;
   background-color: var(--blue);
   width: 100vw;
@@ -309,7 +310,7 @@ button:hover {
 .deco-money-tl {
   top: 20%;
   right: 25%;
-  z-index: 0;
+  z-index: 8;
   width: 204px;
   height: 169px;
   transform: rotate(-23.135deg);
@@ -318,7 +319,7 @@ button:hover {
 .deco-money-ll {
   bottom: 30%;
   left: 0%;
-  z-index: -10;
+  z-index: 8;
   width: 255px;
   height: 211.25px;
   transform: rotate(-24deg);
@@ -327,7 +328,7 @@ button:hover {
 .deco-money-lr {
   bottom: 10%;
   right: 40%;
-  z-index: 0;
+  z-index: 8;
   width: 255px;
   height: 211.25px;
   transform: rotate(-24deg);
@@ -338,7 +339,7 @@ button:hover {
   height: 262px;
   bottom: 1px;
   left: 180px;
-  z-index: 10;
+  z-index: 8;
 }
 
 .deco-money-br {
@@ -348,6 +349,41 @@ button:hover {
   width: 345.875px;
   height: 286.68px;
   transform: rotate(21.566deg);
+}
+.deco-money-ll-2 {
+  bottom: 45%;
+  left: 8%;
+  z-index: 8;
+  width: 255px;
+  height: 211.25px;
+  transform: rotate(18deg);
+}
+
+.deco-money-lr-2 {
+  bottom: 20%;
+  right: 20%;
+  z-index: 8;
+  width: 255px;
+  height: 211.25px;
+  transform: rotate(-18deg);
+}
+
+.deco-money-br-2 {
+  bottom: 15%;
+  right: 8%;
+  z-index: 8;
+  width: 300px;
+  height: 248px;
+  transform: rotate(12deg);
+}
+
+.deco-money-tl-2 {
+  top: 10%;
+  right: 35%;
+  z-index: 8;
+  width: 204px;
+  height: 169px;
+  transform: rotate(-12deg);
 }
 
 /* -------------------------------------------- */
@@ -418,7 +454,7 @@ button:hover {
 /* Last 3 */
 .motion-title-section {
   width: 100vw;
-  height: 120vh;
+  height: 100vh;
   background: var(--blue);
   color: white;
 
@@ -440,7 +476,7 @@ button:hover {
 .showreel-section {
   width: 100vw;
   height: 100vh;
-  background: black;
+  background: var(--darklblue);
   display: grid;
   place-items: center;
   position: relative;
@@ -454,7 +490,7 @@ button:hover {
   width: auto;
   height: 100vh;
   max-width: 100vw;
-  object-fit: contain;
+  object-fit: fill;
   transform-origin: center center;
 }
 

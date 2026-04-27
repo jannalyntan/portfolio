@@ -1,0 +1,325 @@
+:root {
+  --pink: #d0826f;
+  --blue: #3b4358;
+  --darkblue: #1c202b;
+  --mainfont: "Futura 100", sans-serif;
+  --script: "Covered By Your Grace", cursive;
+}
+
+/* -------------------------------------------- */
+/* Global */
+/* -------------------------------------------- */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+
+  background-image: url("img/Splitz (2).png");
+  background-size: 100% auto;
+  background-position: top center;
+  background-repeat: no-repeat;
+
+  font-family: var(--mainfont);
+}
+
+p {
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.25;
+}
+
+h2,
+h3,
+h4 {
+  margin: 0;
+  font-family: var(--mainfont);
+}
+
+h2 {
+  color: var(--blue);
+  font-size: 64px;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+h3 {
+  color: var(--blue);
+  font-size: 46px;
+  font-weight: lighter;
+  font-style: italic;
+}
+
+h4 {
+  color: var(--blue);
+  font-size: 46px;
+  font-weight: normal;
+}
+
+/* -------------------------------------------- */
+/* Back Button */
+/* -------------------------------------------- */
+
+#backBtn {
+  position: relative;
+  margin-top: 40px;
+  margin-left: 40px;
+  padding: 10px;
+  z-index: 20;
+  cursor: pointer;
+}
+
+/* -------------------------------------------- */
+/* Shared Section Layout */
+/* -------------------------------------------- */
+
+.sidebyside,
+.sidebyside2,
+.stacked {
+  position: relative;
+  overflow: hidden;
+}
+
+.sidebyside {
+  min-height: 100vh;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 100px;
+  padding: 100px;
+  color: var(--blue);
+}
+
+.sidebyside2 {
+  min-height: 100vh;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 100px;
+  padding: 100px;
+  color: white;
+}
+
+/* -------------------------------------------- */
+/* Text Blocks */
+/* -------------------------------------------- */
+
+.words {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+}
+
+.words2 {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-self: flex-end;
+
+  width: 200px;
+  height: 100%;
+}
+
+.words3 {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 400px;
+  line-height: 1.2;
+  color: white;
+}
+
+/* -------------------------------------------- */
+/* Main Images */
+/* -------------------------------------------- */
+
+.sidebyside > img:not(.deco),
+.sidebyside2 > img:not(.deco),
+.stacked > img:not(.deco) {
+  position: relative;
+  z-index: 2;
+  max-width: 100%;
+  height: auto;
+}
+
+/* -------------------------------------------- */
+/* Stacked Section */
+/* -------------------------------------------- */
+
+.stacked {
+  min-height: 100vh;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  padding: 100px;
+  gap: 20px;
+}
+
+.stacked img {
+  max-width: 00px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* -------------------------------------------- */
+/* Decoration Images */
+/* -------------------------------------------- */
+
+.deco {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+}
+
+.bill {
+  width: 130px;
+}
+
+.moneybag {
+  width: 170px;
+}
+
+.plane {
+  width: 560px;
+}
+
+/* Hero section decorations */
+.bill-1 {
+  top: 90px;
+  right: 180px;
+  transform: rotate(18deg);
+  z-index: 10;
+  scale: 3;
+}
+
+.bill-2 {
+  top: 500px;
+  left: 180px;
+
+  transform: rotate(-18deg);
+  z-index: 10;
+  scale: 2;
+}
+
+.moneybag-1 {
+  right: 80px;
+  bottom: 100px;
+  z-index: 10;
+}
+
+.plane-1 {
+  left: -20px;
+  bottom: -40px;
+  transform: rotate(-4deg);
+  z-index: 10;
+}
+
+/* Record transaction section decorations */
+.bill-3 {
+  top: 120px;
+  right: 120px;
+  transform: rotate(20deg);
+  scale: 2;
+}
+
+.moneybag-2 {
+  left: 90px;
+  bottom: 120px;
+  scale: 1.5;
+}
+
+/* Expenses section decorations */
+.bill-4 {
+  top: 2200px;
+  right: 60px;
+  transform: rotate(18deg);
+  z-index: 100;
+  scale: 2;
+}
+
+.plane-2 {
+  right: 20px;
+  top: 100px;
+  transform: scaleX(-1) rotate(4deg);
+  z-index: 10;
+}
+
+.bill-5 {
+  left: 350px;
+  bottom: 130px;
+  transform: rotate(15deg);
+}
+
+/* Final section decorations */
+.bill-6 {
+  top: 120px;
+  left: 80px;
+  transform: rotate(-14deg);
+}
+
+.bill-7 {
+  right: 120px;
+  top: 100px;
+  transform: rotate(18deg);
+}
+
+.moneybag-3 {
+  left: 90px;
+  bottom: 120px;
+}
+
+/* -------------------------------------------- */
+/* Button */
+/* -------------------------------------------- */
+
+button {
+  font-family: var(--mainfont);
+  padding: 12px 32px;
+  border-radius: 25px;
+  background-color: var(--pink);
+  color: white;
+  border: none;
+  width: 150px;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+
+  transition:
+    opacity 0.2s,
+    background-color 0.2s,
+    transform 0.2s;
+}
+
+button:hover {
+  opacity: 1;
+  background-color: var(--blue);
+  transform: scale(0.95);
+}
