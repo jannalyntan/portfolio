@@ -266,7 +266,8 @@ button:hover {
 }
 
 #splitz-container,
-#nameZen-container {
+#nameZen-container,
+#omi-container {
   display: flex;
   flex-direction: column;
   z-index: 6;
@@ -281,7 +282,7 @@ button:hover {
   position: relative;
   z-index: 6;
   border-radius: 55px;
-  background: rgba(59, 67, 88, 0.09);
+  background: #3b435817;
   padding: 50px 100px 50px 50px;
   text-align: left;
 }
@@ -426,7 +427,7 @@ button:hover {
 
 .horizontalscrolling {
   position: relative;
-  width: 200vw;
+  width: 300vw;
   height: 100vh;
   display: flex;
   background: rgba(0, 0, 0, 0);
@@ -479,10 +480,147 @@ button:hover {
   z-index: 2;
   border-radius: 6px;
 }
+/* -------------------------------------------- */
+/* FIRST RIPPLE COLLECTION */
+/* -------------------------------------------- */
 
+/* ripple container */
+.ripple-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.75;
+  scale: 0.25;
+}
+
+/* circles */
+.ripple {
+  position: absolute;
+  top: 1700px;
+  left: 400px; /* behind mac + NameZen area */
+  transform: translate(-50%, -50%);
+  width: 700px;
+  opacity: 0;
+}
+
+/* -------------------------------------------- */
+/* SECOND RIPPLE COLLECTION */
+/* -------------------------------------------- */
+
+.ripple-wrap-2 {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.75;
+  scale: 0.3;
+}
+
+/* circles */
+.ripple2 {
+  position: absolute;
+  top: -200px;
+  left: -1000px; /* behind mac + NameZen area */
+  transform: translate(-50%, -50%);
+  width: 700px;
+  opacity: 0;
+}
+
+/* -------------------------------------------- */
+/* THIRD RIPPLE COLLECTION */
+/* -------------------------------------------- */
+
+.ripple-wrap-3 {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: visible;
+  scale: 0.4;
+}
+
+.ripple3 {
+  position: absolute;
+  top: 30%;
+  left: 3100px;
+  transform: translate(-50%, -50%);
+  width: 720px;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+/* keep your real content above */
 #nameZen-container,
 .mac-wrapper {
+  position: relative;
+  z-index: 5;
   will-change: transform, opacity;
+}
+
+/* -------------------------------------------- */
+/* PART 3 — NameZen */
+/* -------------------------------------------- */
+
+.part3 {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 6vw;
+  gap: 40px;
+  will-change: transform;
+  z-index: 15;
+}
+
+#omi-container {
+  display: flex;
+  flex-direction: column;
+  z-index: 6;
+}
+
+#omi {
+  max-width: 700px;
+  color: var(--blue);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 6;
+  border-radius: 55px;
+  background: rgba(59, 67, 88, 0.09);
+  padding: 50px 100px 50px 50px;
+  text-align: left;
+}
+
+#omi p {
+  line-height: 1.5;
+  width: 600px;
+}
+
+.deco-omi-1,
+.deco-omi-2 {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  will-change: transform, opacity;
+}
+
+.deco-omi-1 {
+  bottom: 6%;
+  left: 5%;
+  z-index: 12;
+  width: 200px;
+}
+
+.deco-omi-2 {
+  top: 17%;
+  right: 10%;
+  z-index: 12;
+  width: 150px;
 }
 
 /* Last 3 */

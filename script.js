@@ -34,13 +34,6 @@ function startPortfolioAnimations() {
   const multimediaSplit = new SplitText("#multimedia", { type: "chars" });
   const continueScrolling = new SplitText(".scrollText", { type: "chars" });
 
-  const splitzElement = document.querySelector(".splitz");
-  let splitz = null;
-
-  if (splitzElement) {
-    splitz = new SplitText(".splitz", { type: "chars" });
-  }
-
   /* ------------------------- */
   /* LOGO INTRO */
   /* ------------------------- */
@@ -139,6 +132,28 @@ function startPortfolioAnimations() {
   gsap.set("#nameZen-container", { x: 80, opacity: 0 });
   gsap.set(".mac-wrapper", { x: 120, opacity: 0 });
 
+  gsap.set(".ripple, .ripple2, .ripple3", {
+    scale: 0.2,
+    opacity: 0,
+  });
+
+  gsap.set("#omi-container", { x: 160, opacity: 0 });
+  gsap.set(".part3 .iphone2", { x: -160, opacity: 0, scale: 0.85 });
+
+  gsap.set(".deco-omi-1", {
+    opacity: 0,
+    y: 120,
+    rotation: -12,
+    scale: 0.8,
+  });
+
+  gsap.set(".deco-omi-2", {
+    opacity: 0,
+    y: -120,
+    rotation: 12,
+    scale: 0.8,
+  });
+
   /* ------------------------- */
   /* INTRO SCROLL */
   /* ------------------------- */
@@ -149,7 +164,6 @@ function startPortfolioAnimations() {
       start: "top top",
       end: "+=2500",
       scrub: 1.5,
-      scrub: true,
     },
   });
 
@@ -172,6 +186,7 @@ function startPortfolioAnimations() {
       },
       5,
     )
+
     .to(
       "#circleAnimation",
       {
@@ -245,22 +260,8 @@ function startPortfolioAnimations() {
         ease: "power3.out",
       },
       6.35,
-    );
+    )
 
-  if (splitz) {
-    introScrollTl.to(
-      splitz.chars,
-      {
-        opacity: 1,
-        x: 0,
-        duration: 2,
-        ease: "power3.out",
-      },
-      6.35,
-    );
-  }
-
-  introScrollTl
     .to(".deco-money-ll", { opacity: 1, duration: 0.8 }, 7)
     .to(".deco-money-br", { opacity: 1, duration: 0.8 }, 8)
     .to(".deco-money-tl", { opacity: 1, duration: 0.8 }, 7.6)
@@ -315,11 +316,66 @@ function startPortfolioAnimations() {
   /* ------------------------- */
 
   if (document.querySelector(".horizontalscrolling")) {
+    let rippleStarted = false;
+
+    const startRipples = () => {
+      if (rippleStarted) return;
+      rippleStarted = true;
+
+      gsap.to(".ripple", {
+        scale: 3,
+        opacity: 0,
+        duration: 15,
+        ease: "power2.out",
+        repeat: -1,
+        stagger: {
+          each: 0.55,
+          repeat: -1,
+        },
+        startAt: {
+          scale: 0.2,
+          opacity: 0.3,
+        },
+      });
+
+      gsap.to(".ripple2", {
+        scale: 2.8,
+        opacity: 0,
+        duration: 10,
+        ease: "power2.out",
+        repeat: -1,
+        stagger: {
+          each: 0.65,
+          repeat: -1,
+        },
+        startAt: {
+          scale: 0.2,
+          opacity: 0.22,
+        },
+      });
+      /* add to ripple start function */
+      gsap.to(".ripple3", {
+        scale: 2.6,
+        opacity: 0,
+        duration: 3.1,
+        ease: "power2.out",
+        repeat: -1,
+        stagger: {
+          each: 0.7,
+          repeat: -1,
+        },
+        startAt: {
+          scale: 0.2,
+          opacity: 0.18,
+        },
+      });
+    };
+
     const horizontalTl = gsap.timeline({
       scrollTrigger: {
         trigger: ".horizontalscrolling",
         start: "top top",
-        end: "+=2600",
+        end: "+=4200",
         scrub: 1,
         pin: true,
         anticipatePin: 1,
@@ -327,70 +383,24 @@ function startPortfolioAnimations() {
     });
 
     horizontalTl
+      // hold Part 1
       .to(".horizontalscrolling", {
         x: "0vw",
         duration: 0.45,
         ease: "none",
       })
 
-      .to(
-        ".deco-money-ll-2",
-        {
-          opacity: 1,
-          y: 3600,
-          rotation: -160,
-          duration: 3.8,
-          ease: "none",
-        },
-        0.05,
-      )
+      // move to Part 2
+      .to(".horizontalscrolling", {
+        x: "-100vw",
+        duration: 1.8,
+        ease: "none",
+      })
 
-      .to(
-        ".deco-money-lr-2",
-        {
-          opacity: 1,
-          y: 3950,
-          rotation: 145,
-          duration: 4.2,
-          ease: "none",
-        },
-        0.42,
-      )
+      // start ripple animation
+      .call(startRipples, null, 1.25)
 
-      .to(
-        ".deco-money-br-2",
-        {
-          opacity: 1,
-          y: 4300,
-          rotation: -120,
-          duration: 4.6,
-          ease: "none",
-        },
-        0.9,
-      )
-
-      .to(
-        ".deco-money-tl-2",
-        {
-          opacity: 1,
-          y: 3450,
-          rotation: 110,
-          duration: 4.1,
-          ease: "none",
-        },
-        1.35,
-      )
-
-      .to(
-        ".horizontalscrolling",
-        {
-          x: "-100vw",
-          duration: 1.8,
-          ease: "none",
-        },
-        0.55,
-      )
-
+      // Part 2 content
       .to(
         "#nameZen-container",
         {
@@ -413,15 +423,79 @@ function startPortfolioAnimations() {
         1.65,
       )
 
+      // hold Part 2
+      .to(".horizontalscrolling", {
+        x: "-100vw",
+        duration: 0.8,
+        ease: "none",
+      })
+
+      // move to Part 3
+      .to(".horizontalscrolling", {
+        x: "-200vw",
+        duration: 1.8,
+        ease: "none",
+      })
+
+      // Part 3 phone
       .to(
-        ".horizontalscrolling",
+        ".part3 .iphone2",
         {
-          x: "-100vw",
-          duration: 0.7,
-          ease: "none",
+          opacity: 1,
+          x: 0,
+          scale: 1,
+          duration: 2,
+          ease: "power3.out",
         },
-        2.35,
-      );
+        "<1.1",
+      )
+
+      // Part 3 text/card
+      .to(
+        ".part3 #omi-container",
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.9,
+          ease: "power3.out",
+        },
+        "<0.15",
+      )
+
+      // Omi decoration 1
+      .to(
+        ".deco-omi-1",
+        {
+          opacity: 1,
+          y: 0,
+          rotation: 0,
+          scale: 1,
+          duration: 1,
+          ease: "back.out(1.4)",
+        },
+        "<0.2",
+      )
+
+      // Omi decoration 2
+      .to(
+        ".deco-omi-2",
+        {
+          opacity: 1,
+          y: 0,
+          rotation: 0,
+          scale: 1,
+          duration: 1,
+          ease: "back.out(1.4)",
+        },
+        "<0.2",
+      )
+
+      // hold Part 3
+      .to(".horizontalscrolling", {
+        x: "-200vw",
+        duration: 0.8,
+        ease: "none",
+      });
   }
 
   /* ------------------------- */
@@ -455,12 +529,12 @@ function startPortfolioAnimations() {
   /* SHOWREEL VIDEO */
   /* ------------------------- */
 
-  const video = document.querySelector("#showreelVideo");
+  const showreelVideo = document.querySelector("#showreelVideo");
 
-  if (video) {
-    video.muted = false;
-    video.volume = 1;
-    video.playsInline = true;
+  if (showreelVideo) {
+    showreelVideo.muted = false;
+    showreelVideo.volume = 1;
+    showreelVideo.playsInline = true;
 
     gsap.set("#showreelVideo", {
       scale: 0.75,
@@ -484,24 +558,24 @@ function startPortfolioAnimations() {
 
         onUpdate: (self) => {
           if (self.progress >= 0.25 && self.progress < 0.75) {
-            video.muted = false;
-            video.volume = 1;
-            video.play().catch(() => {});
+            showreelVideo.muted = false;
+            showreelVideo.volume = 1;
+            showreelVideo.play().catch(() => {});
           }
 
           if (self.progress >= 0.75) {
-            video.pause();
+            showreelVideo.pause();
           }
 
           if (self.progress < 0.25) {
-            video.pause();
-            video.currentTime = 0;
+            showreelVideo.pause();
+            showreelVideo.currentTime = 0;
           }
         },
 
         onLeaveBack: () => {
-          video.pause();
-          video.currentTime = 0;
+          showreelVideo.pause();
+          showreelVideo.currentTime = 0;
         },
       },
     });
