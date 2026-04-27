@@ -522,7 +522,7 @@ function startPortfolioAnimations() {
 
       .to("#showreelVideo", {
         scale: 0.75,
-        opacity: 0.4,
+        opacity: 0.25,
         duration: 1,
         ease: "none",
       })
