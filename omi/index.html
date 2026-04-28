@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OMI — UX Case Study</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/iof8vhy.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
+    <script src="script.js" defer></script>
+  </head>
+
+  <body>
+    <div class="pattern-bg" id="patternBg"></div>
+
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="58"
+      height="58"
+      viewBox="0 0 58 58"
+      fill="none"
+      id="backBtn"
+    >
+      <circle cx="29" cy="29" r="29" />
+      <path
+        d="M34.3909 19.4178C34.9269 19.1953 35.4788 19.2672 35.9436 19.4369C36.7388 19.7275 37.3286 20.2893 37.6078 21.099L37.6068 21.099C37.8502 21.7467 37.9061 22.4152 37.7586 23.0829C37.7368 23.2812 37.6675 23.4356 37.6196 23.5249C37.56 23.636 37.4868 23.7295 37.4221 23.8062C37.326 23.9374 37.1927 24.0844 37.0079 24.1993L29.8605 29.6763C29.578 29.9484 29.2448 30.1925 28.8722 30.4087C28.8599 30.4159 28.8472 30.4227 28.8345 30.4293C28.5076 30.6006 28.1754 30.7841 27.8381 30.9798C27.8258 30.9869 27.813 30.9938 27.8005 31.0004C27.7495 31.0271 27.6988 31.0548 27.649 31.0825C28.716 31.4963 29.7588 31.9252 30.776 32.3728C32.2733 33.0034 33.7881 33.696 35.3204 34.4505C35.6184 34.5972 35.8225 34.8825 35.868 35.2105C36.0055 35.3493 36.1325 35.4962 36.2478 35.6517C36.4278 35.8605 36.5699 36.098 36.6598 36.3653L36.6588 36.3653C36.8339 36.823 36.7657 37.2795 36.6339 37.6405C36.4014 38.2769 35.9994 38.8648 35.3318 39.1651C34.6702 39.4628 33.9625 39.3809 33.3257 39.1483C32.8811 38.9859 32.4598 38.7422 32.1415 38.3745C32.1304 38.3616 32.1188 38.349 32.1083 38.3355C32.059 38.2723 31.96 38.1773 31.7691 38.0692C31.7569 38.0623 31.7445 38.0552 31.7326 38.0478C30.9166 37.5388 30.0807 37.0885 29.2244 36.6968C28.3527 36.298 27.4553 35.9294 26.5323 35.5923C26.5324 35.5923 26.5001 35.5817 26.414 35.5571C26.3355 35.5346 26.2294 35.5057 26.0948 35.47C26.0658 35.4623 26.0368 35.4528 26.0086 35.4424C25.7959 35.3648 25.5378 35.2824 25.2313 35.1964C24.9104 35.1064 24.6143 35.0255 24.3435 34.9535C24.3144 34.9458 24.2855 34.9373 24.2572 34.927C24.0149 34.8385 23.8569 34.7807 23.7838 34.754L22.6909 34.3546C22.3735 34.2386 22.0501 34.1056 21.722 33.9563C21.6991 33.9458 21.6765 33.9345 21.6545 33.9224C21.3061 33.7308 20.9861 33.515 20.6987 33.2734C20.6694 33.2487 20.6409 33.2229 20.6146 33.1951C20.3116 32.8742 20.0916 32.4976 19.9567 32.0777C19.776 31.5148 19.8596 30.9401 20.0477 30.4252C20.24 29.8988 20.5896 29.4265 21.1498 29.1661C21.4112 29.0446 21.6849 28.8997 21.9714 28.7304C22.078 28.6606 22.265 28.5366 22.5356 28.3547L22.5833 28.3237C22.8866 28.144 23.1953 27.9522 23.5091 27.7479C23.5233 27.7387 23.538 27.7302 23.5527 27.7216C23.8973 27.5217 24.2076 27.3372 24.4837 27.1695L24.4936 27.1639L24.8568 26.9394C24.8999 26.9114 24.9336 26.8861 24.9612 26.8668C25.2036 26.5839 25.5057 26.3568 25.8702 26.2184L25.9472 26.1832C26.0215 26.1442 26.0881 26.0926 26.1495 26.0241L26.2146 25.9583C26.2373 25.9373 26.2609 25.9174 26.2855 25.8985L32.3056 21.2854L32.3225 21.2721C32.4568 21.1737 32.5808 21.0491 32.6925 20.8916L32.7258 20.8475C32.9394 20.579 33.1462 20.3319 33.347 20.1078C33.3654 20.0873 33.3851 20.0676 33.4051 20.0487C33.6919 19.7778 34.0195 19.555 34.3909 19.4158L34.3909 19.4178Z"
+        fill="white"
+        stroke="white"
+        stroke-width="2"
+        stroke-linejoin="round"
+      />
+    </svg>
+    <!-- HERO -->
+    <section class="sidebyside hero-section">
+      <img
+        src="img/Asset 1@4x-8.png"
+        alt="OMI mascot"
+        class="mascot mascot-hero-bottom-left mascot-float"
+      />
+      <img
+        src="img/Asset 2@4x-8.png"
+        alt="OMI mascot"
+        style="scale: 1.2"
+        class="mascot mascot-hero-top-right mascot-float"
+      />
+      <img
+        src="img/OMI home screen.png"
+        class="phone-img"
+        alt="OMI home screen"
+      />
+
+      <div class="words">
+        <p class="label">USER EXPERIENCE DESIGN</p>
+        <h2 style="margin-bottom: -30px">OMI</h2>
+        <h3>Your Calm Companion</h3>
+        <p>
+          OMI is an anxiety-calming app designed to support users during panic
+          attacks through haptic feedback, calming visuals, breathing guidance,
+          and gentle emotional reassurance.
+        </p>
+      </div>
+    </section>
+
+    <section class="stacked">
+      <img
+        src="img/Asset 3@4x-8.png"
+        alt="OMI mascot"
+        class="mascot mascot-hero-bottom-left mascot-float"
+      />
+      <h3 style="margin-bottom: -40px">In Australia,</h3>
+      <h2>1 in 4 people will experience anxiety,</h2>
+      <h3 style="margin-top: -40px">
+        highlighting the need for more accessible real-time support tools.
+      </h3>
+    </section>
+
+    <!-- PROBLEM -->
+    <section class="sidebyside">
+      <div class="words">
+        <p class="label">THE PROBLEM</p>
+        <h2 style="margin-bottom: -30px">Support is missing in the moment</h2>
+        <h3>Before, during, and after anxiety</h3>
+      </div>
+
+      <div class="case-card large-card">
+        <p>
+          Many existing anxiety tools focus on prevention or reflection, but not
+          the actual moment of a panic attack. During panic, users may feel
+          overwhelmed, isolated, and unable to process complicated interfaces.
+        </p>
+
+        <div class="mini-grid">
+          <div>
+            <h4>Too Many Choices</h4>
+            <p>Busy wellness apps can increase stress during panic.</p>
+          </div>
+          <div>
+            <h4>Bulky Tools</h4>
+            <p>Separate calming devices are expensive and easy to forget.</p>
+          </div>
+          <div>
+            <h4>Need for Relief</h4>
+            <p>Users need something discreet, immediate, and accessible.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="stacked">
+      <p class="label">CORE UX FEATURES</p>
+      <h2 style="margin-bottom: -30px">Designed for low-stress use</h2>
+      <h3>Simple. Immediate. Supportive.</h3>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <span>01</span>
+          <h4>One-Tap Calm</h4>
+          <p>
+            The main calming button is the largest element on the home screen,
+            making it easy to find when users are distressed.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <span>02</span>
+          <h4>Haptic Grounding</h4>
+          <p>
+            Phone vibrations guide the user through inhale and exhale moments,
+            turning the device into a calming tool.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <span>03</span>
+          <h4>Breathing Animation</h4>
+          <p>
+            A soft pulsing visual supports the breathing rhythm without adding
+            too much information to the screen.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <span>04</span>
+          <h4>Support Contact</h4>
+          <p>
+            Users can choose trusted contacts to receive a gentle message when
+            extra support is needed.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <span>05</span>
+          <h4>Live Activity</h4>
+          <p>
+            If the phone locks, breathing information can still appear on the
+            lock screen so the user can continue calming down.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <span>06</span>
+          <h4>Personalisation</h4>
+          <p>
+            Vibration strength, notifications, and support settings can be
+            adjusted to suit different sensory needs.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- USER JOURNEY -->
+    <section class="sidebyside2">
+      <div class="words white">
+        <p class="label light">USER JOURNEY</p>
+        <h2>From panic to control</h2>
+        <p>
+          The main journey follows a user on crowded transport as anxiety begins
+          to rise. OMI reduces the steps between feeling overwhelmed and
+          receiving support.
+        </p>
+      </div>
+
+      <div class="journey-list">
+        <div>
+          <strong>01</strong>
+          <p style="color: black">Anxiety starts building in public.</p>
+        </div>
+        <div>
+          <strong>02</strong>
+          <p style="color: black">User opens OMI or taps a reminder.</p>
+        </div>
+        <div>
+          <strong>03</strong>
+          <p style="color: black">The large calm button starts vibration.</p>
+        </div>
+        <div>
+          <strong>04</strong>
+          <p style="color: black">Visual and haptic cues guide breathing.</p>
+        </div>
+        <div style="color: black">
+          <strong>05</strong>
+          <p>User stops when calmer and receives support.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTING -->
+    <section class="stacked">
+      <p class="label">USER TESTING</p>
+      <h2 style="margin-bottom: -30px">Testing the experience</h2>
+      <h3>Figma + Xcode prototype</h3>
+
+      <div class="testing-grid">
+        <div class="quote-card">
+          <h4>“I’m actually calming down.”</h4>
+          <p>
+            Testing showed that the vibration feature helped users feel more
+            physically connected to the calming experience.
+          </p>
+        </div>
+
+        <div class="quote-card">
+          <h4>“It’s straightforward.”</h4>
+          <p>
+            Users were able to move through onboarding and reach the main
+            calming function without difficulty.
+          </p>
+        </div>
+
+        <div class="quote-card">
+          <h4>“I would actually use this.”</h4>
+          <p>
+            Feedback showed that the concept was useful, but users wanted more
+            calming options in future versions.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ITERATIONS -->
+    <section class="sidebyside">
+      <div class="words">
+        <p class="label">KEY ITERATIONS</p>
+        <h2 style="margin-bottom: -30px">Refining the details</h2>
+        <h3>Small changes, clearer interaction</h3>
+      </div>
+
+      <div class="case-card">
+        <ul class="detail-list" style="color: #1c202b">
+          <li>
+            <strong>Vibration Pattern:</strong> Removed vibration during the
+            hold phase so feedback only happens when users actively inhale or
+            exhale.
+          </li>
+          <li>
+            <strong>Progress Dots:</strong> Planned to show them only when the
+            actual walkthrough begins.
+          </li>
+          <li>
+            <strong>Button States:</strong> Added inactive states to stop users
+            from moving forward before confirming actions.
+          </li>
+          <li>
+            <strong>Visual Balance:</strong> Adjusted text weight so important
+            lines guide attention without overpowering the page.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ETHICS -->
+    <section class="sidebyside2">
+      <div class="words white">
+        <p class="label light">ETHICS & ACCESSIBILITY</p>
+        <h2>Designing with care</h2>
+        <p>
+          Because OMI supports users during vulnerable emotional moments,
+          privacy, consent, accessibility, and emotional safety were key parts
+          of the UX decision-making.
+        </p>
+      </div>
+
+      <div class="ethics-grid">
+        <div>
+          <h4>Privacy</h4>
+          <p>
+            Users should know where their data goes and what it is used for.
+          </p>
+        </div>
+        <div>
+          <h4>Consent</h4>
+          <p>Support contacts should agree before receiving alerts.</p>
+        </div>
+        <div>
+          <h4>Accessibility</h4>
+          <p>Visual and audio cues support users who may not feel vibration.</p>
+        </div>
+        <div>
+          <h4>Control</h4>
+          <p>Users can adjust vibration strength and notification settings.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL -->
+    <section class="sidebyside final-section">
+      <div class="words">
+        <p class="label">FINAL OUTCOME</p>
+        <h2 style="margin-bottom: -30px">A calm companion, not just an app</h2>
+        <h3>UX for emotional support</h3>
+        <p>
+          OMI became a user-centred calming tool focused on simplicity,
+          reassurance, and control. Through testing and iteration, the prototype
+          became clearer, more accessible, and more aligned with the needs of
+          users experiencing anxiety.
+        </p>
+
+        <a
+          href="https://www.figma.com/proto/B62vUwyGJIPpkTnU2ANq8s/Human-Lens--Copy-?node-id=48-3321&m=dev&scaling=min-zoom&content-scaling=fixed&page-id=26%3A2&starting-point-node-id=48%3A3321&t=etnnXhVGFb2QbTl9-1"
+          target="_blank"
+        >
+          <button>FIGMA LINK</button>
+        </a>
+      </div>
+      <div class="video-phone-wrap">
+        <video
+          class="omi-video"
+          src="img/Recording Final.mp4"
+          autoplay
+          muted
+          loop
+          playsinline
+          controls
+        ></video>
+
+        <img
+          src="../img/iphoneTemplate.png"
+          class="video-phone-overlay"
+          alt="iPhone frame"
+        />
+      </div>
+    </section>
+  </body>
+</html>

@@ -357,7 +357,7 @@ function startPortfolioAnimations() {
       gsap.to(".ripple3", {
         scale: 2.6,
         opacity: 0,
-        duration: 3.1,
+        duration: 15,
         ease: "power2.out",
         repeat: -1,
         stagger: {

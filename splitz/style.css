@@ -69,12 +69,31 @@ h4 {
   position: fixed;
   top: 30px;
   left: 30px;
-
-  padding: 10px;
+  width: 58px;
+  height: 58px;
   z-index: 9999;
+  border-radius: 50%;
+  background-color: #3b4358;
 
   cursor: pointer;
+  transition: transform 0.25s ease;
 }
+
+/* circle fill */
+#backBtn circle {
+  fill: #3b4358;
+}
+
+/* hover */
+#backBtn:hover {
+  transform: scale(0.9);
+}
+
+/* optional arrow hover */
+#backBtn:hover path {
+  fill: white;
+}
+
 /* -------------------------------------------- */
 /* Shared Section Layout */
 /* -------------------------------------------- */
