@@ -184,50 +184,69 @@ function startPortfolioAnimations() {
         duration: 1,
         ease: "power3.out",
       },
-      5,
+      6,
     )
 
     .to(
       "#circleAnimation",
       {
         backgroundColor: "#ffffff",
-        duration: 1,
+        duration: 1.2,
         ease: "power3.out",
       },
-      5.25,
+      6.3,
     )
 
-    .to(".intro-text", { opacity: 0, duration: 0.8 }, 5)
+    .to(
+      ".intro-text",
+      {
+        opacity: 0,
+        duration: 1,
+      },
+      6.2,
+    )
 
+    /* slower white expansion */
     .to(
       "#circleAnimation",
       {
-        scale: 7,
-        duration: 4,
-        ease: "power3.out",
+        scale: 9,
+        duration: 6,
+        ease: "power2.out",
       },
-      5.5,
+      6.8,
     )
 
-    .to(".part1", { opacity: 1, duration: 0.5 }, 5.4)
+    /* part1 fades in later */
+    .to(
+      ".part1",
+      {
+        opacity: 1,
+        duration: 1.5,
+      },
+      8,
+    )
 
+    /* iphone starts MUCH later */
     .to(
       ".iphone",
       {
         opacity: 1,
         scale: 1,
-        duration: 3,
+        duration: 3.5,
+        ease: "power3.out",
       },
-      5.1,
+      8.6,
     )
 
     .to(
       ".iphone",
       {
         x: 0,
-        duration: 3,
+        duration: 3.5,
+        ease: "power3.out",
       },
-      6,
+      9,
     )
 
     .to(
@@ -237,7 +256,7 @@ function startPortfolioAnimations() {
         duration: 17,
         ease: "power3.out",
       },
-      5.8,
+      6.8,
     )
 
     .to(
@@ -248,7 +267,7 @@ function startPortfolioAnimations() {
         duration: 1.4,
         ease: "power3.out",
       },
-      6.1,
+      7.1,
     )
 
     .to(
@@ -259,13 +278,13 @@ function startPortfolioAnimations() {
         duration: 2,
         ease: "power3.out",
       },
-      6.35,
+      7.35,
     )
 
-    .to(".deco-money-ll", { opacity: 1, duration: 0.8 }, 7)
-    .to(".deco-money-br", { opacity: 1, duration: 0.8 }, 8)
-    .to(".deco-money-tl", { opacity: 1, duration: 0.8 }, 7.6)
-    .to(".deco-money-lr", { opacity: 1, duration: 0.8 }, 7.9)
+    .to(".deco-money-ll", { opacity: 1, duration: 0.8 }, 8)
+    .to(".deco-money-br", { opacity: 1, duration: 0.8 }, 9)
+    .to(".deco-money-tl", { opacity: 1, duration: 0.8 }, 8.6)
+    .to(".deco-money-lr", { opacity: 1, duration: 0.8 }, 8.9)
 
     .to(
       ".deco-money-ll",
@@ -275,7 +294,7 @@ function startPortfolioAnimations() {
         duration: 15,
         ease: "none",
       },
-      7,
+      8,
     )
 
     .to(
@@ -286,7 +305,7 @@ function startPortfolioAnimations() {
         duration: 12,
         ease: "none",
       },
-      7.3,
+      8.3,
     )
 
     .to(
@@ -297,7 +316,7 @@ function startPortfolioAnimations() {
         duration: 16,
         ease: "none",
       },
-      7.6,
+      8.6,
     )
 
     .to(
@@ -308,7 +327,7 @@ function startPortfolioAnimations() {
         duration: 13,
         ease: "none",
       },
-      7.9,
+      8.9,
     );
 
   /* ------------------------- */
