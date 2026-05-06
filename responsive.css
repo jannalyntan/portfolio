@@ -1,0 +1,465 @@
+/* ==============================================
+   responsive.css — add AFTER style.css
+   script.js stays unchanged
+============================================== */
+
+/* ============================================
+   TABLET ≤ 1100px
+============================================ */
+@media (max-width: 1100px) {
+  .logo {
+    padding: 6vh 4vw;
+  }
+
+  .logo svg {
+    width: clamp(280px, 46vw, 560px);
+    height: auto;
+  }
+
+  #name-1,
+  #name-2 {
+    font-size: clamp(72px, 10vw, 120px);
+    width: 90vw;
+    margin: 0;
+    padding: 0;
+    line-height: 0.82;
+    text-align: right;
+  }
+
+  #multimedia {
+    width: 90vw;
+    font-size: clamp(24px, 3vw, 36px);
+    padding: 0;
+    margin-top: 10px;
+    text-align: right;
+  }
+
+  .part1,
+  .part2,
+  .part3 {
+    gap: 48px;
+    padding: 5rem 5vw;
+  }
+
+  #splitz,
+  #nameZen {
+    padding: 44px 52px;
+    max-width: 560px;
+  }
+
+  #splitz p,
+  #nameZen p,
+  #omi p {
+    width: 100%;
+  }
+
+  .mac-wrapper {
+    width: clamp(460px, 48vw, 620px);
+    height: auto;
+  }
+
+  .iphone {
+    width: clamp(280px, 32vw, 360px);
+  }
+}
+
+/* ============================================
+   MOBILE ≤ 768px
+============================================ */
+@media (max-width: 768px) {
+  h2 {
+    font-size: clamp(28px, 8vw, 36px);
+    line-height: 1;
+  }
+
+  h3 {
+    font-size: clamp(16px, 4.5vw, 20px);
+    line-height: 1.3;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  /* ----------------------------------------
+   LOGO / FRAME 1
+---------------------------------------- */
+  .logo {
+    min-height: 100vh;
+    padding: 6vh 4vw;
+  }
+
+  .logo-inner {
+    width: 94vw;
+  }
+
+  .logo svg {
+    top: clamp(30px, 8vw, 70px);
+    left: 0;
+    width: clamp(190px, 52vw, 330px);
+  }
+
+  .name-block {
+    margin-top: clamp(10px, 2vw, 20px);
+  }
+
+  #name-1,
+  #name-2 {
+    width: 100%;
+    font-size: clamp(52px, 14vw, 96px);
+    line-height: 0.78;
+  }
+
+  #multimedia {
+    font-size: clamp(16px, 4.4vw, 28px);
+  }
+
+  .scrollText {
+    margin-top: clamp(80px, 18vw, 130px);
+  }
+
+  /* ----------------------------------------
+     INTRO TEXT
+  ---------------------------------------- */
+  .intro-text {
+    font-size: clamp(18px, 5.5vw, 26px);
+    padding: 0 24px;
+    line-height: 1.3;
+  }
+
+  /* ----------------------------------------
+     WORK PANELS
+  ---------------------------------------- */
+  .horizontalscrolling {
+    overflow: hidden;
+  }
+
+  .part1,
+  .part2,
+  .part3 {
+    min-height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #ffffff;
+    padding: 44px 20px 56px;
+    gap: 0;
+    overflow: hidden;
+  }
+
+  .part1 #title,
+  .part2 #title,
+  .part3 #title {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: var(--pink);
+    text-align: center;
+
+    margin: 0 0 20px;
+    padding: 7px 16px;
+
+    border: 1.5px solid var(--pink);
+    border-radius: 999px;
+    display: inline-block;
+    align-self: center;
+  }
+
+  .deco-plane,
+  .deco-bag-bl,
+  .deco-money-ll,
+  .deco-money-lr,
+  .deco-money-br,
+  .deco-money-tl,
+  .deco-money-ll-2,
+  .deco-money-lr-2,
+  .deco-money-br-2,
+  .deco-money-tl-2,
+  .deco-omi-1,
+  .deco-omi-2 {
+    display: none;
+  }
+
+  #splitz-container,
+  #nameZen-container,
+  #omi-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: min(100%, 420px);
+    gap: 0;
+  }
+
+  /* phone mockups */
+  .iphone,
+  .part3 .iphone2 {
+    position: relative;
+    z-index: 2;
+    margin-bottom: -42px;
+    filter: drop-shadow(0 18px 34px rgba(0, 0, 0, 0.18));
+  }
+
+  .iphone {
+    width: clamp(155px, 46vw, 210px);
+  }
+
+  .part3 .iphone2 img {
+    width: clamp(155px, 46vw, 210px) !important;
+    height: auto !important;
+    display: block;
+  }
+
+  .phone-frame {
+    width: 100%;
+    display: block;
+  }
+
+  .phone-screen {
+    border-radius: 24px;
+  }
+
+  /* mac mockup */
+  .mac-wrapper {
+    position: relative;
+    width: clamp(220px, 72vw, 330px);
+    height: auto;
+    z-index: 2;
+    margin-bottom: -32px;
+    order: 0;
+    filter: drop-shadow(0 14px 30px rgba(0, 0, 0, 0.16));
+  }
+
+  .mac-frame {
+    width: 100%;
+    display: block;
+  }
+
+  .macImg {
+    position: absolute;
+    top: 34.5%;
+    left: 49.9%;
+    transform: translate(-50%, -50%);
+    width: 96.5%;
+    height: 65%;
+    object-fit: cover;
+    border-radius: 4px;
+    z-index: 2;
+  }
+
+  /* cards */
+  #splitz,
+  #nameZen,
+  #omi-container #nameZen {
+    width: 100%;
+    max-width: 420px;
+
+    border-radius: 30px;
+    padding: 58px 24px 30px;
+
+    text-align: center;
+    z-index: 1;
+  }
+
+  #splitz,
+  #omi-container #nameZen {
+    background: var(--blue);
+    color: white;
+  }
+
+  #nameZen {
+    background: var(--pink);
+    color: white;
+  }
+
+  #splitz h2,
+  #nameZen h2,
+  #omi-container #nameZen h2 {
+    color: white;
+    font-size: clamp(28px, 8vw, 36px);
+    margin: 0 0 6px;
+  }
+
+  #splitz h3,
+  #nameZen h3,
+  #omi-container #nameZen h3 {
+    color: rgba(255, 255, 255, 0.72);
+    font-size: clamp(15px, 4vw, 18px);
+    margin: 0 0 16px;
+    font-style: italic;
+  }
+
+  #splitz p,
+  #nameZen p,
+  #omi-container #nameZen p {
+    width: 100%;
+    color: rgba(255, 255, 255, 0.86);
+    font-size: 13px;
+    line-height: 1.75;
+    margin-bottom: 22px;
+  }
+
+  #splitz button,
+  #omi-container #nameZen button {
+    background: var(--pink);
+    color: white;
+  }
+
+  #nameZen button {
+    background: var(--blue);
+    color: white;
+  }
+
+  .ripple-wrap,
+  .ripple-wrap-2,
+  .ripple-wrap-3 {
+    display: none;
+  }
+
+  /* ----------------------------------------
+     MOTION TITLE
+  ---------------------------------------- */
+  .motion-title-section {
+    margin-top: 0;
+    min-height: 45vh;
+    height: auto;
+    padding: 64px 24px;
+  }
+
+  .motion-title-section h2 {
+    font-size: clamp(30px, 9vw, 42px);
+    text-align: center;
+  }
+
+  /* ----------------------------------------
+     SHOWREEL
+  ---------------------------------------- */
+  #showreelVideo {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .leaving-video-text h2 {
+    font-size: clamp(20px, 6vw, 28px);
+    padding: 0 20px;
+  }
+
+  .leaving-video-text p {
+    font-size: 14px;
+    padding: 0 20px;
+  }
+
+  /* ----------------------------------------
+     ABOUT
+  ---------------------------------------- */
+  .about-section {
+    flex-direction: column;
+    align-items: center;
+    padding: 64px 24px;
+    gap: 28px;
+    text-align: center;
+  }
+
+  #aboutMe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+
+  #aboutMe img {
+    width: 100% !important;
+    max-width: 300px;
+  }
+
+  #aboutMe p {
+    width: 100% !important;
+    max-width: 520px;
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  #aboutMe h2 {
+    font-size: 30px;
+  }
+
+  /* ----------------------------------------
+     SOUND POPUP
+  ---------------------------------------- */
+  .sound-box {
+    width: min(90vw, 420px);
+    padding: 34px 22px;
+  }
+
+  .sound-box h2 {
+    font-size: 22px;
+    line-height: 1.3;
+  }
+
+  .sound-box p {
+    font-size: 15px;
+  }
+
+  button {
+    padding: 11px 30px;
+    font-size: 12px;
+  }
+}
+
+/* ============================================
+   SMALL MOBILE ≤ 430px
+============================================ */
+@media (max-width: 430px) {
+  .logo {
+    padding-top: 8vh;
+  }
+
+  .logo svg {
+    width: 56vw;
+    min-width: 175px;
+    margin-bottom: -5vw;
+  }
+
+  #name-1,
+  #name-2 {
+    width: 94vw;
+    font-size: 13.8vw;
+    line-height: 0.8;
+  }
+
+  #multimedia {
+    width: 94vw;
+    font-size: 4.3vw;
+  }
+
+  .scrollText {
+    margin-top: 18vw;
+    font-size: 3vw;
+  }
+
+  .part1,
+  .part2,
+  .part3 {
+    padding: 40px 18px 52px;
+  }
+
+  .iphone {
+    width: 155px;
+  }
+
+  .part3 .iphone2 img {
+    width: 155px !important;
+  }
+
+  .mac-wrapper {
+    width: 220px;
+  }
+
+  #splitz,
+  #nameZen,
+  #omi-container #nameZen {
+    border-radius: 26px;
+    padding: 54px 22px 28px;
+  }
+}

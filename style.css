@@ -77,14 +77,74 @@ h3 {
 /* Logo Introduction */
 /* -------------------------------------------- */
 
+/* -------------------------------------------- */
+/* Logo Introduction */
+/* -------------------------------------------- */
+
 .logo {
-  height: 100vh;
+  min-height: 100vh;
+  width: 100%;
+  padding: 6vh 4vw;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 20vh;
-  gap: 20px;
+}
+
+.logo-inner {
+  position: relative;
+  width: min(92vw, 1100px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.logo svg {
+  position: absolute;
+  top: clamp(30px, 2vw, 80px);
+  left: clamp(0px, 2vw, 50px);
+  width: clamp(240px, 28vw, 420px);
+  height: auto;
+  padding: 0;
+  z-index: 2;
+}
+
+.name-block {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  margin-top: 0;
+  transform: translateY(120px);
+}
+
+#name-1,
+#name-2 {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  color: var(--blue);
+  font-family: var(--mainfont);
+  font-weight: 700;
+  text-align: right;
+  line-height: 0.78;
+
+  font-size: clamp(60px, 10vw, 150px);
+}
+
+#multimedia {
+  width: 100%;
+  margin-top: clamp(4px, 1vw, 12px);
+  padding-right: clamp(0px, 4vw, 90px);
+
+  color: var(--pink);
+  font-family: var(--mainfont);
+  font-weight: 100;
+  text-align: right;
+  line-height: 1;
+
+  font-size: clamp(18px, 3.6vw, 42px);
 }
 
 .path {
@@ -96,41 +156,6 @@ h3 {
   stroke-linejoin: round;
 }
 
-#name-1 {
-  color: var(--blue);
-  text-align: right;
-  font-family: "Futura 100";
-  font-size: 100px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 94%;
-  margin-top: -300px;
-}
-
-#name-2 {
-  color: var(--blue);
-  text-align: right;
-  font-family: "Futura 100";
-  font-size: 100px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 94%;
-  margin-top: -110px;
-  padding-left: 360px;
-}
-
-#multimedia {
-  color: #d0826f;
-  justify-content: flex-end;
-  font-family: "Futura 100";
-  font-size: 36px;
-  font-style: light;
-  font-weight: 100;
-  line-height: 94%;
-  margin-top: -100px;
-  padding-left: 290px;
-}
-
 .split {
   will-change: transform;
 }
@@ -139,15 +164,12 @@ h3 {
   display: inline-block;
 }
 
-/* -------------------------------------------- */
-/* Continue Scrolling */
-/* -------------------------------------------- */
-
 .scrollText {
+  margin-top: clamp(80px, 10vw, 160px);
+  width: 100%;
+  text-align: center;
   color: var(--blue);
-  margin-top: 200px;
 }
-
 /* -------------------------------------------- */
 /* Introduction */
 /* -------------------------------------------- */
