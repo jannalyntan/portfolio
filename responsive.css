@@ -129,47 +129,73 @@
   }
 
   /* ----------------------------------------
-     WORK PANELS
-  ---------------------------------------- */
+   WORK PANELS — MOBILE HORIZONTAL LAYOUT
+---------------------------------------- */
+
   .horizontalscrolling {
+    width: 300vw;
+    height: 100vh;
+    display: flex;
     overflow: hidden;
   }
 
   .part1,
   .part2,
   .part3 {
-    min-height: 100vh;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    position: relative;
+    top: auto;
+    margin-top: 0;
 
-    background-color: #ffffff;
-    padding: 44px 20px 56px;
-    gap: 0;
+    flex: 0 0 100vw;
+    width: 100vw;
+    height: 100vh;
+
+    display: grid;
+    grid-template-rows: 52% 48%;
+    align-items: center;
+
+    padding: 28px 22px 36px;
+    background: #ffffff;
     overflow: hidden;
   }
 
-  .part1 #title,
-  .part2 #title,
-  .part3 #title {
-    font-size: 11px;
-    letter-spacing: 0.18em;
-    color: var(--pink);
-    text-align: center;
+  .part1 {
+    margin-top: 0;
+    position: relative;
+    top: auto;
+  } /* ----------------------------------------
+   PART 1 MOBILE DECORATIONS
+---------------------------------------- */
 
-    margin: 0 0 20px;
-    padding: 7px 16px;
-
-    border: 1.5px solid var(--pink);
-    border-radius: 999px;
-    display: inline-block;
-    align-self: center;
-  }
-
+  /* stop decoration images from stretching */
   .deco-plane,
   .deco-bag-bl,
   .deco-money-ll,
+  .deco-money-lr {
+    height: auto !important;
+    object-fit: contain !important;
+  }
+
+  /* plane */
+  .deco-plane {
+    width: clamp(300px, 70vw, 450px) !important;
+    height: auto !important;
+  }
+
+  /* money bag */
+  .deco-bag-bl {
+    width: clamp(70px, 18vw, 100px) !important;
+    height: auto !important;
+    margin-left: -90px;
+  }
+
+  /* money notes */
   .deco-money-lr,
+  .deco-money-ll {
+    width: clamp(100px, 30vw, 300px) !important;
+    height: auto !important;
+  }
+
   .deco-money-br,
   .deco-money-tl,
   .deco-money-ll-2,
@@ -177,61 +203,52 @@
   .deco-money-br-2,
   .deco-money-tl-2,
   .deco-omi-1,
-  .deco-omi-2 {
+  .deco-omi-2,
+  .ripple-wrap,
+  .ripple-wrap-2,
+  .ripple-wrap-3 {
     display: none;
   }
+  /* -------------------------------
+   TOP VISUAL AREA
+-------------------------------- */
 
-  #splitz-container,
-  #nameZen-container,
-  #omi-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: min(100%, 420px);
-    gap: 0;
-  }
-
-  /* phone mockups */
   .iphone,
-  .part3 .iphone2 {
-    position: relative;
-    z-index: 2;
-    margin-bottom: -42px;
-    filter: drop-shadow(0 18px 34px rgba(0, 0, 0, 0.18));
+  .iphone2,
+  .mac-wrapper {
+    grid-row: 1;
+    z-index: 3;
+    justify-self: center;
+    align-self: end;
+    filter: drop-shadow(0 16px 32px rgba(28, 32, 43, 0.2));
+
+    margin-bottom: -50px;
   }
 
-  .iphone {
-    width: clamp(155px, 46vw, 210px);
+  .iphone,
+  .iphone2 {
+    width: clamp(200px, 60vw, 240px);
   }
 
-  .part3 .iphone2 img {
-    width: clamp(155px, 46vw, 210px) !important;
+  .splitz-phone-img,
+  .omi-phone-img,
+  .iphone2 img,
+  .iphone img {
+    width: 100% !important;
     height: auto !important;
     display: block;
+    object-fit: contain;
   }
 
-  .phone-frame {
-    width: 100%;
-    display: block;
-  }
-
-  .phone-screen {
-    border-radius: 24px;
-  }
-
-  /* mac mockup */
   .mac-wrapper {
-    position: relative;
-    width: clamp(220px, 72vw, 330px);
+    width: clamp(280px, 82vw, 390px);
     height: auto;
-    z-index: 2;
-    margin-bottom: -32px;
-    order: 0;
-    filter: drop-shadow(0 14px 30px rgba(0, 0, 0, 0.16));
+    /* margin-bottom: 10px; */
   }
 
   .mac-frame {
     width: 100%;
+    height: auto;
     display: block;
   }
 
@@ -244,7 +261,38 @@
     height: 65%;
     object-fit: cover;
     border-radius: 4px;
-    z-index: 2;
+  }
+
+  /* -------------------------------
+   TEXT AREA
+-------------------------------- */
+
+  #splitz-container,
+  #nameZen-container,
+  #omi-container {
+    grid-row: 2;
+    width: min(88vw, 430px);
+    justify-self: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    z-index: 4;
+  }
+
+  /* label */
+  .part1 #title,
+  .part2 #title,
+  .part3 #title {
+    margin: 0 0 8px;
+    padding: 0;
+
+    color: var(--pink);
+    font-size: clamp(16px, 5vw, 22px);
+    letter-spacing: 0.08em;
+    line-height: 1;
+    text-align: left;
   }
 
   /* cards */
@@ -252,40 +300,38 @@
   #nameZen,
   #omi-container #nameZen {
     width: 100%;
-    max-width: 420px;
+    max-width: 430px;
 
-    border-radius: 30px;
-    padding: 58px 24px 30px;
+    background: #f0f1f3;
+    color: var(--blue);
 
-    text-align: center;
-    z-index: 1;
+    border-radius: 28px;
+    padding: 28px 26px 24px;
+
+    text-align: left;
+    z-index: 2;
   }
 
-  #splitz,
-  #omi-container #nameZen {
-    background: var(--blue);
-    color: white;
-  }
-
-  #nameZen {
-    background: var(--pink);
-    color: white;
-  }
-
+  /* title typography */
   #splitz h2,
   #nameZen h2,
   #omi-container #nameZen h2 {
-    color: white;
-    font-size: clamp(28px, 8vw, 36px);
-    margin: 0 0 6px;
+    margin: 0 0 4px !important;
+
+    color: var(--blue);
+    font-size: clamp(34px, 10vw, 46px);
+    line-height: 0.95;
+    letter-spacing: 0.03em;
   }
 
   #splitz h3,
   #nameZen h3,
   #omi-container #nameZen h3 {
-    color: rgba(255, 255, 255, 0.72);
-    font-size: clamp(15px, 4vw, 18px);
-    margin: 0 0 16px;
+    margin: 0 0 18px !important;
+
+    color: var(--blue);
+    font-size: clamp(14px, 18px, 25px);
+    line-height: 1.1;
     font-style: italic;
   }
 
@@ -293,27 +339,30 @@
   #nameZen p,
   #omi-container #nameZen p {
     width: 100%;
-    color: rgba(255, 255, 255, 0.86);
-    font-size: 13px;
-    line-height: 1.75;
-    margin-bottom: 22px;
+    margin: 0 0 22px;
+
+    color: var(--blue);
+    font-size: clamp(13px, 3.8vw, 16px);
+    line-height: 1.25;
   }
 
+  /* button */
   #splitz button,
+  #nameZen button,
   #omi-container #nameZen button {
+    display: block;
+    margin: 0 auto;
+
     background: var(--pink);
     color: white;
+
+    padding: 10px 28px;
+    border-radius: 999px;
+    font-size: 12px;
   }
 
-  #nameZen button {
-    background: var(--blue);
-    color: white;
-  }
-
-  .ripple-wrap,
-  .ripple-wrap-2,
-  .ripple-wrap-3 {
-    display: none;
+  a {
+    text-decoration: none;
   }
 
   /* ----------------------------------------
@@ -441,25 +490,23 @@
   .part1,
   .part2,
   .part3 {
-    padding: 40px 18px 52px;
+    padding: 24px 18px 32px;
+    grid-template-rows: 50% 50%;
   }
 
-  .iphone {
-    width: 155px;
-  }
-
-  .part3 .iphone2 img {
-    width: 155px !important;
+  .iphone,
+  .iphone2 {
+    width: clamp(165px, 54vw, 210px);
   }
 
   .mac-wrapper {
-    width: 220px;
+    width: clamp(250px, 84vw, 330px);
   }
 
   #splitz,
   #nameZen,
   #omi-container #nameZen {
-    border-radius: 26px;
-    padding: 54px 22px 28px;
+    border-radius: 24px;
+    padding: 24px 22px 22px;
   }
 }
