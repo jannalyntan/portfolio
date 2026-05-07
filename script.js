@@ -275,10 +275,10 @@ function startPortfolioAnimations() {
       {
         opacity: 1,
         x: 0,
-        duration: 2,
+        duration: 3,
         ease: "power3.out",
       },
-      7.35,
+      8.6,
     )
 
     .to(".deco-money-ll", { opacity: 1, duration: 0.8 }, 8)
@@ -394,7 +394,7 @@ function startPortfolioAnimations() {
       scrollTrigger: {
         trigger: ".horizontalscrolling",
         start: "top top",
-        end: "+=4200",
+        end: "+=5200",
         scrub: 1,
         pin: true,
         anticipatePin: 1,
@@ -405,7 +405,7 @@ function startPortfolioAnimations() {
       // hold Part 1
       .to(".horizontalscrolling", {
         x: "0vw",
-        duration: 0.45,
+        duration: 1.6,
         ease: "none",
       })
 
