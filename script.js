@@ -136,6 +136,12 @@ function startPortfolioAnimations() {
     scale: 0.2,
     opacity: 0,
   });
+  if (window.innerWidth <= 768) {
+    gsap.set(".ripple, .ripple2, .ripple3", {
+      opacity: 0.18,
+      scale: 1,
+    });
+  }
 
   gsap.set("#omi-container", { x: 160, opacity: 0 });
   gsap.set(".part3 .iphone2", { x: -160, opacity: 0, scale: 0.85 });
