@@ -32,7 +32,7 @@ function startPortfolioAnimations() {
   const name1Split = new SplitText("#name-1", { type: "chars" });
   const name2Split = new SplitText("#name-2", { type: "chars" });
   const multimediaSplit = new SplitText("#multimedia", { type: "chars" });
-  const jumpTextSplit = new SplitText("#jumpTo", { type: "chars" });
+  const jumpToSplit = new SplitText("#jumpTo", { type: "chars" });
   const buttonSplit = new SplitText(".button-array button", { type: "chars" });
   const continueScrolling = new SplitText(".scrollText", { type: "chars" });
 
@@ -95,13 +95,13 @@ function startPortfolioAnimations() {
       jumpToSplit.chars,
       {
         opacity: 0,
-        y: 12,
         duration: 0.5,
         stagger: 0.03,
         ease: "power2.out",
       },
       "+=0.1",
     )
+
     /* buttons appear first */
     .from(
       ".button-array a",

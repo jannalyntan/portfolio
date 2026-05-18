@@ -90,8 +90,8 @@
         <div class="button-container">
           <p id="jumpTo">jump to:</p>
           <div class="button-array">
-            <a href=""><button>Works</button></a>
-            <a href=""><button>About Me</button></a>
+            <a href="#works"><button>Works</button></a>
+            <a href="#about-section"><button>About Me</button></a>
           </div>
         </div>
 
@@ -128,7 +128,7 @@
       <!-- It is sticky so it pins while the circle    -->
       <!-- expands, then sits on top of the white fill -->
       <!-- =========================================== -->
-      <section class="horizontalscrolling">
+      <section class="horizontalscrolling" id="works">
         <section class="part1">
           <img src="img/Plane@4x-8.png" class="deco deco-plane" alt="" />
 
@@ -286,17 +286,19 @@
       </div>
     </section>
 
-    <section class="about-section">
-      <div id="aboutMe">
-        <h2 style="margin-bottom: -10px">ABOUT ME</h2>
+    <section class="about-section" id="about-section">
+      <div class="about-image-block">
+        <h2 class="about-title">ABOUT ME</h2>
+
         <img
           src="img/1E932B0F-869C-46F3-8BFC-135EF0B66AEE_1_201_a.jpeg"
-          alt="meImg"
-          style="width: 500px; border-radius: 10px"
+          alt="Portrait of Jannalyn"
+          class="about-img"
         />
       </div>
-      <div id="aboutMe">
-        <p style="width: 600px">
+
+      <div class="about-text-block">
+        <p>
           I'm Jannalyn, a multimedia creative with a background in motion
           graphics, editing, graphic design and UX. My creative process is
           guided by emotion and storytelling, and I aim to design experiences
@@ -309,16 +311,21 @@
           strategically designed.
         </p>
 
-        <a
-          href="https://www.linkedin.com/in/jannalyn-tan-7934821aa/"
-          target="_blank"
-          ><button>Linkedin</button></a
-        >
-        <a
-          href="https://www.instagram.com/jannalyn.jpg?igsh=YTNyOHBmcXk5NTg5&utm_source=qr"
-          target="_blank"
-          ><button>Instagram</button></a
-        >
+        <div class="about-buttons">
+          <a
+            href="https://www.linkedin.com/in/jannalyn-tan-7934821aa/"
+            target="_blank"
+          >
+            <button>Linkedin</button>
+          </a>
+
+          <a
+            href="https://www.instagram.com/jannalyn.jpg?igsh=YTNyOHBmcXk5NTg5&utm_source=qr"
+            target="_blank"
+          >
+            <button>Instagram</button>
+          </a>
+        </div>
       </div>
     </section>
   </body>
