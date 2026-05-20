@@ -435,6 +435,23 @@ function startPortfolioAnimations() {
           opacity: 0.18,
         },
       });
+
+      /* add to ripple start function */
+      gsap.to(".ripple4", {
+        scale: 2.6,
+        opacity: 0,
+        duration: 15,
+        ease: "power2.out",
+        repeat: -1,
+        stagger: {
+          each: 0.7,
+          repeat: -1,
+        },
+        startAt: {
+          scale: 0.2,
+          opacity: 0.18,
+        },
+      });
     };
 
     const horizontalTl = gsap.timeline({
