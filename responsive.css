@@ -1,50 +1,54 @@
 /* ==============================================
-   responsive.css — add AFTER style.css
-   script.js stays unchanged
+   <1230
 ============================================== */
+
+/* FIX PART 2 BEFORE 1100PX */
+@media (max-width: 1350px) {
+  .part2 {
+    gap: 32px;
+    padding: 5rem 4vw;
+  }
+
+  #nameZen {
+    max-width: 500px;
+    padding: 40px 42px;
+  }
+
+  #nameZen p {
+    width: 100%;
+  }
+  .mac-wrapper {
+    width: clamp(420px, 45vw, 560px);
+    height: auto;
+    aspect-ratio: 767.931 / 703.38;
+  }
+
+  .mac-frame {
+    width: 100%;
+    height: 100%;
+  }
+}
 
 /* ============================================
    TABLET ≤ 1100px
 ============================================ */
 @media (max-width: 1100px) {
-  .logo {
-    padding: 6vh 4vw;
-  }
-
-  .logo svg {
-    width: clamp(280px, 46vw, 560px);
-    height: auto;
-  }
-
-  #name-1,
-  #name-2 {
-    font-size: clamp(72px, 10vw, 120px);
-    width: 90vw;
-    margin: 0;
-    padding: 0;
-    line-height: 0.82;
-    text-align: right;
-  }
-
-  #multimedia {
-    width: 90vw;
-    font-size: clamp(24px, 3vw, 36px);
-    padding: 0;
-    margin-top: 10px;
-    text-align: right;
-  }
-
   .part1,
-  .part2,
   .part3 {
-    gap: 48px;
-    padding: 5rem 5vw;
+    width: 100%;
+    min-height: 100vh;
+    padding: 4rem 6vw;
+    gap: 32px;
+    box-sizing: border-box;
+    overflow: hidden;
   }
 
   #splitz,
-  #nameZen {
-    padding: 44px 52px;
-    max-width: 560px;
+  #nameZen,
+  #omi-container #nameZen {
+    width: 100%;
+    max-width: 600px;
+    padding: 36px 40px;
   }
 
   #splitz p,
@@ -53,13 +57,72 @@
     width: 100%;
   }
 
-  .mac-wrapper {
-    width: clamp(460px, 48vw, 620px);
-    height: auto;
+  .iphone,
+  .iphone2 {
+    width: min(45vw, 340px);
   }
 
-  .iphone {
-    width: clamp(280px, 32vw, 360px);
+  /* ============================================
+   PART 2 TABLET ≤ 1100px
+============================================ */
+
+  @media (max-width: 1100px) {
+    .part2 {
+      width: 100%;
+      min-height: 100vh;
+
+      display: flex;
+      flex-direction: column;
+
+      align-items: center;
+      justify-content: center;
+
+      padding: 4rem 6vw;
+
+      gap: 8px; /* controls spacing between computer + card */
+    }
+
+    .part2 .mac-wrapper {
+      order: 1;
+
+      width: min(75vw, 500px);
+      height: auto;
+
+      aspect-ratio: 767 / 703;
+
+      margin: 0;
+    }
+
+    .part2 #nameZen-container {
+      order: 2;
+
+      width: min(90vw, 580px);
+
+      margin: 0;
+    }
+
+    .part2 #nameZen {
+      width: 100%;
+      max-width: none;
+
+      padding: 32px 36px;
+    }
+
+    .part2 #title {
+      margin-bottom: 6px;
+    }
+
+    .part2 h2 {
+      margin-bottom: -20px !important;
+    }
+
+    .part2 h3 {
+      margin-bottom: 10px !important;
+    }
+
+    .part2 p {
+      width: 100%;
+    }
   }
 }
 
@@ -163,7 +226,17 @@
     margin-top: 0;
     position: relative;
     top: auto;
-  } /* ----------------------------------------
+  }
+
+  .part2 {
+    gap: 0px;
+  }
+
+  .mac-wrapper {
+    margin-left: -20px;
+  }
+
+  /* ----------------------------------------
    PART 1 MOBILE DECORATIONS
 ---------------------------------------- */
 
@@ -691,5 +764,13 @@
 
   .about-buttons button {
     width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .copyright {
+    text-align: center;
+    padding: 20px;
+    font-size: 11px;
   }
 }

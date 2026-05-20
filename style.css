@@ -184,7 +184,7 @@ h3 {
 }
 
 .scrollText {
-  margin-top: clamp(80px, 10vw, 160px);
+  margin-top: clamp(80px, 5vw, 160px);
   width: 100%;
   text-align: center;
   color: var(--blue);
@@ -486,9 +486,10 @@ button:hover {
 
 .mac-wrapper {
   position: relative;
-  width: 767.931px;
-  height: 703.38px;
-  flex-shrink: 0;
+  width: clamp(420px, 44vw, 767px);
+  aspect-ratio: 767 / 703;
+  height: auto;
+  flex-shrink: 1;
 }
 
 .mac-frame {
@@ -496,8 +497,7 @@ button:hover {
   height: 100%;
   display: block;
   position: relative;
-  z-index: 1;
-  margin-left: 0;
+  z-index: 2;
 }
 
 .macImg {
@@ -507,8 +507,8 @@ button:hover {
   transform: translate(-50%, -50%);
   width: 96.5%;
   height: 65%;
-  object-fit: fit;
-  z-index: 2;
+  object-fit: cover;
+  z-index: 3;
   border-radius: 6px;
 }
 /* -------------------------------------------- */
@@ -786,4 +786,28 @@ button:hover {
   flex-wrap: wrap;
 
   margin-top: 32px;
+}
+
+/* ----------------------------------------
+   COPYRIGHT
+---------------------------------------- */
+
+.copyright {
+  width: 100%;
+  text-align: right;
+  padding: 30px 50px;
+
+  font-family: var(--mainfont);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  color: var(--blue);
+  opacity: 0.6;
+}
+
+.copyright p {
+  margin: 0;
+  color: var(--blue);
+  opacity: 0.7;
+  font-size: 14px;
+  letter-spacing: 0.05em;
 }
