@@ -18,23 +18,26 @@
     z-index: 8;
   }
 
-  .part2 {
+  .part2,
+  .part4 {
     gap: 24px;
     padding: 5rem 4vw;
   }
 
-  .part2 #nameZen {
+  .part2 #nameZen,
+  .part4 #human-error-card {
     max-width: 520px;
     padding: 40px 42px;
   }
 
-  .part2 #nameZen p {
+  .part2 #nameZen p,
+  .part4 #human-error-card p {
     width: 100%;
   }
 
-  .part2 .mac-wrapper {
+  .part2 .mac-wrapper,
+  .part4 .human-error-preview {
     width: clamp(420px, 44vw, 560px);
-    aspect-ratio: 767 / 703;
     height: auto;
   }
 
@@ -70,7 +73,8 @@
     overflow: hidden;
   }
 
-  .part2 {
+  .part2,
+  .part4 {
     width: 100%;
     min-height: 100vh;
     padding: 2rem 6vw;
@@ -87,37 +91,53 @@
   .part2 .mac-wrapper {
     order: 1;
     width: min(75vw, 500px);
-    aspect-ratio: 767 / 703;
     height: auto;
     margin: 0;
     margin-bottom: -40px;
   }
 
-  .part2 #nameZen-container {
+  .part4 .human-error-preview {
+    order: 1;
+    width: min(75vw, 500px);
+    height: auto;
+    margin: 0;
+  }
+
+  .part2 .mac-wrapper {
+    aspect-ratio: 767 / 703;
+  }
+
+  .part2 #nameZen-container,
+  .part4 #human-error-container {
     order: 2;
     width: min(90vw, 700px);
     margin: 0;
     padding-bottom: 10px;
   }
 
-  .part2 #nameZen {
+  .part2 #nameZen,
+  .part4 #human-error-card {
     width: 100%;
     max-width: none;
   }
 
-  .part2 #title {
+  .part2 #title,
+  .part4 #title {
     margin-bottom: -10px;
   }
 
-  .part2 h2 {
+  .part2 h2,
+  .part4 h2 {
     margin-top: -10px !important;
   }
 
-  .part2 p {
+  .part2 p,
+  .part4 p {
     margin-top: -10px !important;
   }
 
-  .part2 h3 {
+  .part2 h3,
+  .part4 h3 {
     margin-bottom: 10px !important;
   }
 
@@ -130,7 +150,8 @@
 
   #splitz p,
   #nameZen p,
-  #omi p {
+  #omi p,
+  #human-error-card p {
     width: 100%;
   }
 
@@ -218,7 +239,7 @@
   }
 
   .horizontalscrolling {
-    width: 300vw;
+    width: 400vw;
     height: 100vh;
     display: flex;
     overflow: hidden;
@@ -226,7 +247,8 @@
 
   .part1,
   .part2,
-  .part3 {
+  .part3,
+  .part4 {
     position: relative;
     top: auto;
     margin-top: 0;
@@ -260,10 +282,23 @@
     width: clamp(200px, 60vw, 240px);
   }
 
-  .mac-wrapper {
+  .mac-wrapper,
+  .human-error-preview {
     width: clamp(280px, 82vw, 390px);
-    aspect-ratio: 767 / 703;
     height: auto;
+  }
+
+  .human-error-preview {
+    grid-row: 1;
+    justify-self: center;
+    align-self: end;
+    z-index: 3;
+    transform: translateY(-100px);
+    filter: drop-shadow(0 16px 32px rgba(28, 32, 43, 0.2));
+  }
+
+  .mac-wrapper {
+    aspect-ratio: 767 / 703;
   }
 
   .mac-frame {
@@ -285,7 +320,8 @@
 
   #splitz-container,
   #nameZen-container,
-  #omi-container {
+  #omi-container,
+  #human-error-container {
     grid-row: 2;
     width: min(88vw, 430px);
     justify-self: center;
@@ -299,7 +335,8 @@
 
   .part1 #title,
   .part2 #title,
-  .part3 #title {
+  .part3 #title,
+  .part4 #title {
     margin: 0 0 8px;
     padding: 0;
 
@@ -312,7 +349,8 @@
 
   #splitz,
   #nameZen,
-  #omi-container #nameZen {
+  #omi-container #nameZen,
+  #human-error-card {
     width: 100%;
     max-width: 430px;
     padding: 28px 26px 24px;
@@ -325,7 +363,8 @@
 
   #splitz h2,
   #nameZen h2,
-  #omi-container #nameZen h2 {
+  #omi-container #nameZen h2,
+  #human-error-card h2 {
     margin: 0 0 4px !important;
     font-size: clamp(34px, 10vw, 46px);
     line-height: 0.95;
@@ -333,7 +372,8 @@
 
   #splitz h3,
   #nameZen h3,
-  #omi-container #nameZen h3 {
+  #omi-container #nameZen h3,
+  #human-error-card h3 {
     margin: 0 0 18px !important;
     font-size: clamp(14px, 4vw, 25px);
     line-height: 1.1;
@@ -341,7 +381,8 @@
 
   #splitz p,
   #nameZen p,
-  #omi-container #nameZen p {
+  #omi-container #nameZen p,
+  #human-error-card p {
     width: 100%;
     margin: 0 0 22px;
     font-size: clamp(13px, 3.8vw, 16px);
@@ -350,7 +391,8 @@
 
   #splitz button,
   #nameZen button,
-  #omi-container #nameZen button {
+  #omi-container #nameZen button,
+  #human-error-card button {
     display: block;
     margin: 0 auto;
     padding: 10px 28px;
@@ -377,6 +419,21 @@
     bottom: clamp(20px, 3vh, 60px);
     left: clamp(12px, 5vw, 40px);
     margin-left: 0 !important;
+  }
+
+  .star {
+    font-size: clamp(55px, 18vw, 100px);
+  }
+
+  #star-1 {
+    top: 8%;
+    left: 78%;
+  }
+
+  #star-2 {
+    bottom: 5%;
+    right: 78%;
+    transform: scale(0.5);
   }
 
   /* ----------------------------------------
@@ -576,7 +633,7 @@
   .ripple4 {
     position: absolute;
     width: clamp(180px, 55vw, 300px);
-    opacity: 0.22 !important;
+    opacity: 0 !important;
     visibility: visible !important;
     display: block !important;
     transform: translate(-50%, -50%);
@@ -683,7 +740,8 @@
 
   .part1,
   .part2,
-  .part3 {
+  .part3,
+  .part4 {
     padding: 24px 18px 32px;
     grid-template-rows: 50% 50%;
   }
@@ -701,13 +759,15 @@
     width: clamp(165px, 54vw, 210px);
   }
 
-  .mac-wrapper {
+  .mac-wrapper,
+  .human-error-preview {
     width: clamp(250px, 84vw, 330px);
   }
 
   #splitz,
   #nameZen,
-  #omi-container #nameZen {
+  #omi-container #nameZen,
+  #human-error-card {
     border-radius: 24px;
     padding: 24px 22px 22px;
   }

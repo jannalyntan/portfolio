@@ -201,6 +201,9 @@ function startPortfolioAnimations() {
     scale: 0.8,
   });
 
+  gsap.set("#human-error-container", { x: 160, opacity: 0 });
+  gsap.set(".human-error-preview", { x: -160, opacity: 0, scale: 0.9 });
+
   /* ------------------------- */
   /* INTRO SCROLL */
   /* ------------------------- */
@@ -400,7 +403,7 @@ function startPortfolioAnimations() {
         },
         startAt: {
           scale: 0.2,
-          opacity: 0.3,
+          opacity: 0.75,
         },
       });
 
@@ -416,7 +419,7 @@ function startPortfolioAnimations() {
         },
         startAt: {
           scale: 0.2,
-          opacity: 0.22,
+          opacity: 0.75,
         },
       });
       /* add to ripple start function */
@@ -432,7 +435,7 @@ function startPortfolioAnimations() {
         },
         startAt: {
           scale: 0.2,
-          opacity: 0.18,
+          opacity: 0.75,
         },
       });
 
@@ -449,7 +452,7 @@ function startPortfolioAnimations() {
         },
         startAt: {
           scale: 0.2,
-          opacity: 0.18,
+          opacity: 0.75,
         },
       });
     };
@@ -458,7 +461,7 @@ function startPortfolioAnimations() {
       scrollTrigger: {
         trigger: ".horizontalscrolling",
         start: "top top",
-        end: "+=5200",
+        end: "+=7000",
         scrub: 1,
         pin: true,
         anticipatePin: 1,
@@ -578,7 +581,73 @@ function startPortfolioAnimations() {
         x: "-200vw",
         duration: 0.8,
         ease: "none",
+      })
+
+      // move to Part 4
+      .to(".horizontalscrolling", {
+        x: "-300vw",
+        duration: 1.8,
+        ease: "none",
+      })
+
+      // Part 4 image
+      .to(
+        ".human-error-preview",
+        {
+          opacity: 1,
+          x: 0,
+          scale: 1,
+          duration: 1,
+          ease: "power3.out",
+        },
+        "<0.8",
+      )
+
+      // Part 4 text/card
+      .to(
+        "#human-error-container",
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.9,
+          ease: "power3.out",
+        },
+        "<0.15",
+      )
+
+      // hold Part 4
+      .to(".horizontalscrolling", {
+        x: "-300vw",
+        duration: 0.8,
+        ease: "none",
       });
+
+    gsap.to("#star-1", {
+      y: -15,
+      scale: 1.15,
+      duration: 2,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut",
+    });
+
+    gsap.to("#star-2", {
+      y: -10,
+      scale: 0.75,
+      duration: 2.5,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut",
+      delay: 0.8,
+    });
+
+    gsap.to("#star-1, #star-2", {
+      opacity: 0.4,
+      duration: 1.5,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut",
+    });
   }
 
   /* ------------------------- */

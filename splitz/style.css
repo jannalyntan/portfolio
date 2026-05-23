@@ -71,29 +71,18 @@ h4 {
   position: fixed;
   top: 30px;
   left: 30px;
-  width: 58px;
-  height: 58px;
+  width: 75px;
+  height: 75px;
   z-index: 9999;
   border-radius: 50%;
-  background-color: #3b4358;
 
   cursor: pointer;
   transition: transform 0.25s ease;
 }
 
-/* circle fill */
-#backBtn circle {
-  fill: #3b4358;
-}
-
 /* hover */
 #backBtn:hover {
   transform: scale(0.9);
-}
-
-/* optional arrow hover */
-#backBtn:hover path {
-  fill: white;
 }
 
 /* -------------------------------------------- */

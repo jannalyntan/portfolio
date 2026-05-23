@@ -180,7 +180,7 @@ button:hover {
 
 /* circle fill */
 #backBtn circle {
-  fill: #3b4358;
+  fill: var(--omi-blue);
 }
 
 /* hover */
@@ -189,9 +189,9 @@ button:hover {
 }
 
 /* optional arrow hover */
-#backBtn:hover path {
+/* /* #backBtn:hover path {
   fill: white;
-}
+} */
 
 /* -------------------------------- */
 /* SECTION LAYOUT                   */

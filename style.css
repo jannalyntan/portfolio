@@ -438,7 +438,7 @@ button:hover {
 
 .horizontalscrolling {
   position: relative;
-  width: 300vw;
+  width: 400vw;
   height: 100vh;
   display: flex;
   background: rgba(0, 0, 0, 0);
@@ -448,7 +448,8 @@ button:hover {
 
 .part1,
 .part2,
-.part3 {
+.part3,
+.part4 {
   flex: 0 0 100vw;
   width: 100vw;
   max-width: 100vw;
@@ -568,7 +569,6 @@ button:hover {
   left: 400px; /* behind mac + NameZen area */
   transform: translate(-50%, -50%);
   width: 700px;
-  opacity: 0;
 }
 
 /* -------------------------------------------- */
@@ -579,7 +579,7 @@ button:hover {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  opacity: 0.75;
+  opacity: 1;
   scale: 0.3;
 }
 
@@ -590,7 +590,6 @@ button:hover {
   left: -1000px; /* behind mac + NameZen area */
   transform: translate(-50%, -50%);
   width: 700px;
-  opacity: 0;
 }
 
 /* -------------------------------------------- */
@@ -611,7 +610,6 @@ button:hover {
   left: 3100px;
   transform: translate(-50%, -50%);
   width: 720px;
-  opacity: 0;
   will-change: transform, opacity;
 }
 
@@ -715,7 +713,98 @@ button:hover {
   object-fit: contain;
 }
 
-/* Last 3 */
+/* -------------------------------------------- */
+/* PART 4 — Human Error 404 */
+/* -------------------------------------------- */
+
+.part4 {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  max-width: 100vw;
+
+  background: rgba(0, 0, 0, 0);
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 6rem 6vw;
+  gap: 40px;
+
+  will-change: transform;
+  z-index: 15;
+}
+
+.human-error-preview {
+  position: relative;
+  width: clamp(420px, 44vw, 767px);
+  flex-shrink: 0;
+  z-index: 5;
+}
+
+.human-error-preview img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+#human-error-container {
+  display: flex;
+  flex-direction: column;
+  z-index: 6;
+}
+
+#human-error-card {
+  max-width: 700px;
+  color: var(--blue);
+
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 50;
+
+  border-radius: 55px;
+  background: #f0f1f3;
+
+  padding: 50px 100px 50px 50px;
+  text-align: left;
+}
+
+#human-error-card p {
+  line-height: 1.5;
+  width: 600px;
+}
+
+.star {
+  position: absolute;
+  color: var(--blue);
+  font-size: clamp(90px, 13vw, 190px);
+  line-height: 1;
+  font-weight: 900;
+  z-index: 100;
+
+  font-family: "input-mono", monospace;
+  font-weight: bolder;
+}
+
+#star-1 {
+  top: 20%;
+  left: 85%;
+}
+
+#star-2 {
+  bottom: 15%;
+  right: 90%;
+  transform: scale(0.6);
+}
+
+/* -------------------------------------------- */
+/* Motion Graphics */
+/* -------------------------------------------- */
+
 .motion-title-section {
   width: 100vw;
   height: 100vh;
