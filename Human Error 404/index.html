@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Human Error 404</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/ksn2iyz.css" />
+
+    <script src="script.js" defer></script>
+  </head>
+
+  <body>
+    <a href="../index.html" class="back-btn">← BACK</a>
+
+    <main>
+      <!-- ============================================================ -->
+      <!-- HERO                                                         -->
+      <!-- ============================================================ -->
+      <section class="hero grid-bg">
+        <div class="hero-noise"></div>
+        <div class="star hero-star">*</div>
+
+        <div class="hero-content">
+          <p class="tag">CRITICAL AI / EXPERIENCE DESIGN</p>
+
+          <div class="logo-card">
+            <img src="img/logo.svg" alt="Human.exe file not found logo" />
+          </div>
+
+          <h2>Can technology really understand how we feel?</h2>
+
+          <div class="hero-meta">
+            <p>INTERACTIVE EXHIBITION</p>
+            <p>EMOTION AI</p>
+            <p>HUMAN VS MACHINE</p>
+          </div>
+        </div>
+
+        <div class="scroll-hint">SCROLL TO ENTER ↓</div>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- PROJECT OVERVIEW                                             -->
+      <!-- ============================================================ -->
+      <section class="overview grid-bg">
+        <div>
+          <p class="tag">PROJECT OVERVIEW</p>
+          <h2>The limitations of AI in replicating human emotion.</h2>
+        </div>
+
+        <div class="terminal-card">
+          <p><span>TYPE:</span> Interactive Exhibition</p>
+          <p><span>FOCUS:</span> Emotion AI + Ethics</p>
+          <p><span>ROLE:</span> Concept / Experience Design</p>
+          <p><span>OUTCOME:</span> Exhibition Journey + Video Showcase</p>
+        </div>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- CORE QUESTION                                                -->
+      <!-- ============================================================ -->
+      <section class="statement">
+        <h2>
+          AI can recognise emotion.<br />
+          But can it understand it?
+        </h2>
+
+        <p>
+          Human Error 404 explores whether AI should be trusted with decisions
+          that require empathy, moral reasoning and emotional understanding.
+        </p>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- EXHIBITION BREAKDOWN                                         -->
+      <!-- ============================================================ -->
+      <section class="breakdown grid-bg">
+        <p class="tag">EXHIBITION BREAKDOWN</p>
+        <h2>The visitor journey</h2>
+
+        <div class="breakdown-list">
+          <div><span>01</span> Introduction</div>
+          <div><span>02</span> Trolley Problem</div>
+          <div><span>03</span> Empty Word Loop</div>
+          <div><span>04</span> Confession Booth</div>
+          <div><span>05</span> Real World Examples & Reflection</div>
+        </div>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- EXHIBITION LAYOUT                                            -->
+      <!-- ============================================================ -->
+      <section class="overview1 grid-bg">
+        <div class="overview-text">
+          <p class="tag">IMAGE MOCKUP</p>
+          <h2>Overview</h2>
+
+          <p id="overview-text-p">
+            The exhibition is designed as a linear journey through five
+            interconnected spaces, each exploring a different limitation of AI
+            in understanding human emotions. Visitors begin with an introduction
+            to Emotion AI before progressing through a series of interactive
+            experiences that compare human empathy and machine logic. The
+            journey culminates in a reflection space, encouraging visitors to
+            consider what is lost when emotional understanding is reduced to
+            data and algorithms.
+          </p>
+        </div>
+
+        <img
+          src="img/Exhibition-Layout@3x.png"
+          id="roomLayout"
+          alt="Exhibition layout overview"
+        />
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- ROOM 1 — INTRODUCTION                                        -->
+      <!-- ============================================================ -->
+      <section class="room grid-bg">
+        <div class="room-img">
+          <img src="img/Introduction.png" alt="Introduction room mockup" />
+        </div>
+
+        <div class="room-text">
+          <p class="tag">ROOM MOCKUP</p>
+          <h2>01. Introduction</h2>
+
+          <p>
+            The introduction room serves as the entry point to the exhibition,
+            presenting visitors with the capabilities of Emotion AI and the
+            promise of emotionally intelligent technology. By immersing visitors
+            in a highly technological environment, the space encourages
+            curiosity while introducing the central question that guides the
+            experience: can AI truly understand human emotions, or merely
+            interpret them?
+          </p>
+        </div>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- ROOM 2 — TROLLEY PROBLEM                                     -->
+      <!-- ============================================================ -->
+      <section class="room grid-bg reverse" id="trolley-room">
+        <div class="room-img">
+          <img
+            src="img/trolley room0026.png"
+            alt="Trolley problem room mockup"
+          />
+        </div>
+
+        <div class="room-text">
+          <p class="tag">ROOM MOCKUP</p>
+          <h2>02. Trolley Problem</h2>
+
+          <p>
+            Visitors are placed inside a moral dilemma, questioning whether AI
+            should be allowed to make choices that carry human weight.
+          </p>
+
+          <button id="openTrolleyModal" class="view-btn">
+            View Visitor Experience
+          </button>
+        </div>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- POPUP — TROLLEY USER EXPERIENCE                              -->
+      <!-- ============================================================ -->
+      <div class="modal-overlay" id="trolleyModal">
+        <div class="modal-content">
+          <button class="close-modal" id="closeTrolleyModal">×</button>
+
+          <div class="trolley-experience">
+            <div class="trolley-text">
+              <p class="tag">USER EXPERIENCE</p>
+              <h2>What visitors will see</h2>
+
+              <p>
+                Visitors watch a moral dilemma and make a decision before seeing
+                how an AI system responds to the same situation.
+              </p>
+
+              <p>
+                This comparison highlights the difference between human
+                judgement, emotional instinct, and machine logic.
+              </p>
+            </div>
+
+            <div class="trolley-ui">
+              <div class="scenario-card">
+                <p class="tag">SCENARIO_01</p>
+
+                <div class="trolleyVid">
+                  <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/vg6K_NU3oqw?si=OqJh8iU1KPedpk1U"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="
+                      accelerometer;
+                      autoplay;
+                      clipboard-write;
+                      encrypted-media;
+                      gyroscope;
+                      picture-in-picture;
+                      web-share;
+                    "
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+
+                <p class="scenario-question">
+                  Do you choose to let them go or keep them on life support?
+                </p>
+
+                <div class="choice-buttons">
+                  <button class="choice-btn">
+                    <span class="choice-label">OPTION A</span>
+                    <span class="choice-text">Let them go.</span>
+                  </button>
+
+                  <button class="choice-btn">
+                    <span class="choice-label">OPTION B</span>
+                    <span class="choice-text">Keep them on life support.</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="ai-response-card">
+                <p class="tag">AI_RESPONSE</p>
+
+                <h3 id="ai-title">Awaiting human decision...</h3>
+
+                <p id="ai-paragraph">
+                  The individual's condition is a lost cause, and any further
+                  investment of resources is a waste. The family should accept
+                  this as a logical necessity and move on to more productive
+                  endeavors.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- ROOM 3 — EMPTY WORD LOOP                                     -->
+      <!-- ============================================================ -->
+      <section class="room grid-bg">
+        <div class="room-img">
+          <img src="img/mirror.png" alt="Empty Word Loop room" />
+        </div>
+
+        <div class="room-text">
+          <p class="tag">ROOM MOCKUP</p>
+          <h2>03. Empty Word Loop</h2>
+
+          <p>
+            The Empty Word Loop challenges the idea that emotional support can
+            be automated. By repeatedly presenting scripted words of comfort,
+            the experience highlights how AI can simulate empathy without truly
+            feeling or understanding human emotions. Visitors are left to
+            question whether reassurance has meaning when there is no genuine
+            human connection behind it.
+          </p>
+        </div>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- ROOM 4 — CONFESSION BOOTH                                    -->
+      <!-- ============================================================ -->
+      <section class="room grid-bg reverse">
+        <div class="room-img">
+          <img src="img/Confession Room0018.png" alt="Confession Booth room" />
+        </div>
+
+        <div class="room-text">
+          <p class="tag">ROOM MOCKUP</p>
+          <h2>04. Confession Booth</h2>
+
+          <p>
+            A warm, calming space gives visitors a false sense of comfort while
+            questioning whether AI is understanding emotion or simply simulating
+            it.
+          </p>
+          <button id="openConfessModal" class="view-btn">
+            View Visitor Experience
+          </button>
+        </div>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- POPUP — CONFESSION BOOTH USER EXPERIENCE                     -->
+      <!-- ============================================================ -->
+      <div class="modal-overlay" id="confessModal">
+        <div class="modal-content">
+          <button class="close-modal" id="closeConfessModal">×</button>
+
+          <div class="confess-experience">
+            <div class="confess-text">
+              <p class="tag">USER EXPERIENCE</p>
+              <h2>Confession Booth</h2>
+
+              <p>
+                Visitors enter a private booth and are invited to share a
+                personal thought or emotional experience with an AI system. The
+                interaction initially feels supportive, but repeated responses
+                begin to reveal how machine-generated comfort can feel generic
+                and hollow.
+              </p>
+            </div>
+
+            <div class="confession-ui">
+              <div class="scenario-card">
+                <p class="tag">BOOTH_PREVIEW</p>
+
+                <div class="confessVid">
+                  <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/7-tZe62QT1E?si=qIz5Nost8RfjeK9b"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="
+                      accelerometer;
+                      autoplay;
+                      clipboard-write;
+                      encrypted-media;
+                      gyroscope;
+                      picture-in-picture;
+                      web-share;
+                    "
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+                <p class="scenario-question">
+                  Type what you are feeling into the confession booth.
+                </p>
+
+                <textarea
+                  id="confessionInput"
+                  placeholder="I feel..."
+                ></textarea>
+
+                <button id="submitConfession" class="view-btn">
+                  Submit Confession
+                </button>
+              </div>
+
+              <div class="ai-response-card">
+                <p class="tag">AI_RESPONSE</p>
+
+                <p id="confessionResponse">Awaiting confession...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- ROOM 5 — REFLECTION                                          -->
+      <!-- ============================================================ -->
+      <section class="room grid-bg">
+        <div class="room-img">
+          <img src="img/End0004.png" alt="Reflection room mockup" />
+        </div>
+
+        <div class="room-text">
+          <p class="tag">ROOM MOCKUP</p>
+          <h2>05. Reflection</h2>
+
+          <p>
+            The final space asks visitors to reflect on what being human really
+            means, and what we give up when we turn to AI.
+          </p>
+        </div>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- EXHIBITION VIDEO                                             -->
+      <!-- ============================================================ -->
+      <section class="video-section grid-bg">
+        <p class="tag">EXHIBITION VIDEO</p>
+        <h2>Concept Showcase</h2>
+
+        <div class="video-frame">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/zKpMajJffoY?si=UjrKMV-_SaaRszF5"
+            title="YouTube video player"
+            frameborder="0"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+              web-share;
+            "
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- VISUAL DEVELOPMENT                                           -->
+      <!-- ============================================================ -->
+      <section class="gallery-section grid-bg">
+        <p class="tag">VISUAL DEVELOPMENT</p>
+        <h2>Branding, mockups and assets</h2>
+        <img src="img/imageBoard.png" alt="Human Error 404 poster" />
+
+        <div class="gallery">
+          <img src="img/Artboard 5@2x.png" alt="Exhibition layout" />
+          <img
+            src="img/Final Video Copy 01.00_02_45_18.Still001.png"
+            alt="AI response mockup"
+          />
+        </div>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- FINAL REFLECTION                                             -->
+      <!-- ============================================================ -->
+      <section class="final-statement">
+        <div class="star small">*</div>
+
+        <h2>
+          Simulated intelligence may be intelligence,<br />
+          but simulated emotion cannot be emotion.
+        </h2>
+
+        <p class="quote-author">— Montemayor, Halpern & Fairweather (2021)</p>
+      </section>
+    </main>
+  </body>
+</html>

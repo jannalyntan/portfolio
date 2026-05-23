@@ -1,0 +1,822 @@
+/* ============================================================ */
+/* 01. VARIABLES + GLOBAL SETUP                                 */
+/* ============================================================ */
+
+:root {
+  --black: #050505;
+  --cyan: #d9ffff;
+  --white: #ffffff;
+  --grid: rgba(255, 255, 255, 0.09);
+  --muted: rgba(255, 255, 255, 0.65);
+  --card: rgba(255, 255, 255, 0.06);
+
+  --heading: "mrs-eaves-xl-serif", serif;
+  --font: "input-mono", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--font);
+  overflow-x: hidden;
+}
+
+img,
+video {
+  width: 100%;
+  display: block;
+}
+
+section {
+  min-height: 100vh;
+  padding: 7rem 7vw;
+  position: relative;
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 120px 120px;
+}
+
+/* ============================================================ */
+/* 02. TYPOGRAPHY                                                */
+/* ============================================================ */
+
+h1,
+h2 {
+  margin: 0;
+  color: var(--cyan);
+  line-height: 0.95;
+  font-family: var(--font);
+  font-weight: lighter;
+}
+
+h1 {
+  font-size: clamp(70px, 13vw, 190px);
+}
+
+h2 {
+  font-size: clamp(42px, 7vw, 95px);
+}
+
+p {
+  margin: 0;
+  line-height: 1.7;
+  color: var(--muted);
+  font-size: 18px;
+  max-width: 760px;
+}
+
+.tag {
+  color: var(--cyan);
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-family: var(--font);
+  margin-bottom: 1rem;
+}
+
+/* ============================================================ */
+/* 03. BACK BUTTON + DECORATION                                  */
+/* ============================================================ */
+
+.back-btn {
+  position: fixed;
+  top: 28px;
+  left: 28px;
+  z-index: 1000;
+
+  color: var(--cyan);
+  text-decoration: none;
+  border: 1px solid var(--cyan);
+  border-radius: 999px;
+  padding: 10px 20px;
+  font-size: 14px;
+
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+}
+
+.star {
+  position: absolute;
+  top: 10%;
+  left: 8%;
+  color: var(--white);
+  font-size: clamp(90px, 13vw, 190px);
+  line-height: 1;
+  font-weight: 900;
+}
+
+.star.small {
+  position: relative;
+  top: auto;
+  left: auto;
+  font-size: 120px;
+}
+
+/* ============================================================ */
+/* 04. HERO SECTION                                              */
+/* ============================================================ */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(217, 255, 255, 0.12),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(124, 87, 255, 0.12),
+      transparent 28%
+    );
+  pointer-events: none;
+}
+
+.hero-noise {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.025) 0px,
+    rgba(255, 255, 255, 0.025) 1px,
+    transparent 2px,
+    transparent 7px
+  );
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: min(1100px, 86vw);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-star {
+  top: 8%;
+  left: 8%;
+  opacity: 0.95;
+}
+
+.logo-card {
+  width: min(1000px, 82vw);
+  padding: clamp(2rem, 5vw, 5rem);
+  margin: 2rem 0 3rem;
+}
+
+.logo-card img {
+  width: 100%;
+}
+
+.hero h2 {
+  margin-top: -50px;
+  font-size: clamp(30px, 1.5vw, 76px);
+  max-width: 1000px;
+  text-align: center;
+}
+
+.hero-meta {
+  margin-top: 3rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hero-meta p {
+  max-width: none;
+  margin: 0;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(217, 255, 255, 0.35);
+  color: var(--white);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.scroll-hint {
+  position: absolute;
+  bottom: 2rem;
+  right: 3rem;
+  z-index: 3;
+  color: var(--cyan);
+  font-size: 12px;
+  letter-spacing: 0.15em;
+}
+
+/* ============================================================ */
+/* 05. PROJECT OVERVIEW                                          */
+/* ============================================================ */
+
+.overview {
+  display: grid;
+  grid-template-columns: 1fr 450px;
+  gap: 8rem;
+  align-items: center;
+}
+
+.overview h2 {
+  max-width: 900px;
+}
+
+.terminal-card {
+  width: 100%;
+  justify-self: end;
+
+  border: 1px solid var(--cyan);
+  background: var(--card);
+  padding: 2.5rem;
+  border-radius: 4px;
+  box-shadow: 0 0 35px rgba(217, 255, 255, 0.08);
+}
+
+.terminal-card p {
+  margin-bottom: 1.2rem;
+}
+
+.terminal-card span {
+  color: var(--cyan);
+}
+
+/* ============================================================ */
+/* 06. STATEMENT SECTION                                         */
+/* ============================================================ */
+
+.statement {
+  background: var(--cyan);
+  color: var(--black);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.statement h2,
+.statement p {
+  color: var(--black);
+}
+
+.statement p {
+  max-width: 800px;
+  margin-top: 2rem;
+}
+
+/* ============================================================ */
+/* 07. EXHIBITION BREAKDOWN                                      */
+/* ============================================================ */
+
+.breakdown {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.breakdown-list {
+  margin-top: 4rem;
+  display: grid;
+  gap: 1.5rem;
+  max-width: 900px;
+}
+
+.breakdown-list div {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  align-items: center;
+  border-bottom: 1px solid var(--grid);
+  padding-bottom: 1rem;
+  font-size: clamp(24px, 4vw, 54px);
+  color: var(--white);
+}
+
+.breakdown-list span {
+  color: var(--cyan);
+}
+
+/* ============================================================ */
+/* 08. EXHIBITION LAYOUT OVERVIEW                                */
+/* ============================================================ */
+
+.overview1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+.overview-text {
+  width: 100%;
+  max-width: 1200px;
+}
+
+#overview-text-p {
+  max-width: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#roomLayout {
+  width: 100%;
+  max-width: 1250px;
+  margin-top: -50px;
+
+  background: rgba(255, 255, 255, 0.04);
+  padding: 1rem;
+  border: 1px solid var(--grid);
+}
+
+/* ============================================================ */
+/* 09. ROOM SECTIONS                                             */
+/* ============================================================ */
+
+.room {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.room.reverse {
+  grid-template-columns: 0.9fr 1.1fr;
+}
+
+.room.reverse .room-img {
+  order: 2;
+}
+
+.room-img {
+  background: rgba(255, 255, 255, 0.04);
+  padding: 1rem;
+  border: 1px solid var(--grid);
+}
+
+.room-img img {
+  height: 560px;
+  object-fit: cover;
+}
+
+.room-text h2 {
+  margin-bottom: 2rem;
+}
+
+.room-text p {
+  margin-bottom: 1.5rem;
+}
+
+/* ============================================================ */
+/* 10. MODAL / POPUP                                             */
+/* ============================================================ */
+
+.view-btn {
+  margin-top: 2rem;
+  background: transparent;
+  border: 1px solid var(--cyan);
+  color: var(--cyan);
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  font-family: var(--font);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.view-btn:hover {
+  background: var(--cyan);
+  color: var(--black);
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.9);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition: 0.3s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.modal-content {
+  position: relative;
+  width: min(1000px, 92vw);
+  height: 90vh;
+  margin: 0 auto;
+  overflow-y: auto;
+
+  background: var(--black);
+  border: 1px solid var(--cyan);
+  padding: 4rem 3rem;
+
+  box-shadow: 0 0 45px rgba(217, 255, 255, 0.12);
+}
+
+.close-modal {
+  position: sticky;
+  top: 0;
+  margin-left: auto;
+  display: block;
+
+  background: var(--black);
+  border: 1px solid var(--cyan);
+  color: var(--cyan);
+
+  width: 48px;
+  height: 48px;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.close-modal:hover {
+  background: var(--cyan);
+  border: 1px solid var(--black);
+  color: var(--black);
+}
+
+/* ============================================================ */
+/* 11. TROLLEY EXPERIENCE INSIDE POPUP — SCROLL COLUMN           */
+/* ============================================================ */
+
+.trolley-experience {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.trolley-text {
+  max-width: 850px;
+}
+
+.trolley-text p {
+  margin-bottom: 1.5rem;
+}
+
+.trolley-ui {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.trolleyVid {
+  width: min(700px, 60vw);
+  aspect-ratio: 1 / 1;
+
+  margin: 3rem auto 0;
+  padding: 1rem;
+
+  border: 1px solid var(--cyan);
+  background: var(--card);
+}
+
+.trolleyVid iframe {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+  border: none;
+}
+
+.scenario-card,
+.ai-response-card {
+  border: 1px solid rgba(217, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.045);
+  padding: 2rem;
+  box-shadow: 0 0 35px rgba(217, 255, 255, 0.08);
+}
+
+.scenario-card video {
+  margin: 1.5rem 0;
+  border: 1px solid rgba(217, 255, 255, 0.3);
+  background: black;
+}
+
+.scenario-question {
+  max-width: none;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+  font-size: 20px;
+  padding-top: 30px;
+}
+
+.choice-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  margin-top: 2rem;
+}
+
+.choice-btn {
+  min-height: 120px;
+  padding: 1.4rem;
+
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(217, 255, 255, 0.6);
+
+  color: var(--white);
+  cursor: pointer;
+  font-family: var(--font);
+  text-align: left;
+
+  transition: all 0.25s ease;
+}
+
+.choice-btn:hover {
+  transform: translateY(-4px);
+  background: rgba(217, 255, 255, 0.08);
+  box-shadow: 0 0 25px rgba(217, 255, 255, 0.18);
+}
+
+.choice-btn.selected {
+  background: var(--cyan);
+  border-color: var(--cyan);
+}
+
+.choice-btn.selected .choice-label,
+.choice-btn.selected .choice-text {
+  color: var(--black);
+}
+
+.choice-btn:disabled {
+  cursor: default;
+}
+
+.choice-label {
+  display: block;
+  color: var(--cyan);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+.choice-text {
+  display: block;
+  color: var(--white);
+  font-size: 20px;
+  line-height: 1.3;
+}
+
+.ai-response-card {
+  min-height: 230px;
+}
+
+.ai-response-card h3 {
+  color: var(--cyan);
+  font-size: clamp(28px, 3vw, 46px);
+  font-weight: lighter;
+  margin: 1rem 0;
+}
+
+#ai-paragraph {
+  max-width: none;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.5s ease;
+}
+
+#ai-paragraph.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================================ */
+/* 11. CONFESSION EXPERIENCE INSIDE POPUP — SCROLL COLUMN           */
+/* ============================================================ */
+
+.confess-experience {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.confess-text {
+  max-width: 900px;
+}
+
+.confession-ui {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+#confessionInput {
+  width: 100%;
+  min-height: 160px;
+  margin-top: 1.5rem;
+  padding: 1.2rem;
+
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(217, 255, 255, 0.6);
+
+  color: var(--white);
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.6;
+
+  resize: vertical;
+}
+
+#confessionInput::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+#confessionInput:focus {
+  outline: none;
+  border-color: var(--cyan);
+  box-shadow: 0 0 20px rgba(217, 255, 255, 0.12);
+}
+
+#confessionResponse {
+  max-width: none;
+  color: var(--cyan);
+  font-size: 22px;
+  opacity: 0.5;
+  transition: all 0.4s ease;
+}
+
+#confessionResponse.show {
+  opacity: 1;
+}
+
+.confessVid {
+  width: min(800px, 60vw);
+  aspect-ratio: 16 / 9;
+
+  margin: 3rem auto 0;
+  padding: 1rem;
+
+  border: 1px solid var(--cyan);
+  background: var(--card);
+}
+
+.confessVid iframe {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+  border: none;
+}
+
+.scenario-question-2 {
+  max-width: none;
+  color: var(--white);
+  font-size: 20px;
+  padding-top: 30px;
+}
+
+/* ============================================================ */
+/* 12. VIDEO SECTION                                             */
+/* ============================================================ */
+
+.video-section {
+  min-height: auto;
+  padding: 7rem 7vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.video-frame {
+  width: min(1200px, 90vw);
+  aspect-ratio: 16 / 9;
+
+  margin: 3rem auto 0;
+  padding: 1rem;
+
+  border: 1px solid var(--cyan);
+  background: var(--card);
+}
+
+.video-frame iframe {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+  border: none;
+}
+
+/* ============================================================ */
+/* 13. GALLERY SECTION                                           */
+/* ============================================================ */
+
+.gallery-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.gallery {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.gallery img {
+  height: 420px;
+  object-fit: cover;
+  border: 1px solid var(--grid);
+}
+
+/* ============================================================ */
+/* 14. FINAL STATEMENT                                           */
+/* ============================================================ */
+
+.final-statement {
+  background: var(--black);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.final-statement h2 {
+  color: var(--white);
+  max-width: 1100px;
+}
+
+.quote-author {
+  margin-top: 2rem;
+  color: var(--cyan);
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+/* ============================================================ */
+/* 15. RESPONSIVE                                                */
+/* ============================================================ */
+
+@media (max-width: 900px) {
+  section {
+    padding: 5rem 6vw;
+  }
+
+  .hero {
+    align-items: flex-start;
+    padding-top: 9rem;
+  }
+
+  .overview,
+  .room,
+  .room.reverse,
+  .trolley-experience {
+    grid-template-columns: 1fr;
+  }
+
+  .room.reverse .room-img {
+    order: 0;
+  }
+
+  .room-img img,
+  .gallery img {
+    height: 320px;
+  }
+
+  .gallery,
+  .choice-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .breakdown-list div {
+    grid-template-columns: 60px 1fr;
+  }
+
+  .modal-content {
+    padding: 2rem;
+  }
+
+  .hero h2 {
+    margin-top: -20px;
+  }
+}
