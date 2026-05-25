@@ -297,6 +297,20 @@
     filter: drop-shadow(0 16px 32px rgba(28, 32, 43, 0.2));
   }
 
+  .deco-omi-1 {
+    bottom: 6%;
+    left: 2%;
+    z-index: 12;
+    width: 100px;
+  }
+
+  .deco-omi-2 {
+    top: 17%;
+    right: 5%;
+    z-index: 12;
+    width: 125px;
+  }
+
   .mac-wrapper {
     aspect-ratio: 767 / 703;
   }
@@ -752,6 +766,20 @@
     bottom: 1px;
     left: 10px;
     z-index: 8;
+  }
+
+  .deco-omi-1 {
+    bottom: 6%;
+    left: 2%;
+    z-index: 12;
+    width: 25px;
+  }
+
+  .deco-omi-2 {
+    top: 17%;
+    right: 5%;
+    z-index: 12;
+    width: 25px;
   }
 
   .iphone,
