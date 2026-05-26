@@ -820,4 +820,65 @@
   .about-buttons button {
     width: 100%;
   }
+
+  /* -------------------------------------------- */
+  /* SMALL MOBILE — MOTION GRAPHICS */
+  /* -------------------------------------------- */
+
+  .motion-title-section {
+    height: 45vh;
+    min-height: 300px;
+    margin-top: 0;
+    padding: 48px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+  }
+
+  .motion-title-section h2 {
+    font-size: clamp(34px, 13vw, 54px);
+    line-height: 0.95;
+    margin: 0;
+  }
+
+  .showreel-section {
+    width: 100vw;
+    height: 100vh;
+    min-height: 620px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 16px;
+    overflow: hidden;
+  }
+
+  #showreelVideo {
+    width: 100%;
+    height: auto;
+    max-height: 72vh;
+
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .leaving-video-text {
+    padding: 0 24px;
+    text-align: center;
+  }
+
+  .leaving-video-text h2 {
+    font-size: clamp(28px, 10vw, 42px);
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+
+  .leaving-video-text p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
 }
