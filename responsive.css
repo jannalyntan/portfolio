@@ -771,7 +771,9 @@ a {
     font-size: 13.8vw;
     line-height: 0.8;
   }
-
+  #jumpTo {
+    padding-top: 20px;
+  }
   #multimedia {
     width: 94vw;
     font-size: 4.3vw;
@@ -887,8 +889,17 @@ a {
     display: none;
   }
 
-  .deco-omi-1,
+  .deco-omi-1 {
+    bottom: 6%;
+    left: 2%;
+    z-index: 12;
+    width: 15px;
+  }
+
   .deco-omi-2 {
+    top: 17%;
+    right: 5%;
+    z-index: 12;
     width: 15px;
   }
 
