@@ -7,6 +7,8 @@
 
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="responsive.css" />
+    <link rel="stylesheet" href="mobile.css" />
+
     <link rel="stylesheet" href="https://use.typekit.net/iof8vhy.css" />
     <link rel="stylesheet" href="https://use.typekit.net/ksn2iyz.css" />
 
@@ -24,7 +26,10 @@
   </head>
 
   <body>
-    <!-- Add this near top of body -->
+    <div class="scroll-progress">
+      <div class="scroll-progress-bar"></div>
+    </div>
+
     <div id="soundPopup">
       <div class="sound-box">
         <h2>Best Experience With Sound On</h2>
@@ -339,7 +344,9 @@
         src="videos/showreel.mp4"
         muted
         playsinline
-        preload="auto"
+        preload="metadata"
+        poster="img/poster.png"
+        controls
       ></video>
 
       <div class="leaving-video-text">

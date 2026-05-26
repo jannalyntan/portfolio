@@ -1,0 +1,391 @@
+@media (max-width: 500px) {
+  /* ------------------------------------------------ */
+  /* MOBILE STRUCTURE */
+  /* ------------------------------------------------ */
+  .introduction {
+    min-height: 120vh;
+    transform: none;
+    position: relative;
+  }
+
+  .intro-text {
+    position: sticky;
+    top: 45vh;
+    transform: translateY(-100%);
+    font-size: clamp(24px, 7vw, 34px);
+    line-height: 1.15;
+    padding: 0 24px;
+    margin: 0;
+    text-align: center;
+    z-index: 5;
+  }
+
+  .horizontalscrolling {
+    width: 100vw;
+    height: auto;
+    display: block;
+    transform: none;
+    overflow: visible;
+  }
+
+  /* ------------------------------------------------ */
+  /* PROJECT SECTIONS — PART 1, 2, 3, 4 */
+  /* ------------------------------------------------ */
+
+  .part1,
+  .part2,
+  .part3,
+  .part4 {
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    padding: 72px 22px;
+    gap: 28px;
+
+    margin: 0;
+    transform: none;
+    opacity: 1;
+    overflow: hidden;
+  }
+
+  .part1 {
+    position: relative;
+    margin-top: 0;
+  }
+
+  .part2 {
+    align-items: center;
+    justify-content: center;
+  }
+
+  #nameZen-container {
+    margin: 0 auto;
+  }
+
+  /* ------------------------------------------------ */
+  /* PROJECT VISUALS */
+  /* ------------------------------------------------ */
+
+  .iphone,
+  .iphone2 {
+    width: clamp(150px, 48vw, 200px);
+    margin: 0 auto;
+  }
+
+  .mac-wrapper {
+    width: clamp(260px, 84vw, 340px);
+
+    margin-left: auto;
+    margin-right: auto;
+
+    display: block;
+
+    transform: none;
+    left: auto;
+    right: auto;
+
+    align-self: center;
+  }
+
+  .mac-frame {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .part4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 20px;
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+  .human-error-preview {
+    position: relative;
+
+    width: clamp(240px, 78vw, 330px);
+    margin-left: auto;
+    margin-right: auto;
+
+    left: 0;
+    right: 0;
+
+    transform: translate3d(0, -40px, 0);
+    align-self: center;
+  }
+
+  #human-error-container {
+    width: 100%;
+    max-width: 360px;
+
+    margin: 0 auto;
+    align-items: center;
+    text-align: center;
+  }
+  /* ------------------------------------------------ */
+  /* PROJECT TEXT CONTAINERS */
+  /* ------------------------------------------------ */
+
+  #splitz-container,
+  #nameZen-container,
+  #omi-container,
+  #human-error-container {
+    width: 100%;
+    max-width: 360px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .part1 #title,
+  .part2 #title,
+  .part3 #title,
+  .part4 #title {
+    font-size: 15px;
+    margin: 0 0 8px;
+    text-align: center;
+  }
+
+  #splitz,
+  #nameZen,
+  #omi-container #nameZen,
+  #human-error-card {
+    width: 100%;
+    max-width: 360px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+    padding: 24px 20px;
+    border-radius: 24px;
+  }
+
+  #splitz h2,
+  #nameZen h2,
+  #omi-container #nameZen h2,
+  #human-error-card h2 {
+    font-size: clamp(30px, 9vw, 40px);
+    line-height: 0.95;
+    margin: 0 0 6px;
+    text-align: center;
+  }
+
+  #splitz h3,
+  #nameZen h3,
+  #omi-container #nameZen h3,
+  #human-error-card h3 {
+    font-size: clamp(15px, 4vw, 18px);
+    line-height: 1.15;
+    margin: 0 0 14px;
+    text-align: center;
+  }
+
+  #splitz p,
+  #nameZen p,
+  #omi-container #nameZen p,
+  #human-error-card p {
+    width: 100%;
+    font-size: 12.5px;
+    line-height: 1.35;
+    margin: 0 0 16px;
+    text-align: center;
+  }
+
+  #splitz button,
+  #nameZen button,
+  #omi-container #nameZen button,
+  #human-error-card button {
+    display: inline-block;
+    padding: 9px 24px;
+    font-size: 11px;
+  }
+
+  /* ------------------------------------------------ */
+  /* REMOVE / REDUCE DECORATIONS */
+  /* ------------------------------------------------ */
+
+  @media (max-width: 500px) {
+    /* ------------------------- */
+    /* PLANE */
+    /* ------------------------- */
+
+    .deco-plane {
+      display: block;
+
+      width: 250px;
+      height: auto;
+
+      position: absolute;
+
+      top: 6%;
+      right: 1%;
+
+      opacity: 0.8;
+      transform: rotate(-12deg);
+    }
+
+    /* ------------------------- */
+    /* MONEY BAG */
+    /* ------------------------- */
+
+    .deco-bag-bl {
+      display: block;
+
+      width: 150px;
+      height: auto;
+
+      position: absolute;
+
+      bottom: 5%;
+      left: 4%;
+
+      opacity: 0.85;
+    }
+
+    /* ------------------------- */
+    /* SINGLE MONEY NOTE */
+    /* ------------------------- */
+
+    .deco-money-br {
+      display: block;
+
+      width: 200px;
+      height: auto;
+
+      position: absolute;
+
+      top: 55%;
+      right: 1%;
+
+      opacity: 0.8;
+    }
+
+    /* ------------------------- */
+    /* HIDE EVERYTHING ELSE */
+    /* ------------------------- */
+
+    .deco-money-tl,
+    .deco-money-ll,
+    .deco-money-lr,
+    .deco-money-ll-2,
+    .deco-money-lr-2,
+    .deco-money-br-2,
+    .deco-money-tl-2 {
+      display: none;
+    }
+  }
+
+  .deco-omi-1,
+  .deco-omi-2 {
+    width: 65px;
+  }
+
+  .deco-omi-1 {
+    bottom: 4%;
+    left: 4%;
+  }
+
+  .deco-omi-2 {
+    top: 12%;
+    right: 4%;
+  }
+
+  /* ------------------------------------------------ */
+  /* MOTION TITLE */
+  /* ------------------------------------------------ */
+
+  .motion-title-section {
+    display: flex;
+    min-height: 100vh;
+    height: auto;
+    margin-top: 0;
+
+    background: var(--blue);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .motion-title-section h2,
+  .motion-title-section h2 .char {
+    color: white;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .motion-title-section h2 {
+    font-size: clamp(48px, 10vw, 72px);
+    line-height: 0.9;
+    margin: 0;
+  }
+
+  /* ------------------------------------------------ */
+  /* SHOWREEL */
+  /* ------------------------------------------------ */
+
+  .showreel-section {
+    display: flex;
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    height: auto;
+
+    background: var(--darklblue);
+
+    align-items: center;
+    justify-content: center;
+
+    opacity: 1;
+    visibility: visible;
+    overflow: visible;
+    z-index: 20;
+  }
+
+  #showreelVideo {
+    display: block;
+    width: 92vw;
+    max-width: 420px;
+    height: auto;
+    max-height: 75vh;
+
+    opacity: 1;
+    visibility: visible;
+
+    object-fit: contain;
+    transform: none;
+  }
+  /* ------------------------------------------------ */
+  /* about me */
+  /* ------------------------------------------------ */
+
+  .about-buttons {
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+  }
+}

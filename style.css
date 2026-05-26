@@ -2,8 +2,9 @@
   --pink: #d0826f;
   --blue: #3b4358;
   --darklblue: #1c202b;
-  --mainfont: "Futura 100";
-  --script: "Covered By Your Grace";
+  --mainfont: "Futura 100", "Futura", "Trebuchet MS", Arial, sans-serif;
+  --script: "Covered By Your Grace", "Bradley Hand", cursive;
+  --background: #f7f5f2;
 }
 
 /* -------------------------------------------- */
@@ -73,6 +74,34 @@ h3 {
   line-height: 1.4;
 }
 
+/* -------------------------------------------- */
+/* Scroll Progress Bar */
+/* -------------------------------------------- */
+
+.scroll-progress {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 4px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  z-index: 9999;
+
+  pointer-events: none;
+}
+
+.scroll-progress-bar {
+  width: 0%;
+  height: 100%;
+
+  background: var(--blue);
+
+  transition: width 0.08s linear;
+}
 /* -------------------------------------------- */
 /* Logo Introduction */
 /* -------------------------------------------- */
@@ -826,6 +855,41 @@ button:hover {
   margin: 0;
 }
 
+/* hidden by default */
+.motion-title-mobile {
+  display: none;
+}
+
+/* phone only */
+@media (max-width: 500px) {
+  .motion-title-section {
+    display: none;
+  }
+
+  .motion-title-mobile {
+    display: flex;
+
+    min-height: 100vh;
+    width: 100vw;
+
+    align-items: center;
+    justify-content: center;
+
+    background: var(--blue);
+    text-align: center;
+  }
+
+  .motion-title-mobile h2 {
+    font-family: var(--mainfont);
+    color: white;
+    font-size: clamp(48px, 15vw, 72px);
+    margin: 0;
+  }
+}
+
+/* -------------------------------------------- */
+/* Showreel */
+/* -------------------------------------------- */
 .showreel-section {
   width: 100vw;
   height: 100vh;

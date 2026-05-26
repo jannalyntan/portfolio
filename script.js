@@ -141,6 +141,80 @@ function startPortfolioAnimations() {
       },
       "+=0.15",
     );
+
+  /* ------------------------- */
+  /* PHONE VERSION             */
+  /* ------------------------- */
+
+  const isPhone = window.innerWidth <= 500;
+
+  if (isPhone) {
+    gsap.set(".horizontalscrolling", {
+      x: 0,
+      clearProps: "transform",
+    });
+
+    gsap.set(".part1, .part2, .part3, .part4", {
+      opacity: 1,
+      x: 0,
+      y: 0,
+      clearProps: "transform",
+    });
+
+    gsap.set(".motion-title-section, .motion-title-section h2", {
+      opacity: 1,
+      visibility: "visible",
+      clearProps: "transform",
+    });
+
+    gsap.set(".showreel-section", {
+      opacity: 1,
+      visibility: "visible",
+      clearProps: "transform",
+    });
+
+    gsap.set("#showreelVideo", {
+      opacity: 1,
+      visibility: "visible",
+      scale: 1,
+      clearProps: "transform",
+    });
+
+    /* ------------------------- */
+    /* MOBILE PROJECT ANIMATION */
+    /* ------------------------- */
+
+    gsap.utils
+      .toArray(".iphone, .iphone2, .mac-wrapper, .human-error-preview")
+      .forEach((item) => {
+        gsap.from(item, {
+          opacity: 0,
+          y: 40,
+          scale: 0.96,
+          duration: 0.8,
+          ease: "power2.out",
+
+          scrollTrigger: {
+            trigger: item,
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+          },
+        });
+      });
+
+    const showreelVideo = document.querySelector("#showreelVideo");
+
+    if (showreelVideo) {
+      showreelVideo.pause();
+      showreelVideo.currentTime = 0;
+      showreelVideo.muted = true;
+      showreelVideo.controls = true;
+    }
+
+    ScrollTrigger.refresh();
+    return;
+  }
+
   /* ------------------------- */
   /* INITIAL STATES */
   /* ------------------------- */
@@ -655,7 +729,7 @@ function startPortfolioAnimations() {
   /* ------------------------- */
 
   if (document.querySelector(".motion-title-section h2")) {
-    if (window.innerWidth <= 430) {
+    if (window.innerWidth <= 500) {
       gsap.set(".motion-title-section h2", {
         opacity: 1,
         y: 0,
@@ -775,3 +849,20 @@ function startPortfolioAnimations() {
 
   ScrollTrigger.refresh();
 }
+
+/* -------------------------------------------- */
+/* Scroll Progress Bar */
+/* -------------------------------------------- */
+
+const progressBar = document.querySelector(".scroll-progress-bar");
+
+window.addEventListener("scroll", () => {
+  const scrollTop = window.scrollY;
+
+  const documentHeight =
+    document.documentElement.scrollHeight - window.innerHeight;
+
+  const progress = (scrollTop / documentHeight) * 100;
+
+  progressBar.style.width = `${progress}%`;
+});
