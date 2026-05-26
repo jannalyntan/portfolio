@@ -1,3 +1,22 @@
+:root {
+  --mainfont: "Futura 100", "Futura", "Arial", sans-serif;
+  --script: "Covered By Your Grace", cursive;
+}
+
+body,
+p,
+h1,
+h2,
+h3,
+button,
+a {
+  font-family: var(--mainfont) !important;
+}
+
+#human-centred {
+  font-family: var(--script) !important;
+}
+
 /* ============================================
    RESPONSIVE.CSS
    Add AFTER style.css
@@ -875,24 +894,20 @@
 
   /* motion graphics title */
   .motion-title-section {
-    width: 100vw;
-    height: 60vh;
-    min-height: 360px;
-    margin-top: 0;
-    padding: 60px 20px;
+    min-height: 100vh;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
+    padding: 0 24px;
     text-align: center;
-    z-index: 80;
   }
 
   .motion-title-section h2 {
-    font-size: clamp(40px, 13vw, 56px);
-    line-height: 0.95;
-    margin: 0;
+    font-family: var(--mainfont);
+    font-size: clamp(64px, 18vw, 120px);
+    line-height: 0.9;
   }
 
   /* showreel */
