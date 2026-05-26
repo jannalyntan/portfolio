@@ -889,7 +889,7 @@ a {
 
   .deco-omi-1,
   .deco-omi-2 {
-    width: 55px;
+    width: 15px;
   }
 
   /* motion graphics title */
@@ -961,5 +961,48 @@ a {
 
   .about-buttons button {
     width: 100%;
+  }
+}
+
+@media (max-width: 430px) {
+  .motion-title-section {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+
+    position: relative !important;
+    z-index: 999 !important;
+
+    width: 100vw;
+    height: 100vh;
+    min-height: 100vh;
+
+    margin-top: 0 !important;
+    padding: 0 24px;
+
+    background: var(--blue);
+    color: white;
+
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .motion-title-section h2 {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+
+    color: white;
+    font-family: var(--mainfont) !important;
+    font-size: clamp(48px, 15vw, 72px);
+    line-height: 0.9;
+    margin: 0;
+  }
+
+  .showreel-section {
+    position: relative !important;
+    z-index: 1000 !important;
+    margin-top: 0 !important;
   }
 }

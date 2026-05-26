@@ -655,26 +655,34 @@ function startPortfolioAnimations() {
   /* ------------------------- */
 
   if (document.querySelector(".motion-title-section h2")) {
-    const motionTitleSplit = new SplitText(".motion-title-section h2", {
-      type: "chars",
-    });
+    if (window.innerWidth <= 430) {
+      gsap.set(".motion-title-section h2", {
+        opacity: 1,
+        y: 0,
+        clearProps: "transform",
+      });
+    } else {
+      const motionTitleSplit = new SplitText(".motion-title-section h2", {
+        type: "chars",
+      });
 
-    gsap.set(motionTitleSplit.chars, {
-      y: 80,
-      opacity: 0,
-    });
+      gsap.set(motionTitleSplit.chars, {
+        y: 80,
+        opacity: 0,
+      });
 
-    gsap.to(motionTitleSplit.chars, {
-      y: 0,
-      opacity: 1,
-      stagger: 0.04,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: ".motion-title-section",
-        start: "top 55%",
-        toggleActions: "play none none reverse",
-      },
-    });
+      gsap.to(motionTitleSplit.chars, {
+        y: 0,
+        opacity: 1,
+        stagger: 0.04,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".motion-title-section",
+          start: "top 55%",
+          toggleActions: "play none none reverse",
+        },
+      });
+    }
   }
 
   /* ------------------------- */
