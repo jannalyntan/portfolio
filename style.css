@@ -408,13 +408,13 @@ button:hover {
   user-select: none;
 }
 
-.deco-wave-bottom {
-  bottom: 0;
-  left: 0;
-  transform: rotate(190deg);
+.deco-wave-top {
+  top: -100px;
+  right: 50px;
+  transform: rotate(-20deg);
   z-index: -10;
   height: 286px;
-  scale: 2;
+  scale: 1.5;
   opacity: 50%;
 }
 
@@ -428,7 +428,7 @@ button:hover {
   opacity: 50%;
 }
 
-.deco-plane {
+/* .deco-plane {
   top: 0;
   right: 0;
   transform: rotate(17deg);
@@ -513,7 +513,7 @@ button:hover {
   z-index: 8;
   width: 190px;
   transform: rotate(-12deg);
-}
+} */
 
 /* -------------------------------------------- */
 /* Horizontal */
