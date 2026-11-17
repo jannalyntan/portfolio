@@ -74,9 +74,13 @@
   /* PROJECT VISUALS */
   /* ------------------------------------------------ */
 
-  .iphone,
   .iphone2 {
     width: clamp(150px, 48vw, 200px);
+    margin: 0 auto;
+  }
+
+  .iphoneMac {
+    width: clamp(260px, 84vw, 340px);
     margin: 0 auto;
   }
 

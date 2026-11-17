@@ -37,6 +37,10 @@ a {
     z-index: 8;
   }
 
+  .iphoneMac {
+    width: clamp(420px, 44vw, 560px);
+  }
+
   .part2,
   .part4 {
     gap: 24px;
@@ -81,6 +85,28 @@ a {
     bottom: clamp(12px, 6vw, 35px);
     left: clamp(20px, 7vw, 80px);
     z-index: 8;
+  }
+
+  .part1 {
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    padding: 2rem 6vw;
+  }
+
+  .iphoneMac {
+    order: 1;
+    width: min(75vw, 500px);
+  }
+
+  .part1 #splitz-container {
+    order: 2;
+    width: min(90vw, 700px);
+  }
+
+  .part1 #splitz {
+    width: 100%;
+    max-width: none;
   }
 
   .part1,
@@ -174,7 +200,6 @@ a {
     width: 100%;
   }
 
-  .iphone,
   .iphone2 {
     width: min(45vw, 340px);
   }
@@ -285,7 +310,32 @@ a {
     overflow: hidden;
   }
 
-  .iphone,
+  .iphoneMac {
+    grid-row: 1;
+    justify-self: center;
+    align-self: end;
+    width: clamp(280px, 82vw, 390px);
+    margin-bottom: -50px;
+    z-index: 3;
+    filter: drop-shadow(0 16px 32px rgba(28, 32, 43, 0.2));
+  }
+
+  .award-badge {
+    top: -14px;
+    right: 18px;
+    max-width: 200px;
+    padding: 8px 14px;
+    font-size: 11px;
+  }
+
+  .award-label {
+    font-size: 10px;
+  }
+
+  .part1 #splitz {
+    padding-top: 46px;
+  }
+
   .iphone2,
   .mac-wrapper {
     grid-row: 1;
@@ -296,7 +346,6 @@ a {
     filter: drop-shadow(0 16px 32px rgba(28, 32, 43, 0.2));
   }
 
-  .iphone,
   .iphone2 {
     width: clamp(200px, 60vw, 240px);
   }
