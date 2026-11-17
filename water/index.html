@@ -1,0 +1,790 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Guardians of Water – UX Showcase</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+
+  <body>
+    <!-- HERO -->
+    <header class="hero" id="top">
+      <img src="img/Title.png" id="title" alt="Title" />
+
+      <img src="img/Waves.png" alt="" />
+      <div class="hero-foot">
+        <p>
+          In partnership with the Taungurung Land and Waters Council’s Corop
+          Cultural Waterscape<br /><em
+            >Jannalyn Tan · Jiwon Yang · Amber Klepacovski · Alicia Chow</em
+          >
+        </p>
+        <a class="btn" href="#intro">Start Exploring</a>
+      </div>
+    </header>
+
+    <!-- INTRO -->
+    <section class="intro" id="intro">
+      <div class="intro-inner">
+        <img
+          class="mock-laptop"
+          src="img/water_phone.png"
+          alt="Guardians of Water map on a laptop and phone"
+          loading="lazy"
+        />
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="wrap two">
+        <p class="lead">
+          Explore Australia’s water policy landscape through an interactive map
+          of the National Water Agreement. Discover how policies, organisations
+          and people connect, and uncover who is involved, how funding flows and
+          where authority lies.
+        </p>
+        <p class="ack">
+          <em
+            >We acknowledge the Taungurung People, Traditional Owners of the
+            lands and waters at the heart of this project, and thank the
+            Taungurung Land and Waters Council for sharing their framework and
+            the work of Boon Ganalina, the Guardians of Water. We also
+            acknowledge the Woi wurrung and Boon wurrung peoples of the eastern
+            Kulin Nation, on whose unceded lands RMIT stands and where this
+            project was made. We pay our respects to Elders past and present,
+            and recognise that sovereignty was never ceded.</em
+          >
+        </p>
+      </div>
+      <nav class="wrap tabs">
+        <a class="card dark" href="#discover"
+          ><small>01</small><b>Discover</b><span>Research . Concept</span></a
+        >
+        <a class="card dark" href="#develop"
+          ><small>02</small><b>Develop</b
+          ><span>The Pivot . Key Iteration</span></a
+        >
+        <a class="card dark" href="#deliver"
+          ><small>03</small><b>Deliver</b><span>Final Product . Style</span></a
+        >
+      </nav>
+    </section>
+
+    <!-- 01 DISCOVER -->
+    <section class="sec discover" id="discover">
+      <div class="wrap">
+        <div class="sec-head">
+          <small>01</small>
+          <h2 class="display">Discover</h2>
+          <span>Research . Concept</span>
+        </div>
+        <br /><br /><br />
+        <img src="img/discoverQn.png" alt="" style="scale: 0.75" />
+        <br /><br /><br />
+        <div class="problem">
+          <div class="card cream">
+            <h4>Big Issue</h4>
+            <p style="font-size: 15px; margin-top: -5px">
+              <em><b>The connections behind policy are hard to see.</b></em>
+            </p>
+            <p>
+              Policy is shaped by relationships between organisations: who
+              funds, who decides and who is responsible. But these connections
+              are scattered across legislation, reports and departmental
+              publications. That makes it hard to see who influences decisions,
+              spot gaps in accountability, or understand how a policy area fits
+              together as a whole.
+            </p>
+          </div>
+          <h2 class="display light">The Problem</h2>
+        </div>
+
+        <h3 class="section-h">Water Policy</h3>
+        <div class="policy-grid">
+          <div class="card cream tall">
+            <h4>Narrowing It Down</h4>
+            <p>
+              We chose <b>water policy</b> as the case to test the idea,
+              starting with the Taungurung Land and Waters Council’s Corop
+              Cultural Waterscape program. Our research then showed that water
+              policy is connected at a national level, so we widened the focus
+              to the National Water Agreement and the organisations and policies
+              tied to it.
+            </p>
+            <img
+              src="img/taungurung.png"
+              alt="Taungurung Land &amp; Waters Council logo"
+              width="210"
+            />
+          </div>
+          <div class="card cream pat">
+            <h4>The Problem with Water Policy</h4>
+            <p>
+              Australia’s water governance involves governments, agencies,
+              industry, researchers, Traditional Owner groups and community
+              organisations. Funding, authority and responsibility are shared
+              across all of them, but no single place shows how.
+            </p>
+          </div>
+          <div class="card cream pat">
+            <h4>Who it Affects?</h4>
+            <ul>
+              <li>
+                Policy professionals and researchers need to find specific
+                policies and see how they interact or conflict.
+              </li>
+              <li>
+                Communities, students and the public want to understand what
+                policies mean for them and how to take part.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 class="section-h right">Current Solutions</h3>
+        <div class="card cream table">
+          <div class="row head">
+            <span>Solutions</span><span>What’s Good?</span
+            ><span>Where It Falls Short?</span>
+          </div>
+          <div class="row">
+            <span>Kumu.io</span
+            ><span>Relational mapping of complex networks</span
+            ><span
+              >Dense “hairball” graphs that need specialist knowledge to
+              read</span
+            >
+          </div>
+          <div class="row">
+            <span>Participate Melbourne</span
+            ><span>Clear sections that need no prior knowledge</span
+            ><span
+              >Feedback forms only, no relationships shown, login walls</span
+            >
+          </div>
+          <div class="row">
+            <span>Amplify</span><span>A simple, broad overview</span
+            ><span>Little details on individual people, policies or links</span>
+          </div>
+          <div class="row">
+            <span>Nomadtable</span
+            ><span
+              >Low friction, map first interaction that leads to real
+              action</span
+            ><span>Built for travellers, not policies</span>
+          </div>
+          <small
+            >Sources: Kumu (2011); Participate Melbourne (n.d.); Foley (2026);
+            Nomadtable (n.d.).</small
+          >
+        </div>
+
+        <h3 class="section-h">Target Audience</h3>
+        <div class="card cream persona">
+          <div class="who card dark">
+            <span class="pill">Persona</span>
+            <h3>Priya Nair, 29</h3>
+            <p>Community Engagement Officer</p>
+            <br /><br />
+            <p style="font-size: 16px">
+              <em
+                >“I don’t need to become a policy expert. I just need to know
+                who to call.”</em
+              >
+            </p>
+            <br /><br />
+
+            <label
+              >Digital Confidence<progress max="100" value="75"></progress
+            ></label>
+            <label
+              >Policy Confidence<progress max="100" value="20"></progress
+            ></label>
+          </div>
+          <div>
+            <h4>Goal</h4>
+            <p>
+              Understand who’s responsible for what, so she can direct community
+              questions to the right organisation.
+            </p>
+          </div>
+          <div>
+            <h4>Needs</h4>
+            <p>
+              Jargon-free explanations and no login wall, so she can build
+              confidence before committing to anything.
+            </p>
+          </div>
+          <div>
+            <h4>Behaviour</h4>
+            <p>
+              Checks tools like this occasionally, often during or just after
+              community meetings.
+            </p>
+          </div>
+          <div>
+            <h4>Frustration</h4>
+            <p>
+              Current websites are often too complex to understand, making it
+              difficult for her to see how different policies connect and
+              influence one another.
+            </p>
+          </div>
+          <div class="card peach insights">
+            <h4>Insights</h4>
+            <ul>
+              <li>
+                Won’t spend time studying the interface or navigating multiple
+                pages.
+              </li>
+              <li>Needs key information and insights at a glance.</li>
+              <li>
+                Wants to quickly understand how water policies and organisations
+                connect.
+              </li>
+              <li>
+                Needs clear visual relationships rather than dense blocks of
+                text.
+              </li>
+              <li>
+                Expects to understand the bigger picture without extensive
+                exploration.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="sec-head left">
+          <h2 class="display">Concept</h2>
+          <em>A relational map around Corop</em>
+        </div>
+        <div class="concept">
+          <div class="card cream pat">
+            <h4>The Beginning</h4>
+            <p>
+              <em><b>Initial Concept</b></em>
+            </p>
+            <p>
+              We began with a single case study: the Corop Cultural Waterscape,
+              a program led by the Taungurung Land and Waters Council. The
+              concept centred on the Corop Wetlands, with the organisations
+              around it linked by solid lines for confirmed partnerships. A
+              hidden Dark Matter layer revealed the funding and decision-making
+              behind those connections. Send a Ripple let users message an
+              organisation directly when they spotted a gap.
+            </p>
+          </div>
+          <figure class="monitor">
+            <img src="assets/concept-screen.webp" alt="Concept mock-up" />
+            <figcaption>Concept mock-up in Figma Make</figcaption>
+          </figure>
+        </div>
+
+        <div class="card cream flow">
+          <h2 class="display">User Flow</h2>
+          <ol class="steps" aria-label="User flow">
+            <li class="p dark">Land on the Map</li>
+            <li class="p grey">Filter → Timeline</li>
+            <li class="p yellow">Explore → Click On Icon → Information Page</li>
+            <li class="p yellow">Send a Ripple · View Website · Connections</li>
+            <li class="p orange">Follow the Water</li>
+            <li class="p blue">
+              Reveal Dark Matter → Information Page / Follow the Water →
+              Connections → View Source
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 DEVELOP -->
+    <section class="sec develop" id="develop">
+      <div class="wrap">
+        <div class="sec-head right">
+          <small>02</small>
+          <h2 class="display">Develop</h2>
+          <span>The Pivot . Key Iteration</span>
+        </div>
+        <div class="compare">
+          <figure>
+            <img src="assets/concept-corop.webp" alt="" />
+            <figcaption>Initial Concept with Corop as the focus</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/concept-nwa.webp" alt="" />
+            <figcaption>Moving to NWA</figcaption>
+          </figure>
+        </div>
+        <div class="card cream pivot pat">
+          <div>
+            <h2 class="display">The Pivot</h2>
+            <a class="btn pale" href="#testing">Continue</a>
+          </div>
+          <div>
+            <h3>From Corop to the NWA</h3>
+            <p>
+              After diving deeper into our research and identifying over 45 data
+              points, we realised that Australia’s water policies ultimately
+              lead back to the National Water Agreement (NWA). This discovery
+              led us to shift our focus from Corop to the NWA, allowing us to
+              explore the broader connections between water policies and
+              organisations.
+            </p>
+          </div>
+        </div>
+
+        <h3 class="section-h" id="testing">User Testing</h3>
+        <div class="tests">
+          <article class="card cream pat">
+            <span class="pill pale">User Testing 1</span>
+            <h4>“I can see the connections clearly!”</h4>
+            <p>
+              Testing confirmed that our mapping system worked as intended,
+              providing a clear and accessible way to visualise the connections
+              between water policies and organisations.
+            </p>
+          </article>
+          <article class="card cream pat">
+            <span class="pill pale">User Testing 2</span>
+            <h4>“This is very pretty and fitting!”</h4>
+            <p>
+              Testing confirmed that our waterway-inspired styling reinforced
+              the theme while keeping policy connections clear and easy to
+              explore.
+            </p>
+          </article>
+          <article class="card cream pat">
+            <span class="pill pale">User Testing 3</span>
+            <h4>“The filtering system is good!”</h4>
+            <p>
+              Testing showed that our filtering system made it easier to
+              navigate the dataset, helping users quickly find relevant policies
+              and organisations while keeping the website clear and accessible.
+            </p>
+          </article>
+        </div>
+
+        <div class="sec-head right">
+          <h2 class="display">Key Iteration</h2>
+          <span>Mobile Design Considerations</span>
+        </div>
+        <div class="iteration">
+          <div class="card cream pat">
+            <h4>From Icon Grid to List View</h4>
+            <p>
+              We tested several mobile layouts, including zoom controls, filter
+              sheets and an Apple Watch-style icon grid. However, the small
+              touchscreen made the colour-only circles difficult to identify
+              without tapping, so we switched to a list grouped by the four
+              pillars for clearer navigation.
+            </p>
+          </div>
+          <figure>
+            <img src="assets/phone-grid.webp" alt="Icon grid" />
+            <figcaption>Grid</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="assets/phone-grid-tap.webp"
+              alt="Tap shows a connection"
+            />
+            <figcaption>Tap shows a connection</figcaption>
+          </figure>
+        </div>
+        <img
+          class="wire"
+          src="assets/wireframes.webp"
+          alt="Mobile wireframe iterations"
+        />
+      </div>
+    </section>
+
+    <!-- 03 DELIVER -->
+    <section class="sec deliver" id="deliver">
+      <div class="wrap">
+        <div class="sec-head">
+          <small>03</small>
+          <h2 class="display">Deliver</h2>
+          <span>Final Product . Style</span>
+        </div>
+        <div class="final-intro">
+          <img src="assets/imac-light.webp" alt="Final product on a desktop" />
+          <div class="card cream pat">
+            <h4>Guardians of Water</h4>
+            <p>
+              <em><b>One map, from overview to detail</b></em>
+            </p>
+            <p>
+              Guardians of Water is a responsive website mapping Australia’s
+              water policy landscape around the National Water Agreement. It
+              organises policies, organisations and Traditional Owner groups
+              into four rings based on Taungurung Land and Waters Council’s
+              pillars, allowing anyone to explore water governance at their own
+              pace, without a login or prior policy knowledge.
+            </p>
+          </div>
+        </div>
+        <div class="stats">
+          <div class="card dark">
+            <b>45+</b>
+            <p>entities researched and checked against primary sources</p>
+          </div>
+          <div class="card dark">
+            <b>4</b>
+            <p>
+              Pillars from the Taungurung Land and Waters Council’s own
+              framework to use.
+            </p>
+          </div>
+          <div class="card dark">
+            <b>6</b>
+            <p>
+              Unique features making our website accessible and easy to use.
+            </p>
+          </div>
+          <div class="card dark">
+            <b>2</b>
+            <p>
+              Light Matter shows who is involved in water policy. Dark Matter
+              reveals who funds and decides.
+            </p>
+          </div>
+        </div>
+
+        <h3 class="section-h right">Features</h3>
+        <div class="features">
+          <div class="card cream">
+            <h4>Simple Mapping</h4>
+            <p>
+              The National Water Agreement sits at the centre, with policies and
+              organisations arranged on four rings based on the pillars. Icons
+              make each type of entity easy to recognise at a glance.
+            </p>
+            <img src="assets/rings.webp" alt="Rings map" />
+          </div>
+          <div class="card cream">
+            <h4>Dark Matter</h4>
+            <p>
+              A layer that reveals the funding and decision-making relationships
+              behind the visible connections. It keeps the main view simple
+              while giving deeper insight on request.
+            </p>
+            <img src="assets/imac-dark.webp" alt="Dark Matter view" />
+          </div>
+          <div class="card cream">
+            <h4>Filtering System</h4>
+            <p>
+              Narrow the map by pillar, sector or region so you see only what’s
+              relevant. Filters can be cleared at any time to return to the full
+              picture.
+            </p>
+            <div class="filters" id="pillars">
+              <button class="pillar p1">Healing Knowledge</button
+              ><button class="pillar p2">Healing Country</button
+              ><button class="pillar p3">Managing Country</button
+              ><button class="pillar p4">Governing With Country</button>
+              <div class="seg">
+                <button data-clear>Clear</button
+                ><button class="on" data-all>All</button>
+              </div>
+            </div>
+          </div>
+          <div class="card cream">
+            <h4>Clear Connections</h4>
+            <p>
+              Select any icon to see who or what it is, what it does and how it
+              links to other entities. Connections appear only for the selected
+              item, so the map never becomes a tangled web.
+            </p>
+            <img src="assets/connections.webp" alt="Connections view" />
+          </div>
+          <div class="card cream">
+            <h4>Send A Ripple</h4>
+            <p>
+              Spotted a gap or want to get in touch? Send a ripple to an
+              organisation straight from its profile, turning exploration into
+              action.
+            </p>
+            <div class="card peach contact">
+              <b>Contact Details</b
+              ><span>WSAA@gmail.com<br />+61 0403 500 500</span>
+            </div>
+            <a class="btn" href="#team">Send A Ripple</a>
+          </div>
+          <div class="card cream">
+            <h4>Follow The Water</h4>
+            <p>
+              Pick a starting and ending policy and trace how they connect, step
+              by step. It’s a guided way to understand relationships without
+              needing a policy background.
+            </p>
+            <select id="from" aria-label="From">
+              <option>Water Act (2007)</option>
+              <option>Basin Plan (2012)</option>
+            </select>
+            <select id="to" aria-label="To">
+              <option>Basin Plan (2012)</option>
+              <option>Water Act (2007)</option>
+            </select>
+            <p class="trace" id="trace"></p>
+          </div>
+        </div>
+
+        <h3 class="section-h">Style</h3>
+        <div class="style-grid">
+          <div class="card swatch light">
+            <small>Background Colour 1 · #FFFDF1</small>
+            <h2 class="display">Light Matter</h2>
+            <div class="chips">
+              <span style="background: #feff97">Pipe #FEFF97</span
+              ><span style="background: #686868; color: #fff">Tag #686868</span
+              ><span style="background: #fff1e4">Background 2 #FFF1E4</span>
+            </div>
+          </div>
+          <div class="card swatch dark">
+            <small>Background Colour 1 · #0B0F1C</small>
+            <h2 class="display">Dark Matter</h2>
+            <div class="chips">
+              <span style="background: #ff9066">Pipe #FF9066</span
+              ><span style="background: #3a4466; color: #fff">Tag #3A4466</span
+              ><span style="background: #12182b; color: #fff"
+                >Background 2 #12182B</span
+              >
+            </div>
+          </div>
+          <div class="colours">
+            <h3>Colour</h3>
+            <div style="background: #004767">
+              Governing With Country <small>#004767</small>
+            </div>
+            <div style="background: #006f96">
+              Managing Country <small>#006F96</small>
+            </div>
+            <div style="background: #0092cb">
+              Healing Country <small>#0092CB</small>
+            </div>
+            <div style="background: #3eb8e5">
+              Healing Knowledge <small>#3EB8E5</small>
+            </div>
+            <div style="background: #9ae3ff; color: #004767">
+              Additional Colour <small>#9AE3FF</small>
+            </div>
+          </div>
+        </div>
+        <div class="type">
+          <div>
+            <h3>Font · Web</h3>
+            <ul>
+              <li>H1<b>40px Bold</b></li>
+              <li>H2<b>32px Regular</b></li>
+              <li>H3<b>20px Bold</b></li>
+              <li>Body<b>14px Regular</b></li>
+              <li>Label<b>16px Medium</b></li>
+              <li>Label Small<b>13px Bold</b></li>
+              <li>Caption<b>12px Regular</b></li>
+            </ul>
+            <h3>Mobile</h3>
+            <ul>
+              <li>H1<b>32px Bold</b></li>
+              <li>H2<b>17px Bold</b></li>
+            </ul>
+          </div>
+          <div class="card cream">
+            <small>Font Family</small>
+            <h2 class="display">Familjen Grotesk</h2>
+            <code>font-family: "Familjen Grotesk", sans-serif;</code>
+          </div>
+        </div>
+
+        <h3 class="section-h">UI Elements</h3>
+        <div class="ui">
+          <div class="card cream">
+            <h4>Buttons</h4>
+            <button class="toggle on">Active</button
+            ><button class="toggle">Inactive</button>
+          </div>
+          <div class="card peach">
+            <h4>Search Bar</h4>
+            <input id="search" type="search" placeholder="Search" />
+            <ul id="results"></ul>
+          </div>
+          <div class="card peach timeline-card">
+            <h4>Timeline</h4>
+            <div class="timeline" id="timeline">
+              <button>2000</button><button>2010</button><button>2020</button
+              ><button class="on">Present</button>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="section-h">Accessibility</h3>
+        <div class="a11y">
+          <div class="card pale">
+            <h4>First-time Landing Experience</h4>
+            <p>
+              Introduces the project without repeatedly interrupting returning
+              users.
+            </p>
+          </div>
+          <div class="card pale">
+            <h4>Sign-in Only When Needed</h4>
+            <p>
+              Keeps browsing open while requiring myGov sign-in to send a
+              Ripple, reducing spam and unnecessary friction.
+            </p>
+          </div>
+          <div class="card pale">
+            <h4>Icons with Labels</h4>
+            <p>
+              Combines visuals and text to improve recognition, accessibility
+              and understanding.
+            </p>
+          </div>
+          <div class="card pale">
+            <h4>Flexible Filtering</h4>
+            <p>
+              Filters by pillars, sector, region and year help users navigate
+              complex information with less effort.
+            </p>
+          </div>
+          <div class="card pale">
+            <h4>Clear Interaction States</h4>
+            <p>
+              Consistent colours, shadows and timeline highlights make active
+              and inactive states easy to recognise.
+            </p>
+          </div>
+        </div>
+
+        <h3 class="section-h right">Final Product</h3>
+        <div class="slider" id="slider">
+          <img src="assets/final-dark.webp" alt="Dark Matter view" />
+          <img
+            class="top"
+            src="assets/final-light.webp"
+            alt="Light Matter view"
+          />
+          <input
+            type="range"
+            min="0"
+            max="100"
+            value="50"
+            aria-label="Compare Light Matter and Dark Matter"
+          />
+        </div>
+        <div class="labels">
+          <span class="btn">Light Matter</span
+          ><span class="btn">Dark Matter</span>
+        </div>
+
+        <h3 class="section-h right">Phone Version</h3>
+        <div class="phones">
+          <figure>
+            <img src="assets/phone-loading.webp" alt="" /><span class="btn"
+              >Loading Page</span
+            >
+          </figure>
+          <figure>
+            <img src="assets/phone-list.webp" alt="" /><span class="btn"
+              >List Map</span
+            >
+          </figure>
+          <figure>
+            <img src="assets/phone-info.webp" alt="" /><span class="btn"
+              >Information Page</span
+            >
+          </figure>
+        </div>
+
+        <div class="try">
+          <div>
+            <h2 class="display">Try It Out!</h2>
+            <div class="card cream pat qr">
+              <img
+                src="assets/qr.webp"
+                alt="QR code"
+                width="250"
+                height="250"
+              /><a
+                class="btn"
+                href="https://teamjay.netlify.app"
+                target="_blank"
+                rel="noopener"
+                >https://teamjay.netlify.app</a
+              >
+            </div>
+          </div>
+          <img
+            src="assets/mock-iphone.webp"
+            alt="Guardians of Water on an iPhone"
+            width="260"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- TEAM -->
+    <footer class="team" id="team">
+      <div class="waves flip" aria-hidden="true">
+        <i></i><i></i><i></i><i></i><i></i>
+      </div>
+      <div class="wrap">
+        <h2 class="display">Team JAY</h2>
+        <p class="meet"><b>Meet the team</b></p>
+        <div class="people">
+          <article class="card cream">
+            <h4>Alicia Chow</h4>
+            <span class="pill">Researcher</span>
+            <p>
+              I’m a UX/UI designer passionate about turning complex information
+              into clear, accessible, people-centred experiences that help users
+              feel confident and understood.
+            </p>
+            <a href="#">in Alicia Chow</a>
+          </article>
+          <article class="card cream">
+            <h4>Amber Klepacovski</h4>
+            <span class="pill">Researcher . UI/UX Designer</span>
+            <p>
+              I’m a UI/UX designer with a passion for building experiences that
+              feel intuitive, human, and engaging.
+            </p>
+            <a href="#">in Amber Klepacovski</a>
+          </article>
+          <article class="card cream">
+            <h4>Jannalyn Tan</h4>
+            <span class="pill">UI/UX Designer . Coder</span>
+            <p>
+              I’m a Multimedia Designer passionate about creating interactive
+              digital experiences through design, motion and technology.
+            </p>
+            <a href="#">in Jannalyn Tan</a><a href="#">@jannalyn.jpg</a>
+          </article>
+          <article class="card cream">
+            <h4>Jiwon Yang</h4>
+            <span class="pill">Researcher . UI/UX Designer</span>
+            <p>
+              I’m a UX/UI designer passionate about creating digital experiences
+              that are intuitive, accessible and enjoyable to use.
+            </p>
+            <a href="#">in Jiwon Yang</a>
+          </article>
+        </div>
+        <p class="tools">
+          <b>Tools</b> <span>Miro</span> <span>Figma</span> <span>CSS</span>
+          <span>HTML</span> <span>JS</span>
+        </p>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
