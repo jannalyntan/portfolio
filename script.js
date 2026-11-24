@@ -62,26 +62,28 @@ document.addEventListener("DOMContentLoaded", () => {
 function startPortfolioAnimations() {
   gsap.registerPlugin(DrawSVGPlugin, ScrollTrigger, SplitText);
 
+  /* Stops mobile URL-bar show/hide from re-calculating every trigger */
+  ScrollTrigger.config({ ignoreMobileResize: true });
+
   initLogoIntro();
 
-  /* Phones get a simpler, vertical layout and stop here */
-  if (window.innerWidth <= 500) {
+  /* matchMedia builds the right layout for the current width AND
+     rebuilds it when the window is resized or the device is rotated.
+     Everything created inside each callback is reverted automatically. */
+  const mm = gsap.matchMedia();
+
+  mm.add("(max-width: 500px)", () => {
     initPhoneVersion();
-    return;
-  }
-
-  setInitialStates();
-  initIntroScroll();
-  floatWaves();
-  initHorizontalScroll();
-  initMotionTitle();
-  initShowreel();
-
-  window.addEventListener("load", () => {
-    ScrollTrigger.refresh();
   });
 
-  ScrollTrigger.refresh();
+  mm.add("(min-width: 501px)", () => {
+    setInitialStates();
+    initIntroScroll();
+    floatWaves();
+    initHorizontalScroll();
+    initMotionTitle();
+    initShowreel();
+  });
 }
 
 /* ------------------------------------------------------------ */
@@ -237,7 +239,7 @@ function initPhoneVersion() {
 
   /* Project images fade up as they scroll into view */
   gsap.utils
-    .toArray(".iphoneMac, .iphone2, .mac-wrapper, .human-error-preview")
+    .toArray(".iphoneMac, .iphone2, .part2 .mac-wrapper, .human-error-preview")
     .forEach((item) => {
       gsap.from(item, {
         opacity: 0,
@@ -282,8 +284,8 @@ function setInitialStates() {
 
   /* Part 1 — Guardians of Water */
   gsap.set(".part1", { opacity: 0 });
-  gsap.set(".iphoneMac", { opacity: 0, scale: 0.82, x: -120 });
-  gsap.set("#splitz-container", { opacity: 0, x: 120 });
+  gsap.set(".iphoneMac", { opacity: 0, scale: 0.82, x: -200 });
+  gsap.set("#splitz-container", { opacity: 0, x: -260 });
   gsap.set(".deco-wave-top", { x: 300, opacity: 0 });
   gsap.set(".deco-wave-bottom", { x: -300, opacity: 0 });
 
@@ -335,7 +337,7 @@ function initIntroScroll() {
     scrollTrigger: {
       trigger: ".introduction",
       start: "top top",
-      end: "+=2500",
+      end: "+=4500",
       scrub: 1.5,
     },
   });
@@ -378,20 +380,23 @@ function initIntroScroll() {
 
     .to(
       ".iphoneMac",
-      { opacity: 1, scale: 1, duration: 3.5, ease: "power3.out" },
+      { opacity: 1, scale: 1, duration: 4, ease: "power3.out" },
       PART1_START + 0.6,
     )
     .to(
       ".iphoneMac",
-      { x: 0, duration: 3.5, ease: "power3.out" },
-      PART1_START + 1,
+      { x: 0, duration: 4, ease: "power3.out" },
+      PART1_START + 0.6,
     )
 
     .to(
       "#splitz-container",
-      { opacity: 1, x: 0, duration: 3, ease: "power3.out" },
-      PART1_START + 0.6,
-    );
+      { opacity: 1, x: 0, duration: 4, ease: "power3.out" },
+      PART1_START + 1.8,
+    )
+
+    /* hold: Part 1 stays fully visible for a while before scrolling on */
+    .to({}, { duration: 3 });
 }
 
 /* ------------------------------------------------------------ */
@@ -455,11 +460,19 @@ function initHorizontalScroll() {
 
   /* ---- Horizontal timeline ---- */
 
+  /* How long Part 1 (Water) stays pinned before the page slides on.
+     Units are timeline units; each unit = SCROLL_PER_UNIT px of scrolling.
+     Raise PART1_HOLD for a longer stay (6 is about 4200px of scroll). */
+  const PART1_HOLD = 6;
+  const SCROLL_PER_UNIT = 700;
+  const REST =
+    1.8 + 0.8 + 1.8 + 0.8 + 1.8 + 0.8; /* moves + holds of Parts 2-4 */
+
   const horizontalTl = gsap.timeline({
     scrollTrigger: {
       trigger: ".horizontalscrolling",
       start: "top top",
-      end: "+=7000",
+      end: "+=" + (PART1_HOLD + REST) * SCROLL_PER_UNIT,
       scrub: 1,
       pin: true,
       anticipatePin: 1,
@@ -468,21 +481,25 @@ function initHorizontalScroll() {
 
   horizontalTl
     /* hold Part 1 */
-    .to(".horizontalscrolling", { x: "0vw", duration: 1.6, ease: "none" })
+    .to(".horizontalscrolling", {
+      x: "0vw",
+      duration: PART1_HOLD,
+      ease: "none",
+    })
 
     /* move to Part 2 */
     .to(".horizontalscrolling", { x: "-100vw", duration: 1.8, ease: "none" })
-    .call(startRipples, null, 1.25)
+    .call(startRipples, null, PART1_HOLD - 0.35)
 
     .to(
       "#nameZen-container",
       { x: 0, opacity: 1, duration: 0.7, ease: "power2.out" },
-      1.55,
+      PART1_HOLD - 0.05,
     )
     .to(
       ".mac-wrapper",
       { x: 0, opacity: 1, duration: 0.7, ease: "power2.out" },
-      1.65,
+      PART1_HOLD + 0.05,
     )
 
     /* hold Part 2 */
@@ -686,6 +703,8 @@ const progressBar = document.querySelector(".scroll-progress-bar");
 
 window.addEventListener("scroll", () => {
   if (!progressBar) return;
+  const max = document.documentElement.scrollHeight - window.innerHeight;
+  if (max <= 0) return;
 
   const scrollTop = window.scrollY;
   const documentHeight =
