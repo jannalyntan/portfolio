@@ -1,395 +1,102 @@
+/* mobile.css — phones ≤ 500px (vertical layout, no horizontal pin) */
 @media (max-width: 500px) {
-  /* ------------------------------------------------ */
-  /* MOBILE STRUCTURE */
-  /* ------------------------------------------------ */
-  .introduction {
-    min-height: 120vh;
-    transform: none;
-    position: relative;
-  }
+  .sound-box { padding: 32px 22px; border-radius: 24px; }
+  .sound-box p { font-size: 15px; margin-bottom: 22px; }
 
+  /* ---------- Intro ---------- */
+  .introduction { min-height: 120vh; min-height: 120svh; transform: none; }
   .intro-text {
-    position: sticky;
-    top: 45vh;
-    transform: translateY(-100%);
-    font-size: clamp(24px, 7vw, 34px);
-    line-height: 1.15;
-    padding: 0 24px;
-    margin: 0;
-    text-align: center;
-    z-index: 5;
+    position: sticky; top: 45vh; transform: translateY(-100%);
+    font-size: clamp(22px, 7vw, 34px); line-height: 1.15;
+    padding: 0 24px; text-align: center; z-index: 5;
   }
 
   .horizontalscrolling {
-    width: 100vw;
-    height: auto;
-    display: block;
-    transform: none;
-    overflow: visible;
+    width: 100%; height: auto; display: block;
+    transform: none; overflow: visible;
   }
 
-  /* ------------------------------------------------ */
-  /* PROJECT SECTIONS — PART 1, 2, 3, 4 */
-  /* ------------------------------------------------ */
-
-  .part1,
-  .part2,
-  .part3,
-  .part4 {
-    position: relative;
-    width: 100vw;
-    min-height: 100vh;
-    height: auto;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    text-align: center;
-    padding: 72px 22px;
-    gap: 28px;
-
-    margin: 0;
-    transform: none;
-    opacity: 1;
-    overflow: hidden;
+  /* ---------- Project sections ---------- */
+  .part1, .part2, .part3, .part4 {
+    position: relative; width: 100%; max-width: 100%;
+    min-height: 100vh; min-height: 100svh; height: auto;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 24px; padding: 64px 20px; margin: 0;
+    text-align: center; transform: none; opacity: 1; overflow: hidden;
   }
 
-  .part1 {
-    position: relative;
-    margin-top: 0;
+  /* ---------- Visuals ---------- */
+  .iphoneMac, .mac-wrapper, .human-error-preview {
+    width: min(84vw, 340px); margin: 0 auto;
   }
+  .iphone2 { width: min(48vw, 200px); margin: 0 auto; }
+  .human-error-preview .mac-wrapper { width: 100%; }   /* was wider than its parent */
+  .human-error-preview { transform: none; margin-top: -24px; }  /* GSAP owns transform here */
+  .mac-frame { width: 100%; margin: 0 auto; }
 
-  .part2 {
-    align-items: center;
-    justify-content: center;
+  /* ---------- Text containers + cards ---------- */
+  #splitz-container, #nameZen-container, #omi-container, #human-error-container {
+    width: 100%; max-width: 360px; margin: 0 auto;
+    display: flex; flex-direction: column; align-items: center; text-align: center;
   }
-
-  #nameZen-container {
-    margin: 0 auto;
+  .part1 #title, .part2 #title, .part3 #title, .part4 #title {
+    font-size: 15px; margin: 0 0 8px; text-align: center;
   }
-
-  /* ------------------------------------------------ */
-  /* PROJECT VISUALS */
-  /* ------------------------------------------------ */
-
-  .iphone2 {
-    width: clamp(150px, 48vw, 200px);
-    margin: 0 auto;
+  #splitz, #nameZen, #omi-container #nameZen, #human-error-card {
+    width: 100%; max-width: 360px; padding: 24px 20px; border-radius: 24px;
+    display: flex; flex-direction: column; align-items: center; text-align: center;
   }
-
-  .iphoneMac {
-    width: clamp(260px, 84vw, 340px);
-    margin: 0 auto;
+  #splitz h2, #nameZen h2, #human-error-card h2 {
+    font-size: clamp(28px, 9vw, 38px); line-height: 0.95; margin: 0 0 6px !important; text-align: center;
   }
-
-  .mac-wrapper {
-    width: clamp(260px, 84vw, 340px);
-
-    margin-left: auto;
-    margin-right: auto;
-
-    display: block;
-
-    transform: none;
-    left: auto;
-    right: auto;
-
-    align-self: center;
+  #splitz h3, #nameZen h3, #human-error-card h3 {
+    font-size: clamp(15px, 4vw, 18px); line-height: 1.15; margin: 0 0 14px !important; text-align: center;
   }
-
-  .mac-frame {
-    width: 100%;
-    margin: 0 auto;
+  #splitz p, #nameZen p, #human-error-card p {
+    width: 100%; font-size: 13px; line-height: 1.4; margin: 0 0 16px; text-align: center;
   }
+  #splitz button, #nameZen button, #human-error-card button { padding: 10px 24px; font-size: 11px; }
 
-  .part4 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  /* Award badge: stay inside the card on narrow screens */
+  .award-badge { top: -16px; right: 8px; max-width: min(190px, 60%); padding: 8px 12px; }
 
-    gap: 20px;
-    padding-left: 22px;
-    padding-right: 22px;
-  }
+  /* ---------- Decorations ---------- */
+  .deco-wave-top, .deco-wave-bottom { opacity: 0.25; }
+  .deco-omi-1, .deco-omi-2 { width: 64px; }
+  .deco-omi-1 { bottom: 3%; left: 4%; }
+  .deco-omi-2 { top: 8%; right: 4%; }
+  #star-1 { top: 6%; left: 78%; }
+  #star-2 { bottom: 4%; right: 80%; }
 
-  .human-error-preview {
-    position: relative;
+  /* Ripples are desktop-only (the phone JS never animates them) */
+  .ripple-wrap, .ripple-wrap-2, .ripple-wrap-3, .ripple-wrap-4,
+  .ripple, .ripple2, .ripple3, .ripple4 { display: none !important; }
 
-    width: clamp(240px, 78vw, 330px);
-    margin-left: auto;
-    margin-right: auto;
-
-    left: 0;
-    right: 0;
-
-    transform: translate3d(0, -40px, 0);
-    align-self: center;
-  }
-
-  #human-error-container {
-    width: 100%;
-    max-width: 360px;
-
-    margin: 0 auto;
-    align-items: center;
-    text-align: center;
-  }
-  /* ------------------------------------------------ */
-  /* PROJECT TEXT CONTAINERS */
-  /* ------------------------------------------------ */
-
-  #splitz-container,
-  #nameZen-container,
-  #omi-container,
-  #human-error-container {
-    width: 100%;
-    max-width: 360px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    text-align: center;
-    margin: 0 auto;
-  }
-
-  .part1 #title,
-  .part2 #title,
-  .part3 #title,
-  .part4 #title {
-    font-size: 15px;
-    margin: 0 0 8px;
-    text-align: center;
-  }
-
-  #splitz,
-  #nameZen,
-  #omi-container #nameZen,
-  #human-error-card {
-    width: 100%;
-    max-width: 360px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    text-align: center;
-    padding: 24px 20px;
-    border-radius: 24px;
-  }
-
-  #splitz h2,
-  #nameZen h2,
-  #omi-container #nameZen h2,
-  #human-error-card h2 {
-    font-size: clamp(30px, 9vw, 40px);
-    line-height: 0.95;
-    margin: 0 0 6px;
-    text-align: center;
-  }
-
-  #splitz h3,
-  #nameZen h3,
-  #omi-container #nameZen h3,
-  #human-error-card h3 {
-    font-size: clamp(15px, 4vw, 18px);
-    line-height: 1.15;
-    margin: 0 0 14px;
-    text-align: center;
-  }
-
-  #splitz p,
-  #nameZen p,
-  #omi-container #nameZen p,
-  #human-error-card p {
-    width: 100%;
-    font-size: 12.5px;
-    line-height: 1.35;
-    margin: 0 0 16px;
-    text-align: center;
-  }
-
-  #splitz button,
-  #nameZen button,
-  #omi-container #nameZen button,
-  #human-error-card button {
-    display: inline-block;
-    padding: 9px 24px;
-    font-size: 11px;
-  }
-
-  /* ------------------------------------------------ */
-  /* REMOVE / REDUCE DECORATIONS */
-  /* ------------------------------------------------ */
-
-  @media (max-width: 500px) {
-    /* ------------------------- */
-    /* PLANE */
-    /* ------------------------- */
-
-    .deco-plane {
-      display: block;
-
-      width: 250px;
-      height: auto;
-
-      position: absolute;
-
-      top: 6%;
-      right: 1%;
-
-      opacity: 0.8;
-      transform: rotate(-12deg);
-    }
-
-    /* ------------------------- */
-    /* MONEY BAG */
-    /* ------------------------- */
-
-    .deco-bag-bl {
-      display: block;
-
-      width: 150px;
-      height: auto;
-
-      position: absolute;
-
-      bottom: 5%;
-      left: 4%;
-
-      opacity: 0.85;
-    }
-
-    /* ------------------------- */
-    /* SINGLE MONEY NOTE */
-    /* ------------------------- */
-
-    .deco-money-br {
-      display: block;
-
-      width: 200px;
-      height: auto;
-
-      position: absolute;
-
-      top: 55%;
-      right: 1%;
-
-      opacity: 0.8;
-    }
-
-    /* ------------------------- */
-    /* HIDE EVERYTHING ELSE */
-    /* ------------------------- */
-
-    .deco-money-tl,
-    .deco-money-ll,
-    .deco-money-lr,
-    .deco-money-ll-2,
-    .deco-money-lr-2,
-    .deco-money-br-2,
-    .deco-money-tl-2 {
-      display: none;
-    }
-  }
-
-  .deco-omi-1,
-  .deco-omi-2 {
-    width: 65px;
-  }
-
-  .deco-omi-1 {
-    bottom: 4%;
-    left: 4%;
-  }
-
-  .deco-omi-2 {
-    top: 12%;
-    right: 4%;
-  }
-
-  /* ------------------------------------------------ */
-  /* MOTION TITLE */
-  /* ------------------------------------------------ */
-
+  /* ---------- Motion title + showreel ---------- */
   .motion-title-section {
-    display: flex;
-    min-height: 100vh;
-    height: auto;
-    margin-top: 0;
-
-    background: var(--blue);
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-
-    opacity: 1;
-    visibility: visible;
+    display: flex; min-height: 60vh; min-height: 60svh; height: auto; margin-top: 0;
+    background: var(--blue); align-items: center; justify-content: center;
+    text-align: center; opacity: 1; visibility: visible;
   }
-
-  .motion-title-section h2,
-  .motion-title-section h2 .char {
-    color: white;
-    opacity: 1;
-    visibility: visible;
-    transform: none;
+  .motion-title-section h2, .motion-title-section h2 .char {
+    color: #fff; opacity: 1; visibility: visible; transform: none;
   }
-
-  .motion-title-section h2 {
-    font-size: clamp(48px, 10vw, 72px);
-    line-height: 0.9;
-    margin: 0;
-  }
-
-  /* ------------------------------------------------ */
-  /* SHOWREEL */
-  /* ------------------------------------------------ */
+  .motion-title-section h2 { font-size: clamp(40px, 12vw, 64px); line-height: 0.9; margin: 0; }
 
   .showreel-section {
-    display: flex;
-    position: relative;
-    width: 100vw;
-    min-height: 100vh;
-    height: auto;
-
-    background: var(--darklblue);
-
-    align-items: center;
-    justify-content: center;
-
-    opacity: 1;
-    visibility: visible;
-    overflow: visible;
-    z-index: 20;
+    display: flex; position: relative; width: 100%;
+    min-height: 60vh; min-height: 60svh; height: auto;
+    background: var(--darklblue); align-items: center; justify-content: center;
+    opacity: 1; visibility: visible; overflow: visible; padding: 24px 0;
   }
-
   #showreelVideo {
-    display: block;
-    width: 92vw;
-    max-width: 420px;
-    height: auto;
-    max-height: 75vh;
-
-    opacity: 1;
-    visibility: visible;
-
-    object-fit: contain;
-    transform: none;
+    display: block; width: 92vw; max-width: 420px; height: auto; max-height: 75vh;
+    object-fit: contain; transform: none; opacity: 1; visibility: visible;
   }
-  /* ------------------------------------------------ */
-  /* about me */
-  /* ------------------------------------------------ */
+  .leaving-video-text { display: none; }
 
-  .about-buttons {
-    display: flex;
-    flex-direction: row;
-
-    align-items: center;
-    justify-content: center;
-
-    width: 100%;
-  }
+  /* ---------- About ---------- */
+  .about-buttons { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 10px; width: 100%; }
+  .about-buttons button { padding: 10px 20px; font-size: 12px; }
 }
