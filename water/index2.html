@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guardians of Water</title>
+    <style>
+      * {
+        margin: 0;
+      }
+      body {
+        background: #fffdf1;
+      }
+      #image {
+        display: block;
+        width: 100vw;
+      }
+      #progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 5px;
+        width: 0;
+        background: linear-gradient(90deg, #9ae3ff, #0092cb, #004666);
+        z-index: 50;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="progress"></div>
+    <img
+      src="Final UX SHOWCASE.png"
+      alt="Guardians of Water showcase"
+      id="image"
+    />
+    <script>
+      const bar = document.getElementById("progress");
+      addEventListener(
+        "scroll",
+        () => {
+          const max = document.documentElement.scrollHeight - innerHeight;
+          bar.style.width = (max > 0 ? (scrollY / max) * 100 : 0) + "%";
+        },
+        { passive: true },
+      );
+    </script>
+  </body>
+</html>
